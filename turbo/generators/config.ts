@@ -1,4 +1,4 @@
-import { PlopTypes } from '@turbo/gen';
+import type { PlopTypes } from '@turbo/gen';
 
 const CATEGORIES = [
   'Form',
@@ -53,14 +53,14 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: 'add',
         path: 'packages/dss-ui/src/components/{{pascalCase name}}/index.ts',
         template:
-          "export { default as {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
+          "export { default as {{pascalCase name}} } from './{{pascalCase name}}';\n\n" +
           "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",
       },
       {
         type: 'append',
         path: 'packages/dss-ui/src/components/index.ts',
         template:
-          "export { {{pascalCase name}} } from './{{pascalCase name}}';\n\n" + 
+          "export { {{pascalCase name}} } from './{{pascalCase name}}';\n\n" +
           "export type { {{pascalCase name}}Props } from './{{pascalCase name}}';",
       },
 
