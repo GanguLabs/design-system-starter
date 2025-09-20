@@ -30,7 +30,8 @@
     "format": "biome format",
     "format:fix": "pnpm format --write",
     "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
-    "gen": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
+    "gen": "pnpm gen:vars && pnpm format:fix",
+    "gen-old": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
     "gen:vars": "tsx ./scripts/generateVars.ts",
     "gen:palette": "unicornix"
   },
