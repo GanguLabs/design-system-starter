@@ -56,7 +56,7 @@ const config: StorybookConfig = {
 
   typescript: {
     check: false,
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: 'react-docgen',
     // this is required for correct argTypes processing
     reactDocgenTypescriptOptions: {
       include: docgenPaths,
