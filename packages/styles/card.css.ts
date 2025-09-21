@@ -36,7 +36,7 @@ export const content = style({
 
 export const actions = style({
 	display: 'flex',
-	justifyContent: 'end',
+	justifyContent: 'flex-end',
 });
 
 export const title = style({
