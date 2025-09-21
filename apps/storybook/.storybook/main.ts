@@ -1,4 +1,4 @@
-import { join, dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import { mergeConfig } from 'vite';
 
 import type { StorybookConfig } from '@storybook/react-vite';
@@ -12,10 +12,12 @@ const packages = ['dss-tokens', 'dss-fonts', 'dss-icons', 'dss-ui'];
 const introPath = '../stories/**/*.mdx';
 
 const storiesPaths = packages.map(
-  (dir) => `../../../packages/${dir}/src/**/*.stories.@(js|jsx|ts|tsx)`,
+  (dir) => `../../../packages/${dir}/src/**/*.stories.@(js|jsx|ts|tsx)`
 );
 
-const docsPaths = packages.map((dir) => `../../../packages/${dir}/**/*.mdx`);
+const docsPaths = packages.map(
+  (dir) => `../../../packages/${dir}/!(node_modules)/**/*.mdx`
+);
 
 const docgenPaths = packages.map((dir) => `../../packages/${dir}/src/**/*.tsx`);
 
@@ -23,10 +25,10 @@ const config: StorybookConfig = {
   stories: [introPath, ...storiesPaths, ...docsPaths],
 
   addons: [
-    getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-themes'),
     getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@storybook/addon-docs'),
   ],
 
   framework: {
@@ -35,12 +37,11 @@ const config: StorybookConfig = {
   },
 
   docs: {
-    autodocs: 'tag',
     defaultName: 'Overview',
   },
 
   core: {
-    builder: '@storybook/builder-vite',
+    builder: getAbsolutePath('@storybook/builder-vite'),
   },
 
   async viteFinal(config) {

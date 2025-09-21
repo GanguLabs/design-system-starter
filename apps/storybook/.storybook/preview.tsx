@@ -9,11 +9,11 @@ import {
   Primary,
   ArgTypes,
   Stories,
-} from '@storybook/blocks';
+} from '@storybook/addon-docs/blocks';
 
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
-import type { Preview, ReactRenderer } from '@storybook/react';
+import type { Preview, ReactRenderer } from '@storybook/react-vite';
 
 import { StoryDecorator } from './helpers/StoryDecorator';
 
