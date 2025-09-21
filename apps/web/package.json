@@ -9,19 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@repo/styles": "workspace:*",
     "@vanilla-extract/css": "^1.12.0",
-    "next": "^13.4.1",
+    "next": "^14.2.32",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@repo/styles": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@ds-starter/tsconfig": "workspace:*",
+    "@ds-starter/ui": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@vanilla-extract/next-plugin": "^2.2.2",
-    "@ds-starter/tsconfig": "workspace:*",
-    "@ds-starter/ui": "workspace:*",
+    "eslint-config-next": "^14.2.32",
     "typescript": "^5.5.4"
   }
 }
