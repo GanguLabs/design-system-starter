@@ -55,7 +55,12 @@ const Card = ({ imageSrc, imageAlt, title, description }: CardProps) => (
       <div className={titleStyle}>{title}</div>
       <div className={descriptionStyle}>{description}</div>
       <div className={actions}>
-        <Button>Order This Mouse Now!</Button>
+        <Button variant="ghost" color="accent" size="large">
+          Large-Ghost-Accent
+        </Button>
+        <Button variant="solid" color="neutral" size="small">
+          Small-Solid-neutral
+        </Button>
       </div>
     </div>
   </div>
