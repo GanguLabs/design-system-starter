@@ -4,7 +4,7 @@ import { DemoFlow } from '../../helpers/docs';
 
 import Button from './Button';
 
-export default {
+const meta = {
   title: 'Form/Button',
   component: Button,
   parameters: {
@@ -19,7 +19,8 @@ export default {
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>;
 
-export type Story = StoryObj<typeof Button>;
+export default meta;
+export type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   args: {
