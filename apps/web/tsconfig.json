@@ -6,7 +6,8 @@
         "name": "next"
       }
     ],
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strictNullChecks": true
   },
   "include": [
     "src",
@@ -16,5 +17,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

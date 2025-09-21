@@ -267,6 +267,9 @@ importers:
       '@ds-starter/tsconfig':
         specifier: workspace:*
         version: link:../../tsconfig
+      '@ds-starter/ui':
+        specifier: workspace:*
+        version: link:../../packages/dss-ui
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45
