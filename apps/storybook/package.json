@@ -29,6 +29,7 @@
     "@ds-starter/tsconfig": "workspace:*",
     "@playwright/test": "^1.43.0",
     "@storybook/addon-a11y": "^9.1.7",
+    "@storybook/addon-docs": "^9.1.7",
     "@storybook/addon-links": "^9.1.7",
     "@storybook/addon-themes": "^9.1.7",
     "@storybook/builder-vite": "^9.1.7",
@@ -44,6 +45,6 @@
     "storybook": "^9.1.7",
     "typescript": "^5.5.4",
     "vite": "^5.3.4",
-    "@storybook/addon-docs": "^9.1.7"
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
