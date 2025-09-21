@@ -1,0 +1,5 @@
+{
+  "extends": "@ds-starter/tsconfig/lib-react.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}
