@@ -1,3 +1,8 @@
+'use client';
+
+import ButtonUi, {
+  ButtonProps as ButtonUiProps,
+} from '@ds-starter/ui/components/Button/Button';
 import { button as buttonStyles } from '@repo/styles/button.css';
 
 import {
@@ -11,16 +16,22 @@ import {
 import Image from 'next/image';
 import { grid } from './home.css';
 
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+// import { ButtonHTMLAttributes, ReactNode } from 'react';
 // Define the props for the Button component
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-}
+// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+//   children: ReactNode;
+// }
 
-const Button = ({ children, ...props }: ButtonProps) => (
-  <button className={buttonStyles} {...props}>
+// const Button = ({ children, ...props }: ButtonProps) => (
+//   <button className={buttonStyles} {...props}>
+//     {children}
+//   </button>
+// );
+
+const Button = ({ children, ...props }: ButtonUiProps) => (
+  <ButtonUi className={buttonStyles} {...props}>
     {children}
-  </button>
+  </ButtonUi>
 );
 
 // Define the props for the Card component

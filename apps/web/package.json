@@ -21,6 +21,7 @@
     "@types/react-dom": "^18.0.7",
     "@vanilla-extract/next-plugin": "^2.2.2",
     "@ds-starter/tsconfig": "workspace:*",
+    "@ds-starter/ui": "workspace:*",
     "typescript": "^5.5.4"
   }
 }
