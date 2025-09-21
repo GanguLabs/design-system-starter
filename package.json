@@ -14,6 +14,7 @@
     "change:gen": "changeset add",
     "change:version": "changeset version",
     "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=./apps/web",
     "dev:storybook": "turbo run dev --filter=./apps/storybook",
     "test": "turbo test",
     "build": "pnpm build:pck && pnpm build:doc && pnpm build:app",
