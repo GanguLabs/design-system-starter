@@ -28,11 +28,18 @@ import { grid } from './home.css';
 //   </button>
 // );
 
-const Button = ({ children, ...props }: ButtonUiProps) => (
-  <ButtonUi className={buttonStyles} {...props}>
-    {children}
-  </ButtonUi>
-);
+const Button = ({ children, ...props }: ButtonUiProps) => {
+  const onClick = () => {
+    console.log('Button clicked!');
+    alert('Button clicked!');
+  };
+
+  return (
+    <ButtonUi className={buttonStyles} {...props} onPress={onClick}>
+      {children}
+    </ButtonUi>
+  );
+};
 
 // Define the props for the Card component
 interface CardProps {
