@@ -1,14 +1,12 @@
-import type React from 'react';
-
 import dedent from 'dedent';
 
 import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  ArgTypes,
-  Stories,
+	ArgTypes,
+	Description,
+	Primary,
+	Stories,
+	Subtitle,
+	Title,
 } from '@storybook/blocks';
 
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
@@ -32,84 +30,84 @@ import '@ds-starter/fonts/css/fonts.css';
 import '../../../packages/dss-ui/src/assets/styles/index.css';
 
 const preview: Preview = {
-  parameters: {
-    a11y,
-    backgrounds,
-    viewport,
+	parameters: {
+		a11y,
+		backgrounds,
+		viewport,
 
-    options: {
-      storySort: {
-        order: ['Introduction', 'Foundations', 'Form', 'Navigation'],
-      },
-    },
+		options: {
+			storySort: {
+				order: ['Introduction', 'Foundations', 'Form', 'Navigation'],
+			},
+		},
 
-    actions: { argTypesRegex: '^on[A-Z].*' },
+		actions: { argTypesRegex: '^on[A-Z].*' },
 
-    controls: {
-      expanded: false,
-      sort: 'requiredFirst',
-      exclude: excludedControls,
-      matchers: {
-        date: /Date$/,
-      },
-    },
+		controls: {
+			expanded: false,
+			sort: 'requiredFirst',
+			exclude: excludedControls,
+			matchers: {
+				date: /Date$/,
+			},
+		},
 
-    docs: {
-      canvas: {
-        sourceState: 'shown',
-      },
-      source: {
-        transform: (_: string) => {
-          // emphasizing helper components in code
-          const code = _.replace(/Demo\w+/g, (match) => `__${match}__`);
+		docs: {
+			canvas: {
+				sourceState: 'shown',
+			},
+			source: {
+				transform: (_: string) => {
+					// emphasizing helper components in code
+					const code = _.replace(/Demo\w+/g, (match) => `__${match}__`);
 
-          // cleaning up helper renders
-          if (!code.includes('render: (')) {
-            return code;
-          }
+					// cleaning up helper renders
+					if (!code.includes('render: (')) {
+						return code;
+					}
 
-          let _code = code;
+					let _code = code;
 
-          // extracting from render:
-          const _parsed = code.match(/(?<=render: \(\) => )<+(.|\n)+>+(?=,)?/);
+					// extracting from render:
+					const _parsed = code.match(/(?<=render: \(\) => )<+(.|\n)+>+(?=,)?/);
 
-          if (_parsed?.[0]) {
-            _code = _parsed[0];
-          }
+					if (_parsed?.[0]) {
+						_code = _parsed[0];
+					}
 
-          return dedent(_code);
-        },
-      },
+					return dedent(_code);
+				},
+			},
 
-      page: () => (
-        <>
-          <Title />
-          <Subtitle />
-          <Description />
-          <Primary />
-          <ArgTypes />
-          <Stories />
-        </>
-      ),
-    },
-  },
+			page: () => (
+				<>
+					<Title />
+					<Subtitle />
+					<Description />
+					<Primary />
+					<ArgTypes />
+					<Stories />
+				</>
+			),
+		},
+	},
 
-  decorators: [
-    (Story) => (
-      <StoryDecorator>
-        <Story />
-      </StoryDecorator>
-    ),
+	decorators: [
+		(Story) => (
+			<StoryDecorator>
+				<Story />
+			</StoryDecorator>
+		),
 
-    withThemeByDataAttribute<ReactRenderer>({
-      themes: {
-        light: 'light',
-        dark: 'dark',
-      },
-      defaultTheme: 'dark',
-      attributeName: 'data-theme',
-    }),
-  ],
+		withThemeByDataAttribute<ReactRenderer>({
+			themes: {
+				light: 'light',
+				dark: 'dark',
+			},
+			defaultTheme: 'dark',
+			attributeName: 'data-theme',
+		}),
+	],
 };
 
 export default preview;

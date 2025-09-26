@@ -66,7 +66,7 @@ Secondary module, that is not usually separated from the very beginning. However
 
 Another secondary module, that is exactly what it's named after. Fonts distribution can be done very differently and it's just one of the ways to support it. Find more details in the [documentation](/packages/dss-fonts/README.md).
 
-## Configs 
+## Configs
 
 ### Typescript Config - [tsconfig](/tsconfig/package.json)
 
@@ -93,7 +93,7 @@ Apart from components presentation it also holds articles on patterns, typograph
 
 > [Deployed Demonstration](https://ds-starter-app-vite.vercel.app/)
 
-Example app is a great way to give your Design System a spin, collect insights and discover certain issues at the early stages. If you have multiple modules, it is also an idea for creating a demonstration of how they implement and collaborate together. 
+Example app is a great way to give your Design System a spin, collect insights and discover certain issues at the early stages. If you have multiple modules, it is also an idea for creating a demonstration of how they implement and collaborate together.
 
 ---
 
@@ -175,14 +175,15 @@ The most effective way to scaffold a new Design System component is via generato
 Here we rely on [turbo generation](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation#custom-generators) functionality. Configuration files are located in the [dedicated folder](/turbo/generators/config.ts).
 
 Run generator:
+
 ```sh
 pnpm gen:component
 ```
 
 When all operations succeed you should see changes in `packages/dss-ui` and `apps/docs`.  
-In [UI](/packages/dss-ui/src/components/) you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.  
+In [UI](/packages/dss-ui/src/components/) you would find a scaffolding for the new component (note, for demo purposes components are based on [react-aria](https://react-spectrum.adobe.com/react-aria/), naturally your approach may vary significantly), including styling with [vanilla-extract](https://vanilla-extract.style/) (similarly here, you styling approach can be very different) and [Storybook](https://storybook.js.org/) stories.
 
-In the [Docs](/apps/docs/src/content/components/) you would find new files that are sufficient for adding a component to the docs website.  
+In the [Docs](/apps/docs/src/content/components/) you would find new files that are sufficient for adding a component to the docs website.
 
 All you need to do now is to fill the new files with content!
 
@@ -191,7 +192,8 @@ All you need to do now is to fill the new files with content!
 Scripts can be ran either from a project/app or the root path.  
 Note that root scripts mostly are global by design and would target all packages and apps.
 
-There are a couple of exceptions. For example, to run Storybook in dev mode: 
+There are a couple of exceptions. For example, to run Storybook in dev mode:
+
 ```sh
 pnpm dev
 ```
@@ -201,11 +203,13 @@ pnpm dev
 Build scripts are separated due to assumed different release process.
 
 Packages build:
+
 ```sh
 pnpm build:pck
 ```
 
 Apps build:
+
 ```sh
 pnpm build:app
 ```
@@ -215,6 +219,7 @@ pnpm build:app
 There are different kinds of tests involved, some require building first.
 
 Run component and visual tests:
+
 ```sh
 pnpm test
 ```
@@ -224,11 +229,13 @@ pnpm test
 Both linting and formatting commands follow [Biome CLI](https://biomejs.dev/reference/cli/) without any customizations.
 
 Lint everything:
+
 ```sh
 pnpm lint
 ```
 
 Format everything:
+
 ```sh
 pnpm format
 ```
@@ -238,11 +245,13 @@ pnpm format
 [Syncpack](https://jamiemason.github.io/syncpack/) provides granular control over dependencies, which can get out of control quite soon in a big monorepo setup. Configuration can be located in [.syncpackrc.cjs](/.syncpackrc.cjs).
 
 Fix mismatches:
+
 ```sh
 pnpm syncpack
 ```
 
 List mismatches for inspection:
+
 ```sh
 pnpm syncpack:list
 ```
@@ -252,23 +261,26 @@ pnpm syncpack:list
 Changelog automation can be implemented in a number of ways, here we rely on [Changesets](https://github.com/changesets/changesets/tree/main). Configuration can be found in the [dedicated folder](/.changeset/config.json). Examples of the changelog generation are in the CHANGELOG.md files. Note that real-world logs will also contain commit data and links.
 
 Generate changesets (changeset files can be committed if needed):
+
 ```sh
 pnpm change:gen
 ```
 
 Bump the version(s):
+
 ```sh
 pnpm change:version
 ```
 
 Publish modules:
+
 ```sh
 pnpm release
 ```
 
 ### Automation
 
-Project uses Github [actions](/.github/actions/) and [workflows](/.github/workflows/) for standard operations, such as post-merge checks, deployment of apps and release of the packages. 
+Project uses Github [actions](/.github/actions/) and [workflows](/.github/workflows/) for standard operations, such as post-merge checks, deployment of apps and release of the packages.
 
 Workflows use the following secrets set up in the repo:
 

@@ -1,38 +1,38 @@
 {
-  "name": "dss-example-vite",
-  "version": "0.0.0",
-  "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "license": "MIT",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "lint": "biome lint",
-    "format": "biome format",
-    "format:fix": "pnpm format --write",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@ds-starter/fonts": "workspace:*",
-    "@ds-starter/icons": "workspace:*",
-    "@ds-starter/ui": "workspace:*",
-    "@tsparticles/engine": "^3.0.2",
-    "@tsparticles/plugin-emitters": "^3.0.2",
-    "@tsparticles/plugin-emitters-shape-square": "^3.0.2",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/updater-life": "^3.0.2",
-    "jotai": "^2.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsparticles": "^3.0.2"
-  },
-  "devDependencies": {
-    "@ds-starter/tsconfig": "workspace:*",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.4"
-  }
+	"name": "dss-example-vite",
+	"version": "0.0.0",
+	"author": "Evgeny Khoroshilov (https://github.com/XOP)",
+	"license": "MIT",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"lint": "biome lint",
+		"format": "biome format",
+		"format:fix": "pnpm format --write",
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@ds-starter/fonts": "workspace:*",
+		"@ds-starter/icons": "workspace:*",
+		"@ds-starter/ui": "workspace:*",
+		"@tsparticles/engine": "^3.0.2",
+		"@tsparticles/plugin-emitters": "^3.0.2",
+		"@tsparticles/plugin-emitters-shape-square": "^3.0.2",
+		"@tsparticles/react": "^3.0.0",
+		"@tsparticles/updater-life": "^3.0.2",
+		"jotai": "^2.6.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tsparticles": "^3.0.2"
+	},
+	"devDependencies": {
+		"@ds-starter/tsconfig": "workspace:*",
+		"@types/react": "^18.2.74",
+		"@types/react-dom": "^18.2.23",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"typescript": "^5.5.4",
+		"vite": "^5.3.4"
+	}
 }

@@ -1,3 +1,3 @@
 export * from './camelCaseToKebab';
-export * from './convertVarsToCss';
 export * from './composeCss';
+export * from './convertVarsToCss';

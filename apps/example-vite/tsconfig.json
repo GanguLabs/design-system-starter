@@ -1,7 +1,7 @@
 {
-  "extends": "@ds-starter/tsconfig/lib-react.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "isolatedModules": false
-  }
+	"extends": "@ds-starter/tsconfig/lib-react.json",
+	"include": ["src"],
+	"compilerOptions": {
+		"isolatedModules": false
+	}
 }

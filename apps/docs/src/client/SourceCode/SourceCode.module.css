@@ -1,36 +1,36 @@
 .root {
-  font-size: var(--awsm-font-size-s);
+	font-size: var(--awsm-font-size-s);
 }
 
 .code {
-  position: relative;
-  border-radius: var(--awsm-radius-n);
+	position: relative;
+	border-radius: var(--awsm-radius-n);
 
-  height: 0;
-  overflow: hidden;
+	height: 0;
+	overflow: hidden;
 }
 
 /* contrast for dark theme */
 .code::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-radius: var(--awsm-radius-n);
-  border: var(--awsm-space-px) solid var(--awsm-color-neutral-alpha-600);
-  pointer-events: none;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: var(--awsm-radius-n);
+	border: var(--awsm-space-px) solid var(--awsm-color-neutral-alpha-600);
+	pointer-events: none;
 }
 
 .__open {
-  height: auto;
+	height: auto;
 }
 
 .controls {
-  display: flex;
-  gap: var(--awsm-space-4);
-  justify-content: flex-end;
+	display: flex;
+	gap: var(--awsm-space-4);
+	justify-content: flex-end;
 
-  margin-block-start: var(--awsm-space-2);
+	margin-block-start: var(--awsm-space-2);
 }

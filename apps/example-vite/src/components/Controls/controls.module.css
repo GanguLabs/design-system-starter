@@ -1,20 +1,21 @@
 .root {
-  position: absolute;
-  bottom: 10%;
-  left: 20%;
-  right: 20%;
-  z-index: 2;
+	position: absolute;
+	bottom: 10%;
+	left: 20%;
+	right: 20%;
+	z-index: 2;
 
-  display: flex;
-  flex-direction: row;
-  gap: var(--awsm-space-8);
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	gap: var(--awsm-space-8);
+	align-items: center;
+	justify-content: center;
 
-  padding: var(--awsm-space-8);
-  border-radius: var(--awsm-radius-pill);
-  border: var(--awsm-space-1) solid var(--awsm-color-accent-soft);
-  background-color: var(--awsm-color-background-muted);
-  box-shadow: 0 calc(-1 * var(--awsm-space-1)) 0 var(--awsm-space-1)
-    var(--awsm-color-accent-alpha-600), var(--awsm-shadow-medium);
+	padding: var(--awsm-space-8);
+	border-radius: var(--awsm-radius-pill);
+	border: var(--awsm-space-1) solid var(--awsm-color-accent-soft);
+	background-color: var(--awsm-color-background-muted);
+	box-shadow: 0 calc(-1 * var(--awsm-space-1)) 0 var(--awsm-space-1)
+			var(--awsm-color-accent-alpha-600),
+		var(--awsm-shadow-medium);
 }

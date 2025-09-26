@@ -2,7 +2,8 @@
 
 > **@ds-starter/icons** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
-> See it in action:  
+> See it in action:
+>
 > - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
 > - [DSS Documentation](https://ds-starter-docs.vercel.app/)
 > - [Example App](https://ds-starter-app-vite.vercel.app/)
@@ -26,8 +27,8 @@ import { IconArrowLeft } from '@ds-starter/icons';
 
 // ...
 <div>
-  <IconArrowLeft />
-</div>
+	<IconArrowLeft />
+</div>;
 ```
 
 When tree-shaking is supported you can benefit from dedicated import:
@@ -47,8 +48,8 @@ import arrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
 // ...
 
 <figure>
-  <img src={arrowRightSrc} alt="" />
-</figure>
+	<img src={arrowRightSrc} alt="" />
+</figure>;
 ```
 
 ## Managing icons

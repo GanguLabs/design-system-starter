@@ -6,42 +6,42 @@ const THEMES = ['dark', 'light'];
 const DEFAULT_THEME = 'dark';
 
 const getThemeName = (): string => {
-  return document.documentElement.dataset.theme || '';
+	return document.documentElement.dataset.theme || '';
 };
 
 const setTheme = (theme: string) => {
-  document.documentElement.dataset.theme = theme;
+	document.documentElement.dataset.theme = theme;
 };
 
 const ThemeToggle = () => {
-  const [currentIndex, setCurrentIndex] = useState(-1);
+	const [currentIndex, setCurrentIndex] = useState(-1);
 
-  useEffect(() => {
-    const currentTheme = getThemeName() || DEFAULT_THEME;
+	useEffect(() => {
+		const currentTheme = getThemeName() || DEFAULT_THEME;
 
-    if (!currentTheme) {
-      console.log('Theme is not set, proceeding with default theme');
-    }
+		if (!currentTheme) {
+			console.log('Theme is not set, proceeding with default theme');
+		}
 
-    const index = THEMES.indexOf(currentTheme);
+		const index = THEMES.indexOf(currentTheme);
 
-    if (index === -1) {
-      console.log('Theme is not found, check html[data-awsm] attribute');
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(index);
-    }
-  }, []);
+		if (index === -1) {
+			console.log('Theme is not found, check html[data-awsm] attribute');
+			setCurrentIndex(0);
+		} else {
+			setCurrentIndex(index);
+		}
+	}, []);
 
-  const handleChange = () => {
-    const nextIndex = currentIndex + 1 >= THEMES.length ? 0 : currentIndex + 1;
-    const nextTheme = THEMES[nextIndex];
+	const handleChange = () => {
+		const nextIndex = currentIndex + 1 >= THEMES.length ? 0 : currentIndex + 1;
+		const nextTheme = THEMES[nextIndex];
 
-    setCurrentIndex(nextIndex);
-    setTheme(nextTheme);
-  };
+		setCurrentIndex(nextIndex);
+		setTheme(nextTheme);
+	};
 
-  return <Button onPress={handleChange}>Toggle Theme</Button>;
+	return <Button onPress={handleChange}>Toggle Theme</Button>;
 };
 
 export default ThemeToggle;

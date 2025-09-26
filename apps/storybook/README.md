@@ -24,14 +24,14 @@ Here, Storybook functions as facilitator and compiler of the documentation, that
 Practically, Storybook project does not contain a single story, but imports and organizes them.  
 Configuration fetches stories from everything that needs visual documentation -  
 `dss-fonts`, `dss-icons`, `dss-tokens` and `dss-ui`.
-This of course can be modified and extended as needed - see [configuration](./.storybook/main.ts).  
+This of course can be modified and extended as needed - see [configuration](./.storybook/main.ts).
 
 ## Configuration
 
 Apart from packages, there are a lot of options that can be tweaked if needed.  
-Most of the config is located in [main.ts](./.storybook/main.ts) and [preview.tsx](./.storybook/preview.tsx).  
+Most of the config is located in [main.ts](./.storybook/main.ts) and [preview.tsx](./.storybook/preview.tsx).
 
-### Plugins 
+### Plugins
 
 Amount of plugins is minimal on purpose and only focuses on the most important development features.  
 Respective configuration for `a11y`, `backgrounds` and `viewport` can be found in [params](./.storybook/params) folder.
@@ -66,17 +66,17 @@ Take a look at the [components.spec.ts](./tests/components.spec.ts).
 There is only one, but powerful test. It's directly linked to the number of UI components and their stories.
 For only 3 components against 2 browsers (desktop Chrome and iPhone Safari) test generates around ~60 screenshots (**!**).  
 Naturally this would scale respectively, as traditional amount of components in mature Design System is around 40-50 items.  
-It takes time, so for quicker but **shallow** testing you can limit VRT [configuration](./playwright.config.ts) to 1 browser.  
+It takes time, so for quicker but **shallow** testing you can limit VRT [configuration](./playwright.config.ts) to 1 browser.
 
 In addition, some stories might be redundant or not suitable for testing.  
 To bypass VRT for specific stories you can add a `novrt` tag like so:
 
 ```tsx
 export const VrtBypass: Story = {
-  args: {
-    ...Base.args,
-  },
-  tags: ['novrt']
+	args: {
+		...Base.args,
+	},
+	tags: ['novrt'],
 };
 ```
 
@@ -95,36 +95,43 @@ Development and build operations are standard and straightforward.
 Install the project and run the following commands from the `apps/storybook` path.
 
 Development:
+
 ```sh
 pnpm dev
 ```
 
 Build:
+
 ```sh
 pnpm build
 ```
 
 Lint:
+
 ```sh
 pnpm lint
 ```
 
 Format:
+
 ```sh
 pnpm format
 ```
 
 Preview:
+
 ```sh
 pnpm serve
 ```
 
 Run VRT:
+
 ```sh
 pnpm test
 ```
 
 Update VRT snapshots:
+
 ```sh
 pnpm test:update
 ```

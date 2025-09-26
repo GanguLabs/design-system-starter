@@ -12,10 +12,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' data-theme='dark'>
+		<html lang="en" data-theme="dark">
 			<body>
 				<div className={container}>
-					<Image src='/react.png' width={25} height={25} alt='React Logo' />
+					<Image src="/react.png" width={25} height={25} alt="React Logo" />
 					<div>NextJS App Router</div>
 				</div>
 				<div>{children}</div>

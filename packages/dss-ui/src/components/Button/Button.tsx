@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 import { clsx } from 'clsx';
 
 import {
-  Button as BaseButton,
-  type ButtonProps as BaseButtonProps,
+	Button as BaseButton,
+	type ButtonProps as BaseButtonProps,
 } from 'react-aria-components';
 
 import { styles } from './Button.css';
@@ -14,36 +14,36 @@ export type ButtonColors = 'accent' | 'neutral';
 export type ButtonSizes = 'small' | 'regular' | 'large';
 
 export interface ButtonProps extends BaseButtonProps {
-  variant?: ButtonVariants;
-  color?: ButtonColors;
-  size?: ButtonSizes;
-  disabled?: boolean;
+	variant?: ButtonVariants;
+	color?: ButtonColors;
+	size?: ButtonSizes;
+	disabled?: boolean;
 }
 
 const Button = forwardRef(function Button(
-  props: ButtonProps,
-  ref: React.ForwardedRef<HTMLButtonElement>
+	props: ButtonProps,
+	ref: React.ForwardedRef<HTMLButtonElement>
 ) {
-  const {
-    children,
-    className,
-    variant = 'solid',
-    color = 'accent',
-    size = 'regular',
-    disabled = false,
-    ...other
-  } = props;
+	const {
+		children,
+		className,
+		variant = 'solid',
+		color = 'accent',
+		size = 'regular',
+		disabled = false,
+		...other
+	} = props;
 
-  return (
-    <BaseButton
-      {...other}
-      isDisabled={disabled}
-      ref={ref}
-      className={clsx(className, styles({ color, variant, size }))}
-    >
-      {children}
-    </BaseButton>
-  );
+	return (
+		<BaseButton
+			{...other}
+			isDisabled={disabled}
+			ref={ref}
+			className={clsx(className, styles({ color, variant, size }))}
+		>
+			{children}
+		</BaseButton>
+	);
 });
 
 Button.displayName = 'Button';

@@ -1,23 +1,21 @@
 {
-  "extends": "@ds-starter/tsconfig/lib-react.json",
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "jsx": "preserve",
-    "strictNullChecks": true
-  },
-  "include": [
-    "src",
-    "next.config.js",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"extends": "@ds-starter/tsconfig/lib-react.json",
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"jsx": "preserve",
+		"strictNullChecks": true
+	},
+	"include": [
+		"src",
+		"next.config.js",
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts"
+	],
+	"exclude": ["node_modules"]
 }

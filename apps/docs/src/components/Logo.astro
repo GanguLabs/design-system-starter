@@ -1,19 +1,19 @@
 ---
 interface Props {
-  class?: string;
+	class?: string;
 }
 
 const { class: className } = Astro.props;
 ---
 
-<a class:list={['logo', className]} href="/" title="DSS Docs">DSS</a>
+<a class:list={['logo', className]} href='/' title='DSS Docs'>DSS</a>
 
 <style>
-  .logo {
-    max-width: min-content;
-    font-size: var(--awsm-font-size-xxl);
-    font-weight: bold;
-    color: var(--awsm-color-accent-accent);
-    text-decoration: none;
-  }
+	.logo {
+		max-width: min-content;
+		font-size: var(--awsm-font-size-xxl);
+		font-weight: bold;
+		color: var(--awsm-color-accent-accent);
+		text-decoration: none;
+	}
 </style>

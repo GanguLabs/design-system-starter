@@ -2,7 +2,8 @@
 
 > **@ds-starter/tokens** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
-> See it in action:  
+> See it in action:
+>
 > - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
 > - [DSS Documentation](https://ds-starter-docs.vercel.app/)
 > - [Example App](https://ds-starter-app-vite.vercel.app/)
@@ -44,9 +45,9 @@ As mentioned, there are different scenarios of how tokens can be utilized.
 /* ... */
 
 body {
-  font-size: var(--awsm-font-size-n);
-  line-height: var(--awsm-line-height-normal);
-  color: var(--awsm-color-content-regular);
+	font-size: var(--awsm-font-size-n);
+	line-height: var(--awsm-line-height-normal);
+	color: var(--awsm-color-content-regular);
 }
 ```
 
@@ -63,7 +64,7 @@ import '@ds-starter/tokens/css/tokens.css';
 // ...
 
 const AccentDiv = () => (
-  <div style={{ background: tokens.color.accent.strong }}></div> // background: var(--awsm-color-accent-strong)
+	<div style={{ background: tokens.color.accent.strong }}></div> // background: var(--awsm-color-accent-strong)
 );
 ```
 
@@ -80,7 +81,7 @@ import { tokensLight as tokens } from '@ds-starter/tokens';
 // ...
 
 const AccentDiv = () => (
-  <div style={{ background: tokens.color.accent.strong }}></div> // background: rgb(18, 103, 228)
+	<div style={{ background: tokens.color.accent.strong }}></div> // background: rgb(18, 103, 228)
 );
 ```
 

@@ -1,46 +1,46 @@
 {
-  "name": "@ds-starter/fonts",
-  "version": "0.2.0",
-  "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/XOP/design-system-starter"
-  },
-  "type": "module",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/entries/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/entries/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
-    },
-    "./css/*": "./dist/css/*"
-  },
-  "files": [
-    "dist/css",
-    "dist/entries",
-    "dist/src",
-    "dist/index.*",
-    "fonts",
-    "src"
-  ],
-  "scripts": {
-    "lint": "biome lint",
-    "format": "biome format",
-    "format:fix": "pnpm format --write",
-    "build": "vite build && tsc --project tsconfig.build.json"
-  },
-  "devDependencies": {
-    "@ds-starter/tokens": "workspace:*",
-    "@ds-starter/tsconfig": "workspace:*",
-    "@storybook/blocks": "^8.2.4",
-    "@types/react": "^18.2.74",
-    "@vitejs/plugin-react": "^4.2.0",
-    "react": "^18.2.0",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.4"
-  }
+	"name": "@ds-starter/fonts",
+	"version": "0.2.0",
+	"author": "Evgeny Khoroshilov (https://github.com/XOP)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/XOP/design-system-starter"
+	},
+	"type": "module",
+	"main": "./dist/index.cjs.js",
+	"module": "./dist/index.esm.js",
+	"types": "./dist/entries/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/entries/index.d.ts",
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.cjs.js"
+		},
+		"./css/*": "./dist/css/*"
+	},
+	"files": [
+		"dist/css",
+		"dist/entries",
+		"dist/src",
+		"dist/index.*",
+		"fonts",
+		"src"
+	],
+	"scripts": {
+		"lint": "biome lint",
+		"format": "biome format",
+		"format:fix": "pnpm format --write",
+		"build": "vite build && tsc --project tsconfig.build.json"
+	},
+	"devDependencies": {
+		"@ds-starter/tokens": "workspace:*",
+		"@ds-starter/tsconfig": "workspace:*",
+		"@storybook/blocks": "^8.2.4",
+		"@types/react": "^18.2.74",
+		"@vitejs/plugin-react": "^4.2.0",
+		"react": "^18.2.0",
+		"typescript": "^5.5.4",
+		"vite": "^5.3.4"
+	}
 }

@@ -4,77 +4,77 @@ import { COLLECTION } from '../pages/components/index.astro';
 const currentSlug = Astro.url.pathname.split('/')[3] || '';
 
 interface Props {
-  page?: string;
-  data: Array<{ slug: string; title: string }>;
+	page?: string;
+	data: Array<{ slug: string; title: string }>;
 }
 
 const { page = COLLECTION, data } = Astro.props;
 
 const organizedData = data.sort((a, b) => {
-  const aHasSlash = a.slug.includes('/');
-  const bHasSlash = b.slug.includes('/');
+	const aHasSlash = a.slug.includes('/');
+	const bHasSlash = b.slug.includes('/');
 
-  // example slug should be first
-  if (!aHasSlash && bHasSlash) return -1;
-  if (aHasSlash && !bHasSlash) return 1;
+	// example slug should be first
+	if (!aHasSlash && bHasSlash) return -1;
+	if (aHasSlash && !bHasSlash) return 1;
 
-  // other slugs are sorded by the name
-  if (aHasSlash && bHasSlash) {
-    const aPostSlash = a.slug.split('/')[1];
-    const bPostSlash = b.slug.split('/')[1];
+	// other slugs are sorded by the name
+	if (aHasSlash && bHasSlash) {
+		const aPostSlash = a.slug.split('/')[1];
+		const bPostSlash = b.slug.split('/')[1];
 
-    return aPostSlash.localeCompare(bPostSlash);
-  }
+		return aPostSlash.localeCompare(bPostSlash);
+	}
 
-  return 0;
+	return 0;
 });
 ---
 
-<nav class="nav">
-  {
-    organizedData?.map((entry) => {
-      const isActive = currentSlug === (entry.slug.split('/')[1] || '');
+<nav class='nav'>
+	{
+		organizedData?.map((entry) => {
+			const isActive = currentSlug === (entry.slug.split('/')[1] || '');
 
-      return (
-        <a
-          class:list={{ active: isActive }}
-          href={`/${page}/${entry.slug}`}
-          title={entry.title}
-        >
-          {entry.title}
-        </a>
-      );
-    })
-  }
+			return (
+				<a
+					class:list={{ active: isActive }}
+					href={`/${page}/${entry.slug}`}
+					title={entry.title}
+				>
+					{entry.title}
+				</a>
+			);
+		})
+	}
 </nav>
 
 <style>
-  .nav {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin-block-start: calc(-1 * var(--awsm-space-4));
-    margin-block-end: var(--awsm-space-8);
-    background: var(--awsm-color-neutral-surface);
-  }
+	.nav {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		margin-block-start: calc(-1 * var(--awsm-space-4));
+		margin-block-end: var(--awsm-space-8);
+		background: var(--awsm-color-neutral-surface);
+	}
 
-  .nav a {
-    padding: var(--awsm-space-3) var(--awsm-space-6);
-    color: var(--awsm-color-neutral-content);
-    border: var(--awsm-space-1) solid transparent;
-    font-size: var(--awsm-font-size-s);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+	.nav a {
+		padding: var(--awsm-space-3) var(--awsm-space-6);
+		color: var(--awsm-color-neutral-content);
+		border: var(--awsm-space-1) solid transparent;
+		font-size: var(--awsm-font-size-s);
+		text-decoration: none;
+		text-transform: uppercase;
+	}
 
-  @media (hover: hover) {
-    .nav a:hover {
-      background: var(--awsm-color-neutral-soft);
-    }
-  }
+	@media (hover: hover) {
+		.nav a:hover {
+			background: var(--awsm-color-neutral-soft);
+		}
+	}
 
-  .nav a.active {
-    background: var(--awsm-color-neutral-strong);
-    color: var(--awsm-color-neutral-contrast);
-  }
+	.nav a.active {
+		background: var(--awsm-color-neutral-strong);
+		color: var(--awsm-color-neutral-contrast);
+	}
 </style>

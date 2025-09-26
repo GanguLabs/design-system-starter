@@ -4,5 +4,5 @@
  * @returns string
  */
 export function kebabCaseToPascal(str: string) {
-  return str.replace(/(^\w|-\w)/g, (s) => s.replace(/-/, '').toUpperCase());
+	return str.replace(/(^\w|-\w)/g, (s) => s.replace(/-/, '').toUpperCase());
 }

@@ -8,18 +8,18 @@ import Panel from './components/Panel/Panel';
 import Space from './components/Space/Space';
 
 function App() {
-  return (
-    <Provider>
-      <main>
-        <Space />
-        <Cabin />
-        <Panel />
-        <Controls />
-        <About />
-        <Meta />
-      </main>
-    </Provider>
-  );
+	return (
+		<Provider>
+			<main>
+				<Space />
+				<Cabin />
+				<Panel />
+				<Controls />
+				<About />
+				<Meta />
+			</main>
+		</Provider>
+	);
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import { includeKeys, excludeKeys } from 'filter-obj';
+import { excludeKeys, includeKeys } from 'filter-obj';
 
 import { DEFAULT, EXAMPLE_SORT_KEYS } from '../globals';
 
@@ -10,51 +10,51 @@ import type { Stories, Story } from '../types';
  * @returns Array<[string, Story | undefined]>
  */
 export const refineStories = (
-  stories: Stories,
+	stories: Stories
 ): Array<[string, Story | undefined]> => {
-  const refinedStories: Array<[string, Story | undefined]> = [];
+	const refinedStories: Array<[string, Story | undefined]> = [];
 
-  // excluding struct
-  let filteredStories = excludeKeys(stories, (key) => key === DEFAULT);
+	// excluding struct
+	let filteredStories = excludeKeys(stories, (key) => key === DEFAULT);
 
-  // excluding hidden stories
-  filteredStories = excludeKeys(
-    filteredStories,
-    (_, obj) => obj?.parameters?.hidden === true,
-  );
+	// excluding hidden stories
+	filteredStories = excludeKeys(
+		filteredStories,
+		(_, obj) => obj?.parameters?.hidden === true
+	);
 
-  // order by sort keys first
-  EXAMPLE_SORT_KEYS.forEach((key) => {
-    const items = includeKeys(filteredStories, (name) => {
-      if (typeof name !== 'string') return false;
+	// order by sort keys first
+	EXAMPLE_SORT_KEYS.forEach((key) => {
+		const items = includeKeys(filteredStories, (name) => {
+			if (typeof name !== 'string') return false;
 
-      return nameStartWith(name, key);
-    });
+			return nameStartWith(name, key);
+		});
 
-    refinedStories.push(...Object.entries(items));
-  });
+		refinedStories.push(...Object.entries(items));
+	});
 
-  // remaining keys next
-  const restStoriesItems = excludeKeys(filteredStories, (name) => {
-    let exclude = false;
+	// remaining keys next
+	const restStoriesItems = excludeKeys(filteredStories, (name) => {
+		let exclude = false;
 
-    EXAMPLE_SORT_KEYS.forEach((key) => {
-      if (typeof name !== 'string') {
-        exclude = true;
-        return;
-      }
+		EXAMPLE_SORT_KEYS.forEach((key) => {
+			if (typeof name !== 'string') {
+				exclude = true;
+				return;
+			}
 
-      if (nameStartWith(name, key)) {
-        exclude = true;
-      }
-    });
+			if (nameStartWith(name, key)) {
+				exclude = true;
+			}
+		});
 
-    return exclude;
-  });
+		return exclude;
+	});
 
-  refinedStories.push(...Object.entries(restStoriesItems));
+	refinedStories.push(...Object.entries(restStoriesItems));
 
-  return refinedStories;
+	return refinedStories;
 };
 
 /**
@@ -64,5 +64,5 @@ export const refineStories = (
  * @returns boolean
  */
 function nameStartWith(name: string, str: string): boolean {
-  return name.toLowerCase().startsWith(str);
+	return name.toLowerCase().startsWith(str);
 }

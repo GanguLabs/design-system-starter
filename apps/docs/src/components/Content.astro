@@ -1,99 +1,98 @@
 ---
 export interface Props {
-  class?: string;
-  id?: string;
+	class?: string;
+	id?: string;
 }
 
 const { class: className = '' } = Astro.props;
 ---
 
 <div class={`content ${className}`}>
-  <slot />
+	<slot />
 </div>
 
 <style>
-  .content {
-    color: var(--awsm-color-content-regular);
-    line-height: var(--awsm-line-height-normal);
-  }
+	.content {
+		color: var(--awsm-color-content-regular);
+		line-height: var(--awsm-line-height-normal);
+	}
 
-  .content > :global(h1),
-  .content > :global(h2),
-  .content > :global(h3) {
-    line-height: var(--awsm-line-height-tight);
-    color: var(--awsm-color-accent-subtle);
-  }
+	.content > :global(h1),
+	.content > :global(h2),
+	.content > :global(h3) {
+		line-height: var(--awsm-line-height-tight);
+		color: var(--awsm-color-accent-subtle);
+	}
 
-  .content > :global(h1) {
-    margin-block-end: var(--awsm-space-8);
-    padding-block-end: var(--awsm-space-2);
-    border-block-end: var(--awsm-space-05) solid
-      var(--awsm-color-accent-border);
-    font-size: var(--awsm-font-size-xxl);
-  }
+	.content > :global(h1) {
+		margin-block-end: var(--awsm-space-8);
+		padding-block-end: var(--awsm-space-2);
+		border-block-end: var(--awsm-space-05) solid var(--awsm-color-accent-border);
+		font-size: var(--awsm-font-size-xxl);
+	}
 
-  .content > :global(h1 sup) {
-    display: block;
-    margin-block-end: var(--awsm-space-2);
-    font-size: var(--awsm-font-size-n);
-    color: var(--awsm-color-accent-base);
-  }
+	.content > :global(h1 sup) {
+		display: block;
+		margin-block-end: var(--awsm-space-2);
+		font-size: var(--awsm-font-size-n);
+		color: var(--awsm-color-accent-base);
+	}
 
-  .content > :global(h2) {
-    font-size: var(--awsm-font-size-xl);
-  }
+	.content > :global(h2) {
+		font-size: var(--awsm-font-size-xl);
+	}
 
-  .content > :global(h3) {
-    font-size: var(--awsm-font-size-l);
-  }
+	.content > :global(h3) {
+		font-size: var(--awsm-font-size-l);
+	}
 
-  .content > :global(p),
-  .content > :global(ul),
-  .content > :global(blockquote) {
-    margin: var(--awsm-space-5) 0;
+	.content > :global(p),
+	.content > :global(ul),
+	.content > :global(blockquote) {
+		margin: var(--awsm-space-5) 0;
 
-    line-height: var(--awsm-line-height-normal);
-  }
+		line-height: var(--awsm-line-height-normal);
+	}
 
-  .content > :global(h2 + p),
-  .content > :global(h3 + p) {
-    margin-block-start: var(--awsm-space-3);
-  }
+	.content > :global(h2 + p),
+	.content > :global(h3 + p) {
+		margin-block-start: var(--awsm-space-3);
+	}
 
-  .content > :global(ul) {
-    padding: 0;
-    padding-inline-start: var(--awsm-space-8);
-  }
+	.content > :global(ul) {
+		padding: 0;
+		padding-inline-start: var(--awsm-space-8);
+	}
 
-  .content :global(ul li) {
-    margin: var(--awsm-space-2) 0;
-    padding-inline-start: var(--awsm-space-2);
-  }
+	.content :global(ul li) {
+		margin: var(--awsm-space-2) 0;
+		padding-inline-start: var(--awsm-space-2);
+	}
 
-  .content :global(code) {
-    padding: var(--awsm-space-1) var(--awsm-space-2);
+	.content :global(code) {
+		padding: var(--awsm-space-1) var(--awsm-space-2);
 
-    font-size: 0.9em;
-    border: var(--awsm-space-px) solid var(--awsm-color-accent-accent);
-    border-radius: var(--awsm-radius-s);
-    white-space: nowrap;
-  }
+		font-size: 0.9em;
+		border: var(--awsm-space-px) solid var(--awsm-color-accent-accent);
+		border-radius: var(--awsm-radius-s);
+		white-space: nowrap;
+	}
 
-  .content :global(pre) {
-    margin: var(--awsm-space-5) 0;
-    padding: var(--awsm-space-3) var(--awsm-space-4);
+	.content :global(pre) {
+		margin: var(--awsm-space-5) 0;
+		padding: var(--awsm-space-3) var(--awsm-space-4);
 
-    border-radius: var(--awsm-radius-s);
+		border-radius: var(--awsm-radius-s);
 
-    white-space: pre;
-    line-height: var(--awsm-line-height-normal);
-  }
+		white-space: pre;
+		line-height: var(--awsm-line-height-normal);
+	}
 
-  .content :global(pre > code) {
-    padding: 0;
-    border: none;
+	.content :global(pre > code) {
+		padding: 0;
+		border: none;
 
-    background: none;
-    white-space: inherit;
-  }
+		background: none;
+		white-space: inherit;
+	}
 </style>

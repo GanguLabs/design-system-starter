@@ -1,10 +1,10 @@
 import { atom } from 'nanostores';
 
 import {
-  LS_KEY_META,
-  SIDEBAR_STATE,
-  EXAMPLE_STATE,
-  COLOR_THEME,
+	COLOR_THEME,
+	EXAMPLE_STATE,
+	LS_KEY_META,
+	SIDEBAR_STATE,
 } from '../shared/globals';
 
 import { localStore } from './local';
@@ -35,47 +35,47 @@ export const $sidebarState = atom<SidebarStateValues>(SIDEBAR_STATE.closed);
 export const $exampleState = atom<ExamplesStateValues>(EXAMPLE_STATE.loading);
 
 $sourceCode.listen(() => {
-  setMetaStore();
+	setMetaStore();
 });
 
 $colorTheme.listen(() => {
-  setMetaStore();
+	setMetaStore();
 });
 
 // store update
 export const updateMetaStore = function updateMetaStore(
-  data: MetaDataStore,
+	data: MetaDataStore
 ): void {
-  showSourceCode(data.sourceCode as boolean);
-  changeColorTheme(data.colorTheme as ColorThemeValues);
+	showSourceCode(data.sourceCode as boolean);
+	changeColorTheme(data.colorTheme as ColorThemeValues);
 };
 
 // retrieve and set initial data
 const localMeta = getMetaStore();
 
 if (localMeta === null) {
-  setInitialMeta();
+	setInitialMeta();
 } else {
-  updateMetaStore(localMeta);
+	updateMetaStore(localMeta);
 }
 
 // ------------------------------------
 // Actions
 // ------------------------------------
 export function showSourceCode(isShown: boolean) {
-  $sourceCode.set(isShown);
+	$sourceCode.set(isShown);
 }
 
 export function changeColorTheme(nextTheme: ColorThemeValues) {
-  $colorTheme.set(nextTheme);
+	$colorTheme.set(nextTheme);
 }
 
 export function setSidebarState(nextState: SidebarStateValues) {
-  $sidebarState.set(nextState);
+	$sidebarState.set(nextState);
 }
 
 export function setExampleState(nextState: ExamplesStateValues) {
-  $exampleState.set(nextState);
+	$exampleState.set(nextState);
 }
 
 // ------------------------------------
@@ -83,17 +83,17 @@ export function setExampleState(nextState: ExamplesStateValues) {
 // ------------------------------------
 
 export function setInitialMeta(): void {
-  $sourceCode.set(false);
-  $colorTheme.set(COLOR_THEME.dark);
+	$sourceCode.set(false);
+	$colorTheme.set(COLOR_THEME.dark);
 }
 
 export function setMetaStore(): void {
-  setLsMeta(LS_KEY_META, {
-    sourceCode: $sourceCode.get(),
-    colorTheme: $colorTheme.get(),
-  });
+	setLsMeta(LS_KEY_META, {
+		sourceCode: $sourceCode.get(),
+		colorTheme: $colorTheme.get(),
+	});
 }
 
 export function getMetaStore(): MetaDataStore {
-  return getLsMeta(LS_KEY_META);
+	return getLsMeta(LS_KEY_META);
 }

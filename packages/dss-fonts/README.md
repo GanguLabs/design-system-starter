@@ -2,7 +2,8 @@
 
 > **@ds-starter/fonts** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
-> See it in action:  
+> See it in action:
+>
 > - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
 > - [DSS Documentation](https://ds-starter-docs.vercel.app/)
 > - [Example App](https://ds-starter-app-vite.vercel.app/)
@@ -37,22 +38,22 @@ import { GoogleFonts } from '@ds-starter/fonts';
 // ...
 
 <html>
-  <head>
-    <GoogleFonts weights={[400, 700]} />
-  </head>
-</html>
+	<head>
+		<GoogleFonts weights={[400, 700]} />
+	</head>
+</html>;
 ```
 
 **Interface**
 
 ```ts
 interface FontsProps {
-  // font-weights
-  weights: number[] | string[];
-  // font-display method, 'swap' by default
-  display?: 'swap' | 'auto' | 'block' | 'fallback' | 'optional';
-  // use of preconnect, true by default
-  preconnect?: boolean;
+	// font-weights
+	weights: number[] | string[];
+	// font-display method, 'swap' by default
+	display?: 'swap' | 'auto' | 'block' | 'fallback' | 'optional';
+	// use of preconnect, true by default
+	preconnect?: boolean;
 }
 ```
 

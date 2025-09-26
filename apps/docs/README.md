@@ -18,9 +18,9 @@ What's more - user-friendly markdown format allows to easily add, format and org
 
 DSS Docs is powered by [Astro](https://astro.build/) enhanced with [nanostores](https://github.com/nanostores/nanostores) and [store2](https://github.com/nbubna/store#readme) for extra convenience. Structure and design are minimalistic on purpose and provide a great start for further development.
 
-There are 2 kinds of documentation featured in the app: Articles and Components.  
+There are 2 kinds of documentation featured in the app: Articles and Components.
 
-### Articles 
+### Articles
 
 Articles are standalone items organized in collections with corresponding navigation.  
 To add an article in existing collection just drop a new markdown file `icons.md` into `src/content/core`, i.e.:
@@ -46,10 +46,11 @@ There is a mandatory `index.mdx` file and and optional `usage.mdx` file.
 The names are self-explanatory. Index represents the first page with the examples, whereas Usage is the article explaining component usage nuances, do-s and don't-s and so on.
 
 What you won't find in these MDX files is the coded examples themselves.  
-Examples in the form of storybook stories are conveniently loaded from the `dss-ui` package.  
+Examples in the form of storybook stories are conveniently loaded from the `dss-ui` package.
 
 Have a look at the [useStoryLoad](/apps/docs/src/shared/hooks/useStoryLoad.ts) hook.  
 Along with the path to the package it's relying on the following properties, both defined in frontmatter data in `index.mdx`:
+
 ```txt
 ---
 ...
@@ -60,6 +61,7 @@ dir: 'Button'
 
 Here, `component` prop is the file name and `dir` is the folder name in case it's different.  
 Other frontmatter attributes are specific to the DSS Docs and allow to display and organize component better:
+
 ```txt
 ---
 title: 'Button'
@@ -74,7 +76,7 @@ In this case `title` is the component's page heading, `page` is the organization
 ### Adding Documentation
 
 Adding a component manually to the docs can be tedious.  
-One option is to copy-paste an example and modify as needed.  
+One option is to copy-paste an example and modify as needed.
 
 However there's a better way involving code generation.  
 Find full description in the main [README](../../README.md).
@@ -85,21 +87,25 @@ Development and build operations are standard and straightforward.
 Install the project and run the following commands from the `apps/docs` path.
 
 Development:
+
 ```sh
 pnpm dev
 ```
 
 Build:
+
 ```sh
 pnpm build
 ```
 
 Lint:
+
 ```sh
 pnpm lint
 ```
 
 Format:
+
 ```sh
 pnpm format
 ```

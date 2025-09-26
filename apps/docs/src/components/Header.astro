@@ -5,58 +5,58 @@ import TopNav from './TopNav.astro';
 import MenuToggle from '../client/MenuToggle/MenuToggle';
 
 interface Props {
-  class?: string;
-  showMenuToggle?: boolean;
+	class?: string;
+	showMenuToggle?: boolean;
 }
 
 const { class: className, showMenuToggle = true } = Astro.props;
 ---
 
 <header class:list={['header', className]}>
-  <Logo />
-  <TopNav />
-  {showMenuToggle && <MenuToggle className="toggle" client:idle />}
+	<Logo />
+	<TopNav />
+	{showMenuToggle && <MenuToggle className='toggle' client:idle />}
 </header>
 
 <style>
-  .header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: var(--awsm-space-8);
+	.header {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		gap: var(--awsm-space-8);
 
-    padding: var(--awsm-space-6) var(--awsm-space-8);
-    border-block-end: var(--awsm-space-px) solid var(--awsm-color-accent-soft);
-    background: var(--awsm-color-background-regular);
-  }
+		padding: var(--awsm-space-6) var(--awsm-space-8);
+		border-block-end: var(--awsm-space-px) solid var(--awsm-color-accent-soft);
+		background: var(--awsm-color-background-regular);
+	}
 
-  @media screen and (max-width: 480px) {
-    .header {
-      padding: var(--awsm-space-6) var(--awsm-space-4);
-    }
-  }
+	@media screen and (max-width: 480px) {
+		.header {
+			padding: var(--awsm-space-6) var(--awsm-space-4);
+		}
+	}
 
-  .toggle {
-    position: absolute;
-    right: var(--awsm-space-8);
-    top: var(--awsm-space-6);
-  }
+	.toggle {
+		position: absolute;
+		right: var(--awsm-space-8);
+		top: var(--awsm-space-6);
+	}
 
-  @media screen and (max-width: 480px) {
-    .toggle {
-      right: var(--awsm-space-4);
-    }
-  }
+	@media screen and (max-width: 480px) {
+		.toggle {
+			right: var(--awsm-space-4);
+		}
+	}
 
-  @media screen and (min-width: 781px) {
-    .toggle {
-      display: none;
-    }
-  }
+	@media screen and (min-width: 781px) {
+		.toggle {
+			display: none;
+		}
+	}
 
-  @media screen and (max-width: 780px) {
-    .header {
-      flex-flow: column;
-    }
-  }
+	@media screen and (max-width: 780px) {
+		.header {
+			flex-flow: column;
+		}
+	}
 </style>

@@ -1,13 +1,13 @@
 {
-  "extends": "@ds-starter/tsconfig/lib-react.json",
-  "include": ["src"],
-  "exclude": ["dist", "node_modules"],
-  "references": [
-    {
-      "path": "../tsconfig/vite.json"
-    }
-  ],
-  "compilerOptions": {
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
-  }
+	"extends": "@ds-starter/tsconfig/lib-react.json",
+	"include": ["src"],
+	"exclude": ["dist", "node_modules"],
+	"references": [
+		{
+			"path": "../tsconfig/vite.json"
+		}
+	],
+	"compilerOptions": {
+		"types": ["vitest/globals", "@testing-library/jest-dom"]
+	}
 }

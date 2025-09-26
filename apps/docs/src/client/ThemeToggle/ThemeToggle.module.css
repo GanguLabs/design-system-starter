@@ -1,19 +1,19 @@
 .root {
-  width: var(--awsm-space-10);
-  font-size: var(--awsm-font-size-xl);
-  color: var(--awsm-color-accent-base);
+	width: var(--awsm-space-10);
+	font-size: var(--awsm-font-size-xl);
+	color: var(--awsm-color-accent-base);
 }
 
 .root:hover {
-  color: var(--awsm-color-accent-accent);
+	color: var(--awsm-color-accent-accent);
 }
 
 .button {
-  appearance: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
+	appearance: none;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
 }

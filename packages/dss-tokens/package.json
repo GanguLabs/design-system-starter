@@ -1,50 +1,50 @@
 {
-  "name": "@ds-starter/tokens",
-  "version": "0.2.0",
-  "author": "Evgeny Khoroshilov (https://github.com/XOP)",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/XOP/design-system-starter"
-  },
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/lib/tokens/tokens.d.ts",
-      "import": "./dist/tokens.esm.js",
-      "require": "./dist/tokens.cjs.js"
-    },
-    "./css/*": {
-      "import": "./dist/css/*",
-      "require": "./dist/css/*"
-    }
-  },
-  "files": [
-    "dist/tokens.*",
-    "dist/css",
-    "dist/lib",
-    "src/lib"
-  ],
-  "scripts": {
-    "lint": "biome lint",
-    "format": "biome format",
-    "format:fix": "pnpm format --write",
-    "build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
-    "gen": "pnpm gen:vars && pnpm format:fix",
-    "gen-old": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
-    "gen:vars": "tsx ./scripts/generateVars.ts",
-    "gen:palette": "unicornix"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.24.9",
-    "@ds-starter/tsconfig": "workspace:*",
-    "@storybook/blocks": "^8.2.4",
-    "@types/react": "^18.2.74",
-    "@vanilla-extract/css": "^1.15.3",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.4"
-  },
-  "dependencies": {
-    "unicornix": "0.8.1"
-  }
+	"name": "@ds-starter/tokens",
+	"version": "0.2.0",
+	"author": "Evgeny Khoroshilov (https://github.com/XOP)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/XOP/design-system-starter"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/lib/tokens/tokens.d.ts",
+			"import": "./dist/tokens.esm.js",
+			"require": "./dist/tokens.cjs.js"
+		},
+		"./css/*": {
+			"import": "./dist/css/*",
+			"require": "./dist/css/*"
+		}
+	},
+	"files": [
+		"dist/tokens.*",
+		"dist/css",
+		"dist/lib",
+		"src/lib"
+	],
+	"scripts": {
+		"lint": "biome lint",
+		"format": "biome format",
+		"format:fix": "pnpm format --write",
+		"build": "pnpm gen && vite build && tsc --project tsconfig.build.json",
+		"gen": "pnpm gen:vars && pnpm format:fix",
+		"gen-old": "pnpm gen:palette && pnpm gen:vars && pnpm format:fix",
+		"gen:vars": "tsx ./scripts/generateVars.ts",
+		"gen:palette": "unicornix"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.24.9",
+		"@ds-starter/tsconfig": "workspace:*",
+		"@storybook/blocks": "^8.2.4",
+		"@types/react": "^18.2.74",
+		"@vanilla-extract/css": "^1.15.3",
+		"typescript": "^5.5.4",
+		"vite": "^5.3.4"
+	},
+	"dependencies": {
+		"unicornix": "0.8.1"
+	}
 }

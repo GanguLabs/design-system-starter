@@ -1,49 +1,45 @@
-import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 import { Button } from './';
 import { styles } from './Button.css';
 
 describe('Button', () => {
-  it('should render with given children', () => {
-    const { container } = render(<Button>Click me</Button>);
+	it('should render with given children', () => {
+		const { container } = render(<Button>Click me</Button>);
 
-    expect(container.firstChild).toBeInTheDocument();
-  });
+		expect(container.firstChild).toBeInTheDocument();
+	});
 
-  it('should apply default styles', () => {
-    const { container } = render(<Button>Click me</Button>);
+	it('should apply default styles', () => {
+		const { container } = render(<Button>Click me</Button>);
 
-    expect(container.firstChild).toHaveClass(
-      styles({ variant: 'solid', color: 'accent', size: 'regular' })
-    );
-  });
+		expect(container.firstChild).toHaveClass(
+			styles({ variant: 'solid', color: 'accent', size: 'regular' })
+		);
+	});
 
-  it('should apply the variant style', () => {
-    const { container } = render(<Button variant="ghost">Click me</Button>);
+	it('should apply the variant style', () => {
+		const { container } = render(<Button variant="ghost">Click me</Button>);
 
-    expect(container.firstChild).toHaveClass(styles({ variant: 'ghost' }));
-  });
+		expect(container.firstChild).toHaveClass(styles({ variant: 'ghost' }));
+	});
 
-  it('should apply the styles according to props', () => {
-    const { container } = render(
-      <Button
-        color="neutral"
-        variant="ghost"
-        size="small"
-      >
-        Click me
-      </Button>
-    );
+	it('should apply the styles according to props', () => {
+		const { container } = render(
+			<Button color="neutral" variant="ghost" size="small">
+				Click me
+			</Button>
+		);
 
-    expect(container.firstChild).toHaveClass(
-      styles({ color: 'neutral', variant: 'ghost', size: 'small' })
-    );
-  });
+		expect(container.firstChild).toHaveClass(
+			styles({ color: 'neutral', variant: 'ghost', size: 'small' })
+		);
+	});
 
-  it('should render in disabled state', () => {
-    const { container } = render(<Button disabled>Click me</Button>);
+	it('should render in disabled state', () => {
+		const { container } = render(<Button disabled>Click me</Button>);
 
-    expect(container.firstChild).toBeDisabled();
-  });
+		expect(container.firstChild).toBeDisabled();
+	});
 });
