@@ -25,7 +25,10 @@ export const gradientText = style({
 	display: 'inline-block',
 	color: 'transparent',
 	// background: '-webkit-linear-gradient(var(--gradient2))',
-	background: 'linear-gradient(var(--gradient2))',
+	background: [
+		'linear-gradient(var(--gradient1))',
+		'linear-gradient(var(--gradient2))',
+	],
 	backgroundSize: '400% 100%',
 	backgroundClip: 'text',
 	WebkitBackgroundClip: 'text',
