@@ -1,4 +1,7 @@
 export type TokensSpace = {
+  small: string;
+  medium: string;
+  large: string;
   0: string;
   px: string;
   0.5: string;
@@ -30,6 +33,9 @@ export type TokensRadius = {
 
 export default {
   space: {
+    small: '8px',
+    medium: '16px',
+    large: '24px',
     0: '0',
     px: '1px',
     0.5: '2px',
