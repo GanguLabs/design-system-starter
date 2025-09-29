@@ -1,7 +1,7 @@
 // import AnimatedLogo from '@/components/SVG/Logo/AnimatedLogo';
 // import PostListPage from './blog/page';
 import { metadata } from '@/app/layout';
-import { gradientText, hero } from './home.css';
+import { animatedLogo, gradientText, hero } from './home.css';
 
 export default function Home() {
 	return (
@@ -12,6 +12,7 @@ export default function Home() {
 					initialInView={false}
 					className={'m-auto animatedLogo'}
 				/> */}
+				<div className={animatedLogo}>Animated logo</div>
 				<div>
 					<div>
 						<big aria-hidden="true">👋</big>

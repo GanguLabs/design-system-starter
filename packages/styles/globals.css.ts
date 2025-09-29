@@ -3,8 +3,9 @@ import { vars } from './theme.css';
 
 globalStyle('body', {
 	fontFamily: `'Clear Sans', 'Helvetica Neue', Arial, sans-serif`,
-	maxWidth: '500px',
+	minHeight: '100vh',
+	// maxWidth: '500px',
 	margin: '0px auto',
-	marginBottom: '2rem',
+	// marginBottom: '2rem',
 	background: `linear-gradient(${vars.color.background}, #000)`,
 });
