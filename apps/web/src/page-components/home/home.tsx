@@ -1,6 +1,9 @@
 // import AnimatedLogo from '@/components/SVG/Logo/AnimatedLogo';
 // import PostListPage from './blog/page';
 import { metadata } from '@/app/layout';
+import { dInline, mAuto, mNone, pNone } from '@repo/styles/utility-classes.css';
+import clsx from 'clsx';
+
 import { animatedLogo, gradientText, hero } from './home.css';
 
 export default function Home() {
@@ -12,13 +15,13 @@ export default function Home() {
 					initialInView={false}
 					className={'m-auto animatedLogo'}
 				/> */}
-				<div className={animatedLogo}>Animated logo</div>
+				<div className={clsx(animatedLogo, mAuto)}>Animated logo</div>
 				<div>
 					<div>
 						<big aria-hidden="true">👋</big>
-						<p>Hi, I am</p> {/* changes for narrator - accessibility */}
+						<p className={dInline}>Hi, I am</p>
 					</div>
-					<h1 className={gradientText}>Anwesh Gangula</h1>
+					<h1 className={clsx(gradientText, pNone, mNone)}>Anwesh Gangula</h1>
 					<p>{metadata.description}</p>
 					<p>
 						Welcome to my "Digital Garden". This is where I would like to share

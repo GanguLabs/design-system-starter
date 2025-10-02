@@ -9,11 +9,12 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@repo/styles": "workspace:*",
 		"@csstools/normalize.css": "^12.0.0",
 		"@ds-starter/fonts": "workspace:*",
 		"@ds-starter/tokens": "workspace:*",
+		"@repo/styles": "workspace:*",
 		"@vanilla-extract/css": "^1.12.0",
+		"clsx": "^2.0.0",
 		"next": "^14.2.32",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
