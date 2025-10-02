@@ -1,6 +1,6 @@
-import HtmlMain from '@/page-components/html-main/html-main';
-import { ThemeProvider } from '@/page-components/theme-components/theme-provider';
-import ThemeSwitcher from '@/page-components/theme-components/theme-switcher';
+import HtmlMain from '@/components/html-main/html-main';
+import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
+import { ThemeProvider } from '@/providers/theme-provider';
 import '@ds-starter/tokens/css/tokens.css';
 import '@ds-starter/ui/css/styles.css';
 import '@repo/styles/globals.css';
