@@ -242,3 +242,12 @@ export const flexNoShrink = style({
 });
 
 // #endregion
+
+// #region Text
+
+export const text2xl = style({
+	fontSize: '1.5rem',
+	lineHeight: '2rem',
+});
+
+// #endregion

@@ -49,7 +49,7 @@ export const lightTheme = createTheme(colors, {
 export const darkTheme = createTheme(colors, {
 	primary: '#60A5FA',
 	secondary: '#F472B6',
-	background: '#1F2937',
+	background: '#020817',
 	headerBackground: '#222',
 	headerText: '#fff',
 	accent: '#080',
@@ -59,4 +59,5 @@ export const darkTheme = createTheme(colors, {
 	},
 });
 
+createGlobalTheme;
 export const vars = { ...root, colors };

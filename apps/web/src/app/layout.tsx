@@ -7,7 +7,13 @@ import '@repo/styles/globals.css';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
 import { Metadata } from 'next';
+import { Inter as FontSans } from 'next/font/google';
 import Image from 'next/image';
+
+export const fontSans = FontSans({
+	subsets: ['latin'],
+	variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
 	// this add the html `<head/>` element
@@ -37,7 +43,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>
+			<body className={fontSans.variable}>
 				<ThemeProvider
 					// ref: https://www.npmjs.com/package/next-themes
 					storageKey="AG-Theme"
@@ -49,7 +55,7 @@ export default function RootLayout({
 					// themes={['light', 'dark']}
 					// Note! When you pass themes, the default set of themes ("light" and "dark") are overridden. Make sure you include those if you still want your light and dark themes:
 					// ref: https://www.npmjs.com/package/next-themes#more-than-light-and-dark-mode
-					// attribute="data-theme"
+					// attribute="data-theme" // data-theme doesn't work with vanilla extract, since vanilla-extract is class based.
 					attribute="class"
 					// Note! Tailwind supports dark theme by  using class or data-attributes, which can be configured in tailwind.config.js. If you use class, you can set attribute to class and it will work out of the box. If you use data-attribute, you need to set attribute to data-theme="dark" (or whatever your data-attribute is).
 					// https://www.npmjs.com/package/next-themes#with-tailwind

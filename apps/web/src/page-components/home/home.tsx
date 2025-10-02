@@ -1,7 +1,13 @@
 // import AnimatedLogo from '@/components/SVG/Logo/AnimatedLogo';
 // import PostListPage from './blog/page';
 import { metadata } from '@/app/layout';
-import { dInline, mAuto, mNone, pNone } from '@repo/styles/utility-classes.css';
+import {
+	dInline,
+	mAuto,
+	mNone,
+	pNone,
+	text2xl,
+} from '@repo/styles/utility-classes.css';
 import clsx from 'clsx';
 
 import { animatedLogo, gradientText, hero } from './home.css';
@@ -18,7 +24,9 @@ export default function Home() {
 				<div className={clsx(animatedLogo, mAuto)}>Animated logo</div>
 				<div>
 					<div>
-						<big aria-hidden="true">👋</big>
+						<big aria-hidden="true" className={text2xl}>
+							👋
+						</big>
 						<p className={dInline}>Hi, I am</p>
 					</div>
 					<h1 className={clsx(gradientText, pNone, mNone)}>Anwesh Gangula</h1>
