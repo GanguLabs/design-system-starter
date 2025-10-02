@@ -7,5 +7,6 @@ globalStyle('body', {
 	// maxWidth: '500px',
 	margin: '0px auto',
 	// marginBottom: '2rem',
-	background: `linear-gradient(${vars.color.background}, #000)`,
+	// background: `linear-gradient(${vars.color.background}, #000)`,
+	background: vars.colors.background,
 });

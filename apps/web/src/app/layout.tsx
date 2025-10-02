@@ -1,10 +1,11 @@
 import HtmlMain from '@/page-components/html-main/html-main';
+import { ThemeProvider } from '@/page-components/theme-components/theme-provider';
+import ThemeSwitcher from '@/page-components/theme-components/theme-switcher';
 import '@ds-starter/tokens/css/tokens.css';
 import '@ds-starter/ui/css/styles.css';
 import '@repo/styles/globals.css';
-// import '@repo/styles/theme.css'; // this is imported already in globals.css
-
 import { container } from '@repo/styles/header.css';
+import { darkTheme, lightTheme } from '@repo/styles/theme.css';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -35,13 +36,35 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" data-theme="dark">
+		<html lang="en">
 			<body>
-				<div className={`${container} `}>
-					<Image src="/react.png" width={25} height={25} alt="React Logo" />
-					<div>NextJS App Router</div>
-				</div>
-				<HtmlMain>{children}</HtmlMain>
+				<ThemeProvider
+					// ref: https://www.npmjs.com/package/next-themes
+					storageKey="AG-Theme"
+					defaultTheme="system"
+					// forcedTheme="dark"
+					enableSystem
+					// enableColorScheme
+					disableTransitionOnChange // enabling this since transition is staggered
+					// themes={['light', 'dark']}
+					// Note! When you pass themes, the default set of themes ("light" and "dark") are overridden. Make sure you include those if you still want your light and dark themes:
+					// ref: https://www.npmjs.com/package/next-themes#more-than-light-and-dark-mode
+					// attribute="data-theme"
+					attribute="class"
+					// Note! Tailwind supports dark theme by  using class or data-attributes, which can be configured in tailwind.config.js. If you use class, you can set attribute to class and it will work out of the box. If you use data-attribute, you need to set attribute to data-theme="dark" (or whatever your data-attribute is).
+					// https://www.npmjs.com/package/next-themes#with-tailwind
+					value={{
+						light: lightTheme,
+						dark: darkTheme,
+					}}
+				>
+					<div className={`${container} `}>
+						<Image src="/react.png" width={25} height={25} alt="React Logo" />
+						<div>NextJS App Router</div>
+						<ThemeSwitcher />
+					</div>
+					<HtmlMain>{children}</HtmlMain>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
