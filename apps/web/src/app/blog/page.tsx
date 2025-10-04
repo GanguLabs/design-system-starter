@@ -1,4 +1,5 @@
 import { PostItem } from '@/components/post-item/post-item';
+import { QueryPagination } from '@/components/query-pagination/query-pagination';
 import { sortPostsByDate } from '@/lib/utils';
 import {
 	alignContentStart,
@@ -8,9 +9,21 @@ import {
 import { posts } from '@site/content';
 import clsx from 'clsx';
 
-export default async function BlogPage() {
+const POSTS_PER_PAGE = 5;
+
+interface BlogPageProps {
+	searchParams?: { page?: string };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+	const page = Number(searchParams?.page || '1');
 	const sortedPosts = sortPostsByDate(posts.filter((post) => post.published));
-	const displayPosts = sortedPosts;
+	const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+
+	const displayPosts = sortedPosts.slice(
+		POSTS_PER_PAGE * (page - 1),
+		POSTS_PER_PAGE * page
+	);
 	return (
 		<div>
 			<div className={clsx(dFlex, flexColumn, alignContentStart)}>
@@ -36,6 +49,7 @@ export default async function BlogPage() {
 			) : (
 				<p>Nothing to see here</p>
 			)}
+			<QueryPagination totalPages={totalPages} className="justify-end mt-4" />
 		</div>
 	);
 }
