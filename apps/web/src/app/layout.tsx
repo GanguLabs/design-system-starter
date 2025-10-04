@@ -49,8 +49,8 @@ export default function RootLayout({
 					storageKey="AG-Theme"
 					defaultTheme="system"
 					// forcedTheme="dark"
-					enableSystem
-					// enableColorScheme
+					enableSystem={true} // this is needed to enable system theme detection
+					enableColorScheme={true} // this make form elements like input, select, etc to adapt to dark mode automatically
 					disableTransitionOnChange // enabling this since transition is staggered
 					// themes={['light', 'dark']}
 					// Note! When you pass themes, the default set of themes ("light" and "dark") are overridden. Make sure you include those if you still want your light and dark themes:
