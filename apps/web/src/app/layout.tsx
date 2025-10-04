@@ -1,4 +1,5 @@
 import HtmlMain from '@/components/html-main/html-main';
+import { SiteFooter } from '@/components/site-footer/site-footer';
 import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
 import '@ds-starter/tokens/css/tokens.css';
@@ -91,6 +92,7 @@ export default function RootLayout({
 						<ThemeSwitcher />
 					</div>
 					<HtmlMain>{children}</HtmlMain>
+					<SiteFooter />
 				</ThemeProvider>
 			</body>
 		</html>
