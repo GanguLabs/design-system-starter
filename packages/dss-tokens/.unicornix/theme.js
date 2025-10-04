@@ -247,7 +247,7 @@ export const theme = {
       muted: "rgb(108, 113, 116)"
     },
     background: {
-      regular: "rgb(255, 255, 255)",
+      regular: "rgb(239, 246, 255)",
       subtle: "rgb(236, 237, 237)",
       muted: "rgb(207, 209, 211)"
     }
@@ -500,7 +500,7 @@ export const theme = {
       muted: "rgb(127, 134, 137)"
     },
     background: {
-      regular: "rgb(0, 0, 0)",
+      regular: "rgb(2, 8, 23)",
       subtle: "rgb(9, 10, 11)",
       muted: "rgb(20, 21, 23)"
     }

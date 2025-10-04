@@ -1,4 +1,5 @@
 import HtmlMain from '@/components/html-main/html-main';
+import { SiteFooter } from '@/components/site-footer/site-footer';
 import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
 import '@ds-starter/tokens/css/tokens.css';
@@ -6,9 +7,10 @@ import '@ds-starter/ui/css/styles.css';
 import '@repo/styles/globals.css';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import Image from 'next/image';
+import { siteConfig } from '../../config/site';
 
 export const fontSans = FontSans({
 	subsets: ['latin'],
@@ -18,7 +20,7 @@ export const fontSans = FontSans({
 export const metadata: Metadata = {
 	// this add the html `<head/>` element
 	// ref: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-	metadataBase: new URL('https://anweshgangula.github.io/'),
+	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
 	title: {
 		default: 'Anwesh Gangula',
 		template: '%s | Anwesh Gangula',
@@ -34,6 +36,26 @@ export const metadata: Metadata = {
 	generator: 'nextjs, react, blog',
 	// colorScheme: constants.defaultTheme,
 	// themeColor: constants.themeColorMetaDark,
+};
+
+export const viewport: Viewport = {
+	// themeColor: [
+	// 	// TODO: currently this is dynamically handled using useEffect in ThemeSwitcher component
+	// 	{
+	// 		media: '(prefers-color-scheme: light)',
+	// 		color: tokensLight.color.background.regular,
+	// 	},
+	// 	{
+	// 		media: '(prefers-color-scheme: dark)',
+	// 		color: tokensDark.color.background.regular,
+	// 	},
+	// ],
+	width: 'device-width',
+	initialScale: 1,
+	minimumScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	// viewport-fit: "cover" // this is default to cover in nextjs
 };
 
 export default function RootLayout({
@@ -70,6 +92,7 @@ export default function RootLayout({
 						<ThemeSwitcher />
 					</div>
 					<HtmlMain>{children}</HtmlMain>
+					<SiteFooter />
 				</ThemeProvider>
 			</body>
 		</html>

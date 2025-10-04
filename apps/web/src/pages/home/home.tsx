@@ -10,6 +10,7 @@ import {
 } from '@repo/styles/utility-classes.css';
 import clsx from 'clsx';
 
+import PostsList from '@/components/posts-list/posts-list';
 import { animatedLogo, gradientText, hero } from './home.css';
 
 export default function Home() {
@@ -45,9 +46,7 @@ export default function Home() {
 					</p> */}
 				</div>
 			</div>
-			{/* <section className="postList">
-				<PostListPage />
-			</section> */}
+			<PostsList />
 		</>
 	);
 }
