@@ -2,6 +2,7 @@ import { MdxContent } from '@/components/mdx-components/mdx-components';
 import '@repo/styles/mdx.css';
 import { posts } from '@site/content';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next/types';
 
 interface PostPageProps {
 	params: {
@@ -17,6 +18,47 @@ async function getPostFromParams(params: PostPageProps['params']) {
 	}
 	return post;
 }
+
+export async function generateMetadata({
+	params,
+}: PostPageProps): Promise<Metadata> {
+	const post = await getPostFromParams(params);
+
+	if (!post) {
+		return {
+			// title: 'Post Not Found',
+		};
+	}
+
+	const ogSearchParams = new URLSearchParams();
+	ogSearchParams.set('title', post.title);
+
+	return {
+		title: post.title,
+		description: post.description,
+		openGraph: {
+			title: post.title,
+			description: post.description,
+			type: 'article',
+			url: post.slug,
+			images: [
+				{
+					url: `/api/og?${ogSearchParams.toString()}`,
+					width: 1200,
+					height: 630,
+					alt: post.title,
+				},
+			],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: post.title,
+			description: post.description,
+			images: [`/api/og?${ogSearchParams.toString()}`],
+		},
+	};
+}
+
 export async function generateStaticParams(): Promise<
 	PostPageProps['params'][]
 > {
