@@ -1,6 +1,7 @@
 import HtmlMain from '@/components/html-main/html-main';
 import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
+import { tokensDark, tokensLight } from '@ds-starter/tokens';
 import '@ds-starter/tokens/css/tokens.css';
 import '@ds-starter/ui/css/styles.css';
 import '@repo/styles/globals.css';
@@ -34,6 +35,26 @@ export const metadata: Metadata = {
 	generator: 'nextjs, react, blog',
 	// colorScheme: constants.defaultTheme,
 	// themeColor: constants.themeColorMetaDark,
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		// TODO: currently this is dynamically handled using useEffect in ThemeSwitcher component
+		{
+			media: '(prefers-color-scheme: light)',
+			color: tokensLight.color.background.regular,
+		},
+		{
+			media: '(prefers-color-scheme: dark)',
+			color: tokensDark.color.background.regular,
+		},
+	],
+	width: 'device-width',
+	initialScale: 1,
+	minimumScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	// viewport-fit: "cover" // this is default to cover in nextjs
 };
 
 export default function RootLayout({
