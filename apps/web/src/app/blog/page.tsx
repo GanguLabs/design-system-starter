@@ -8,6 +8,12 @@ import {
 } from '@repo/styles/utility-classes.css';
 import { posts } from '@site/content';
 import clsx from 'clsx';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: 'Blog',
+	description: 'My Ramblings on all things web dev',
+};
 
 const POSTS_PER_PAGE = 5;
 
