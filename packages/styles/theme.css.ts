@@ -1,4 +1,4 @@
-import { tokens } from '@ds-starter/tokens';
+import { tokens, tokensDark, tokensLight } from '@ds-starter/tokens';
 import {
 	createGlobalTheme,
 	createTheme,
@@ -23,7 +23,10 @@ const root = createGlobalTheme(':root', {
 const colors = createThemeContract({
 	primary: null,
 	secondary: null,
-	background: null,
+	background: {
+		fallback: null, // fallback should be first
+		token: null,
+	},
 	headerText: null,
 	headerBackground: null,
 	accent: null,
@@ -36,7 +39,10 @@ const colors = createThemeContract({
 export const lightTheme = createTheme(colors, {
 	primary: '#1E40AF',
 	secondary: '#DB2777',
-	background: '#EFF6FF',
+	background: {
+		fallback: '#EFF6FF', // 'blue',
+		token: tokensLight.color.background.regular,
+	},
 	headerBackground: '#222',
 	headerText: '#fff',
 	accent: '#080',
@@ -49,7 +55,10 @@ export const lightTheme = createTheme(colors, {
 export const darkTheme = createTheme(colors, {
 	primary: '#60A5FA',
 	secondary: '#F472B6',
-	background: '#020817',
+	background: {
+		fallback: '#020817', // 'pink',
+		token: tokensDark.color.background.regular,
+	},
 	headerBackground: '#222',
 	headerText: '#fff',
 	accent: '#080',

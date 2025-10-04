@@ -38,17 +38,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: [
-		// TODO: currently this is dynamically handled using useEffect in ThemeSwitcher component
-		{
-			media: '(prefers-color-scheme: light)',
-			color: tokensLight.color.background.regular,
-		},
-		{
-			media: '(prefers-color-scheme: dark)',
-			color: tokensDark.color.background.regular,
-		},
-	],
+	// themeColor: [
+	// 	// TODO: currently this is dynamically handled using useEffect in ThemeSwitcher component
+	// 	{
+	// 		media: '(prefers-color-scheme: light)',
+	// 		color: tokensLight.color.background.regular,
+	// 	},
+	// 	{
+	// 		media: '(prefers-color-scheme: dark)',
+	// 		color: tokensDark.color.background.regular,
+	// 	},
+	// ],
 	width: 'device-width',
 	initialScale: 1,
 	minimumScale: 1,
