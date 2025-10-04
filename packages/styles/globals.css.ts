@@ -1,6 +1,19 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { vars } from './theme.css';
 
+globalStyle('html', {
+	// scrollBehavior: 'smooth', // #TODO: investigate - somehow smooth scroll-behavior is automatically added
+	scrollPaddingTop: '4rem',
+	// background: vars.colors.background,
+	// color: vars.colors.text.normal,
+	// background: `linear-gradient(${vars.color.background}, #000)`,
+	// color: vars.color.text.normal,
+	// backgroundColor: vars.color.background,
+	// colorScheme: 'dark',
+	// WebkitFontSmoothing: 'antialiased',
+	// MozOsxFontSmoothing: 'grayscale',
+});
+
 globalStyle('body', {
 	fontFamily:
 		'var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
