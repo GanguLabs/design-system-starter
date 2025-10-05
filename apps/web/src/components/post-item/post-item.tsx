@@ -23,7 +23,7 @@ export function PostItem({
 		<article>
 			<div>
 				<h2>
-					<Link href={slug}>{title}</Link>
+					<Link href={'/' + slug}>{title}</Link>
 				</h2>
 			</div>
 
