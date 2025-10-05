@@ -3,14 +3,34 @@ import { Tag } from '@/components/tag/tag';
 import { getAllTags, getPostsByTagSlug, sortTagsByCount } from '@/lib/utils';
 import { posts } from '@site/content';
 import { slug } from 'github-slugger';
+import { Metadata } from 'next';
 
-interface TagePageProps {
+interface TagPageProps {
 	params: {
 		tag: string;
 	};
 }
 
-export default function TagPage({ params }: TagePageProps) {
+export async function generateMetadata({
+	params,
+}: TagPageProps): Promise<Metadata> {
+	const { tag } = params;
+	const title = tag.split('-').join(' ');
+
+	return {
+		title: `Tag: ${title}`,
+		description: `Posts tagged with "${title}"`,
+	};
+}
+
+export const generateStaticParams = () => {
+	const tags = getAllTags(posts);
+	const paths = Object.keys(tags).map((tag) => ({ tag: slug(tag) }));
+
+	return paths;
+};
+
+export default function TagPage({ params }: TagPageProps) {
 	const { tag } = params;
 	const title = tag.split('-').join(' ');
 
