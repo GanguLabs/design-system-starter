@@ -19,27 +19,27 @@ export const pLarge = style({
 });
 
 export const pxSmall = style({
-	margin: `0 ${tokens.space.small}`,
+	padding: `0 ${tokens.space.small}`,
 });
 
 export const pxMedium = style({
-	margin: `0 ${tokens.space.medium}`,
+	padding: `0 ${tokens.space.medium}`,
 });
 
 export const pxLarge = style({
-	margin: `0 ${tokens.space.large}`,
+	padding: `0 ${tokens.space.large}`,
 });
 
 export const pySmall = style({
-	margin: `${tokens.space.small} 0`,
+	padding: `${tokens.space.small} 0`,
 });
 
 export const pyMedium = style({
-	margin: `${tokens.space.medium} 0`,
+	padding: `${tokens.space.medium} 0`,
 });
 
 export const pyLarge = style({
-	margin: `${tokens.space.large} 0`,
+	padding: `${tokens.space.large} 0`,
 });
 
 // #endregion
