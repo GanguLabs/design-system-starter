@@ -11,7 +11,14 @@ export function Tag({ tag, current, count }: TagProps) {
 	return (
 		<Link
 			className={pxSmall}
-			style={{ background: current ? 'darkgray' : 'black' }}
+			style={{
+				background: current ? 'white' : 'black',
+				color: current ? 'black' : 'white',
+				borderRadius: '9999px',
+				fontSize: '0.75rem',
+				fontWeight: 600,
+				textDecoration: 'none',
+			}}
 			href={`/tags/${slug(tag)}`}
 		>
 			{tag} {count && <span>({count})</span>}
