@@ -14,7 +14,7 @@ export function Tag({ tag, current, count }: TagProps) {
 			style={{ background: current ? 'darkgray' : 'black' }}
 			href={`/tags/${slug(tag)}`}
 		>
-			{tag}
+			{tag} {count && <span>({count})</span>}
 		</Link>
 	);
 }
