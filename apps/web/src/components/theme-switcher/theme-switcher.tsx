@@ -1,5 +1,6 @@
 'use client';
 
+import { tokensDark, tokensLight } from '@ds-starter/tokens';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
@@ -10,6 +11,34 @@ const ThemeSwitcher = () => {
 
 	// When mounted on client, now we can show the UI
 	useEffect(() => setMounted(true), []);
+
+	useEffect(() => {
+		// TODO: This should ideally be handled using nextjs genrateViewport. But it's a known issue
+		// ref: https://github.com/pacocoursey/next-themes/issues/78#issuecomment-1674109200
+		let themeColorMeta = document.querySelector(
+			'meta[name="theme-color"]'
+		) as HTMLMetaElement;
+		let colorSchemeMeta = document.querySelector(
+			'meta[name="color-scheme"]'
+		) as HTMLMetaElement;
+
+		if (themeColorMeta === null || colorSchemeMeta === null) {
+			themeColorMeta = document.createElement('meta');
+			colorSchemeMeta = document.createElement('meta');
+			themeColorMeta.name = 'theme-color';
+			colorSchemeMeta.name = 'color-scheme';
+			document.head.appendChild(themeColorMeta);
+			document.head.appendChild(colorSchemeMeta);
+		}
+
+		if (theme === 'dark') {
+			themeColorMeta.content = tokensDark.color.background.regular;
+			colorSchemeMeta.content = 'dark';
+		} else {
+			themeColorMeta.content = tokensLight.color.background.regular;
+			colorSchemeMeta.content = 'light';
+		}
+	}, [theme]);
 
 	if (!mounted) return null;
 

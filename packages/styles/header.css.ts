@@ -4,7 +4,7 @@ import { vars } from './theme.css';
 export const container = style({
 	borderBottomRightRadius: '.5rem',
 	borderBottomLeftRadius: '.5rem',
-	boxShadow: `0 10px 15px -3px ${vars.colors.background},0 4px 6px -2px rgba(0,0,0,.05)`,
+	boxShadow: `0 10px 15px -3px ${vars.colors.background.token},0 4px 6px -2px rgba(0,0,0,.05)`,
 	display: 'flex',
 	backgroundColor: vars.colors.headerBackground,
 	color: vars.colors.headerText,

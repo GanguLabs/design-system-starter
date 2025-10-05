@@ -9,12 +9,13 @@
 		"jsx": "preserve",
 		"strictNullChecks": true,
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@site/content": ["./.velite"]
 		}
 	},
 	"include": [
 		"src",
-		"next.config.js",
+		"next.config.mjs",
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
