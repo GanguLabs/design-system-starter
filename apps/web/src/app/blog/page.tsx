@@ -1,6 +1,8 @@
+import Card from '@/components/card/card';
 import { PostItem } from '@/components/post-item/post-item';
 import { QueryPagination } from '@/components/query-pagination/query-pagination';
-import { sortPostsByDate } from '@/lib/utils';
+import { Tag } from '@/components/tag/tag';
+import { getAllTags, sortPostsByDate, sortTagsByCount } from '@/lib/utils';
 import {
 	alignContentStart,
 	dFlex,
@@ -30,6 +32,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 		POSTS_PER_PAGE * (page - 1),
 		POSTS_PER_PAGE * page
 	);
+	const tags = getAllTags(posts);
+	const sortedTags = sortTagsByCount(tags);
+
 	return (
 		<div>
 			<div className={clsx(dFlex, flexColumn, alignContentStart)}>
@@ -38,6 +43,21 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 					<p>My Ramblings on all things web dev</p>
 				</div>
 			</div>
+			<Card className="my-4 p-4">
+				<h2>Tags</h2>
+				{sortedTags.length > 0 ? (
+					<div
+						className={clsx(dFlex)}
+						style={{ gap: '0.5rem', flexWrap: 'wrap' }}
+					>
+						{sortedTags.map((tag) => (
+							<Tag key={tag} tag={tag} count={tags[tag]} />
+						))}
+					</div>
+				) : (
+					<p>No tags found</p>
+				)}
+			</Card>
 			<hr />
 			{displayPosts?.length > 0 ? (
 				<ul className={clsx(dFlex, flexColumn)}>
