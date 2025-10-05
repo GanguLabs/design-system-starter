@@ -266,6 +266,9 @@ importers:
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
+      github-slugger:
+        specifier: ^2.0.0
+        version: 2.0.0
       next:
         specifier: ^14.2.32
         version: 14.2.32(@babel/core@7.24.9)(@playwright/test@1.43.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

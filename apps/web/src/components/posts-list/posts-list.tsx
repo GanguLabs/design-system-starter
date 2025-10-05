@@ -10,13 +10,14 @@ export default function PostsList() {
 		<section className="postList">
 			<h2>Latest Posts</h2>
 			<ul>
-				{latestPosts.map(({ slug, title, description, date }) => (
+				{latestPosts.map(({ slug, title, description, date, tags }) => (
 					<li key={slug} className="postItem">
 						<PostItem
 							slug={slug}
 							title={title}
 							description={description}
 							date={date}
+							tags={tags}
 						/>
 					</li>
 				))}

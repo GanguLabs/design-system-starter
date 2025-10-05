@@ -1,5 +1,7 @@
 import { MdxContent } from '@/components/mdx-components/mdx-components';
+import { Tag } from '@/components/tag/tag';
 import '@repo/styles/mdx.css';
+import { dFlex } from '@repo/styles/utility-classes.css';
 import { posts } from '@site/content';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next/types';
@@ -76,6 +78,13 @@ export default async function PostPage({ params }: PostPageProps) {
 	return (
 		<article>
 			<h1>{post.title}</h1>
+			{post.tags && (
+				<div className={dFlex} style={{ gap: '0.5rem', flexWrap: 'wrap' }}>
+					{post.tags.map((tag) => (
+						<Tag key={tag} tag={tag} />
+					))}
+				</div>
+			)}
 			{post.description ? <p>{post.description}</p> : null}
 			<p>Published on: {new Date(post.date).toDateString()}</p>
 			<hr />

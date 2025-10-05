@@ -41,13 +41,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 			<hr />
 			{displayPosts?.length > 0 ? (
 				<ul className={clsx(dFlex, flexColumn)}>
-					{displayPosts.map(({ slug, title, description, date }) => (
+					{displayPosts.map(({ slug, title, description, date, tags }) => (
 						<li key={slug}>
 							<PostItem
 								slug={slug}
 								title={title}
 								description={description}
 								date={date}
+								tags={tags}
 							/>
 						</li>
 					))}
