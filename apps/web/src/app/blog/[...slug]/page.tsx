@@ -1,4 +1,5 @@
 import { MdxContent } from '@/components/mdx-components/mdx-components';
+import '@repo/styles/mdx.css';
 import { posts } from '@site/content';
 import { notFound } from 'next/navigation';
 
