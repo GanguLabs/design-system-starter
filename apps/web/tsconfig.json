@@ -9,7 +9,8 @@
 		"jsx": "preserve",
 		"strictNullChecks": true,
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@site/content": ["./.velite"]
 		}
 	},
 	"include": [
