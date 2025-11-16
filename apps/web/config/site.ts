@@ -1,6 +1,6 @@
 export const siteConfig = {
 	name: 'Anwesh Gangula - Blog',
-	url: 'https://example.com',
+	url: 'https://anweshgangula.github.io/',
 	description: 'Nextjs 14 blog using velite, tailwind and shadcn',
 	author: 'Anwesh Gangula',
 	links: {
