@@ -38,18 +38,18 @@ const nextConfig = {
 	// 		{
 	// 			source: '/about',
 	// 			destination: '/',
-	// 			permanent: true,
+	// 			permanent: false,
 	// 		},
 	// 		{
 	// 			source: '/blog/:path*',
 	// 			destination: '/velite-blog/:path*',
-	// 			permanent: true,
+	// 			permanent: false,
 	// 		},
 	// 		// // Wildcard path matching
 	// 		// {
 	// 		// 	source: '/blog/:slug',
 	// 		// 	destination: '/news/:slug',
-	// 		// 	permanent: true,
+	// 		// 	permanent: false,
 	// 		// },
 	// 	];
 	// },
