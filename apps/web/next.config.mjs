@@ -24,6 +24,27 @@ class VeliteWebpackPlugin {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	async redirects() {
+		return [
+			// Basic redirect
+			{
+				source: '/about',
+				destination: '/',
+				permanent: true,
+			},
+			{
+				source: '/blog/:path*',
+				destination: '/velite-blog/:path*',
+				permanent: true,
+			},
+			// // Wildcard path matching
+			// {
+			// 	source: '/blog/:slug',
+			// 	destination: '/news/:slug',
+			// 	permanent: true,
+			// },
+		];
+	},
 	reactStrictMode: true,
 	transpilePackages: ['@repo/ui'],
 	webpack: (config, { isServer }) => {
