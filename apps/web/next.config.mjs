@@ -24,6 +24,14 @@ class VeliteWebpackPlugin {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	async rewrites() {
+		return [
+			{
+				source: '/blog/:path*',
+				destination: '/velite-blog/:path*',
+			},
+		];
+	},
 	// async redirects() {
 	// 	return [
 	// 		// Basic redirect
