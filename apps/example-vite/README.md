@@ -14,7 +14,7 @@ It implements the following dependencies:
 - [@repo/ui](/packages/dss-ui/) - Core UI library (tree-shakeable)
 
 and the following configs:
-- [@ds-starter/tsconfig](/config/tsconfig/)
+- [@repo/tsconfig](/config/tsconfig/)
 - [eslint-config-ds-starter](/config/eslint-config-ds-starter/)
 
 ## Technology 

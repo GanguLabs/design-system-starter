@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@repo/tokens": "workspace:*",
-		"@ds-starter/tsconfig": "workspace:*",
+		"@repo/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@svgr/core": "^8.1.0",
 		"@svgr/plugin-jsx": "^8.1.0",

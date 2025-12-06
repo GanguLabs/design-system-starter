@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"@repo/tokens": "workspace:*",
-		"@ds-starter/tsconfig": "workspace:*",
+		"@repo/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@types/react": "^18.2.74",
 		"@vitejs/plugin-react": "^4.2.0",

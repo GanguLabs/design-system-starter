@@ -145,7 +145,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
     devDependencies:
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@types/react':
@@ -231,7 +231,7 @@ importers:
       '@axe-core/playwright':
         specifier: ^4.9.0
         version: 4.9.0(playwright-core@1.43.0)
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@playwright/test':
@@ -325,7 +325,7 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@repo/ui':
@@ -364,7 +364,7 @@ importers:
       '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -391,7 +391,7 @@ importers:
       '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -434,7 +434,7 @@ importers:
       '@babel/core':
         specifier: ^7.24.9
         version: 7.24.9
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -474,7 +474,7 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/react':
@@ -522,7 +522,7 @@ importers:
       '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/react':

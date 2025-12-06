@@ -1,5 +1,5 @@
 {
-	"extends": "@ds-starter/tsconfig/lib-react.json",
+	"extends": "@repo/tsconfig/lib-react.json",
 	"include": ["src"],
 	"exclude": ["dist", "node_modules"],
 	"references": [

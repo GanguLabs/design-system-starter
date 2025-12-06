@@ -1,4 +1,4 @@
-# @ds-starter/tsconfig
+# @repo/tsconfig
 
 ## 0.2.0
 

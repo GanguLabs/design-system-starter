@@ -6,7 +6,7 @@ module.exports = {
     {
       label: 'Pin local config packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@ds-starter/tsconfig'],
+      dependencies: ['@repo/tsconfig'],
       dependencyTypes: ['dev'],
       pinVersion: 'workspace:*',
     },
