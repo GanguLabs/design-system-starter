@@ -18,7 +18,7 @@
 		"test": "pnpm test:a11y && pnpm test:vrt"
 	},
 	"dependencies": {
-		"@ds-starter/fonts": "workspace:*",
+		"@repo/fonts": "workspace:*",
 		"@repo/tokens": "workspace:*",
 		"@repo/ui": "workspace:*",
 		"react": "^18.2.0",

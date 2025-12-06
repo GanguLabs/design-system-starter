@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@csstools/normalize.css": "^12.0.0",
-		"@ds-starter/fonts": "workspace:*",
+		"@repo/fonts": "workspace:*",
 		"@repo/tokens": "workspace:*",
 		"@repo/styles": "workspace:*",
 		"@vanilla-extract/css": "^1.12.0",

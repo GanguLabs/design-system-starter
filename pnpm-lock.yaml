@@ -44,7 +44,7 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
       '@repo/tokens':
@@ -108,7 +108,7 @@ importers:
 
   apps/example-vite:
     dependencies:
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
       '@repo/icons':
@@ -212,7 +212,7 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
       '@repo/tokens':
@@ -297,7 +297,7 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
       '@repo/tokens':

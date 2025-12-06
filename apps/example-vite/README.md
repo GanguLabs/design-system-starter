@@ -9,7 +9,7 @@
 Current example app is the simple demonstration of real-life usage of Design System parts.
 
 It implements the following dependencies:
-- [@ds-starter/fonts](/packages/dss-fonts/) - Fonts
+- [@repo/fonts](/packages/dss-fonts/) - Fonts
 - [@repo/icons](/packages/dss-icons/) - Iconography (tree-shakeable)
 - [@repo/ui](/packages/dss-ui/) - Core UI library (tree-shakeable)
 

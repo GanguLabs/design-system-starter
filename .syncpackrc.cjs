@@ -13,7 +13,7 @@ module.exports = {
     {
       label: 'Pin unpublished local packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@ds-starter/fonts', '@repo/icons', '@repo/tokens', '@repo/ui'],
+      dependencies: ['@repo/fonts', '@repo/icons', '@repo/tokens', '@repo/ui'],
       dependencyTypes: ['dev', 'prod'],
       pinVersion: 'workspace:*',
     },

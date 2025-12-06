@@ -1,6 +1,6 @@
 # DSS Fonts @ Design System Starter Template
 
-> **@ds-starter/fonts** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> **@repo/fonts** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
 > See it in action:
 >
@@ -17,7 +17,7 @@ However for [quick hacking or dev-oriented projects](https://www.zachleat.com/we
 ## Installation
 
 ```sh
-npm i @ds-starter/fonts
+npm i @repo/fonts
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ npm i @ds-starter/fonts
 ### Base64 fonts
 
 ```tsx
-import '@ds-starter/fonts/css/fonts.css';
+import '@repo/fonts/css/fonts.css';
 ```
 
 ### Google Fonts helper
@@ -33,7 +33,7 @@ import '@ds-starter/fonts/css/fonts.css';
 > Note, this component is supposed to be used on server side.
 
 ```tsx
-import { GoogleFonts } from '@ds-starter/fonts';
+import { GoogleFonts } from '@repo/fonts';
 
 // ...
 
