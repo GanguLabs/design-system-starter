@@ -1,8 +1,8 @@
-import IconArrowLeft from '@ds-starter/icons/lib/IconArrowLeft';
-import IconArrowRight from '@ds-starter/icons/lib/IconArrowRight';
+import IconArrowLeft from '@repo/icons/lib/IconArrowLeft';
+import IconArrowRight from '@repo/icons/lib/IconArrowRight';
 
-import IconArrowLeftSrc from '@ds-starter/icons/svg/arrow-left.svg';
-import IconArrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
+import IconArrowLeftSrc from '@repo/icons/svg/arrow-left.svg';
+import IconArrowRightSrc from '@repo/icons/svg/arrow-right.svg';
 
 import Button from '@repo/ui/components/Button/Button';
 

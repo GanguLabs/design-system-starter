@@ -1,6 +1,6 @@
 # DSS Icons @ Design System Starter Template
 
-> **@ds-starter/icons** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> **@repo/icons** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
 > See it in action:
 >
@@ -15,7 +15,7 @@ Icons is an optional package and naturally is the dependency for `@repo/ui`.
 ## Installation
 
 ```sh
-npm i @ds-starter/icons
+npm i @repo/icons
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm i @ds-starter/icons
 ### Icon components
 
 ```tsx
-import { IconArrowLeft } from '@ds-starter/icons';
+import { IconArrowLeft } from '@repo/icons';
 
 // ...
 <div>
@@ -34,7 +34,7 @@ import { IconArrowLeft } from '@ds-starter/icons';
 When tree-shaking is supported you can benefit from dedicated import:
 
 ```tsx
-import IconArrowLeft from '@ds-starter/icons/lib/IconArrowLeft';
+import IconArrowLeft from '@repo/icons/lib/IconArrowLeft';
 ```
 
 ### SVG import
@@ -43,7 +43,7 @@ Depending on the project settings SVG import can work differently.
 In basic cases result of import would be the image src:
 
 ```tsx
-import arrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
+import arrowRightSrc from '@repo/icons/svg/arrow-right.svg';
 
 // ...
 

@@ -1,4 +1,4 @@
-# @ds-starter/icons
+# @repo/icons
 
 ## 0.2.0
 

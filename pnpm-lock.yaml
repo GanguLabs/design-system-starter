@@ -111,7 +111,7 @@ importers:
       '@ds-starter/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/icons':
+      '@repo/icons':
         specifier: workspace:*
         version: link:../../packages/dss-icons
       '@repo/ui':
