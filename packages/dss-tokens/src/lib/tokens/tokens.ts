@@ -12,25 +12,25 @@ export type * from './palette';
 export type * from './sizes';
 
 export const tokens = {
-  color: paletteVars,
+	color: paletteVars,
 
-  ...content,
-  ...sizes,
-  ...details,
+	...content,
+	...sizes,
+	...details,
 };
 
 export const tokensLight = {
-  color: paletteLight,
+	color: paletteLight,
 
-  ...content,
-  ...sizes,
-  ...makeDetailsTokens(paletteLight),
+	...content,
+	...sizes,
+	...makeDetailsTokens(paletteLight),
 };
 
 export const tokensDark = {
-  color: paletteDark,
+	color: paletteDark,
 
-  ...content,
-  ...sizes,
-  ...makeDetailsTokens(paletteDark),
+	...content,
+	...sizes,
+	...makeDetailsTokens(paletteDark),
 };
