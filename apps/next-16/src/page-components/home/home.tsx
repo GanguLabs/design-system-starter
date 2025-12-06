@@ -1,66 +1,53 @@
-import Image from "next/image";
-import styles from "./home.module.css";
+// import AnimatedLogo from '@/components/SVG/Logo/AnimatedLogo';
+// import PostListPage from './blog/page';
+import { metadata } from '@/app/layout';
+import {
+	dInline,
+	mAuto,
+	mNone,
+	pNone,
+	text2xl,
+} from '@repo/styles/utility-classes.css';
+import clsx from 'clsx';
+
+import { animatedLogo, gradientText, hero } from './home.css';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+	return (
+		<>
+			<div className={hero}>
+				{/* <AnimatedLogo
+					animateOnce={true}
+					initialInView={false}
+					className={'m-auto animatedLogo'}
+				/> */}
+				<div className={clsx(animatedLogo, mAuto)}>Animated logo</div>
+				<div>
+					<div>
+						<big aria-hidden="true" tabIndex={-1} className={text2xl}>
+							👋
+						</big>
+						<p className={dInline}>Hi, I am</p>
+					</div>
+					<h1 className={clsx(gradientText, pNone, mNone)}>Anwesh Gangula</h1>
+					<p>{metadata.description}</p>
+					<p>
+						Welcome to my "Digital Garden". This is where I would like to share
+						& showcase:
+					</p>
+					<ul>
+						<li>🏗️ things i'm building</li>
+						<li>🎋 what I'm currently learning</li>
+						<li>🥰 and things that inspire me</li>
+					</ul>
+					{/* <p>
+						Added D3 JS implementation in Nextjs - <Link href={"./d3_Next13"}>here</Link>
+					</p> */}
+				</div>
+			</div>
+			{/* <section className="postList">
+				<PostListPage />
+			</section> */}
+		</>
+	);
 }
