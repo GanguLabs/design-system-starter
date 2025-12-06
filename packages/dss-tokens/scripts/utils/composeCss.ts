@@ -4,11 +4,11 @@
  * @returns string
  */
 export function composeCssVarName(...keys: string[]) {
-  const refinedKeys = keys.filter(Boolean).map((key) => {
-    return key.replaceAll('.', '');
-  });
+	const refinedKeys = keys.filter(Boolean).map((key) => {
+		return key.replaceAll('.', '');
+	});
 
-  return `--${refinedKeys.join('-')}`;
+	return `--${refinedKeys.join('-')}`;
 }
 
 /**
@@ -17,5 +17,5 @@ export function composeCssVarName(...keys: string[]) {
  * @returns string
  */
 export function composeCssVar(...keys: string[]) {
-  return `var(${composeCssVarName(...keys)})`;
+	return `var(${composeCssVarName(...keys)})`;
 }

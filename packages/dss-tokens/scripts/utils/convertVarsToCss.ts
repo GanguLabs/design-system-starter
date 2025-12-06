@@ -8,20 +8,20 @@ import { composeCssVarName } from './composeCss';
  * @returns string
  */
 export function convertVarsToCss(varsObj: object, ...keys: string[]) {
-  let css = '';
+	let css = '';
 
-  Object.entries(varsObj).forEach(([_, value]) => {
-    let key = camelCaseToKebab(_);
+	Object.entries(varsObj).forEach(([_, value]) => {
+		let key = camelCaseToKebab(_);
 
-    if (key === 'default') key = '';
-    if (!value) return;
+		if (key === 'default') key = '';
+		if (!value) return;
 
-    if (typeof value === 'object') {
-      css += convertVarsToCss(value, ...keys, key);
-    } else {
-      css += `  ${composeCssVarName(...keys, key)}: ${value};\n`;
-    }
-  });
+		if (typeof value === 'object') {
+			css += convertVarsToCss(value, ...keys, key);
+		} else {
+			css += `  ${composeCssVarName(...keys, key)}: ${value};\n`;
+		}
+	});
 
-  return css;
+	return css;
 }
