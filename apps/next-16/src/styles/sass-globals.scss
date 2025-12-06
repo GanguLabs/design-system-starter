@@ -1,0 +1,13 @@
+@use 'sass-variables.scss' as vars;
+
+.italic {
+	font-style: italic;
+}
+
+.red {
+	color: vars.$red;
+}
+
+h2 {
+	text-decoration: underline;
+}

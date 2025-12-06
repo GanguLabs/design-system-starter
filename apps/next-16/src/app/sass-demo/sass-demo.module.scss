@@ -1,0 +1,12 @@
+@use '../../styles/sass-variables' as vars;
+
+$primary-color: #64ff00;
+
+:export {
+	primaryColor: $primary-color;
+}
+
+.secondary {
+	font-style: italic;
+	color: vars.$secondary-color; // this doesn't work for some reason. @use only works inside the styles folder
+}
