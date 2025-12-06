@@ -7,7 +7,7 @@ import '@ds-starter/ui/css/styles.css';
 import '@repo/styles/globals.css';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
-import { Metadata, Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import Image from 'next/image';
 import { siteConfig } from '../../config/site';
