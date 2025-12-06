@@ -114,7 +114,7 @@ importers:
       '@ds-starter/icons':
         specifier: workspace:*
         version: link:../../packages/dss-icons
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       '@tsparticles/engine':
@@ -218,7 +218,7 @@ importers:
       '@ds-starter/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       react:
@@ -328,7 +328,7 @@ importers:
       '@ds-starter/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       '@types/node':

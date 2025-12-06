@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@ds-starter/fonts": "workspace:*",
 		"@ds-starter/icons": "workspace:*",
-		"@ds-starter/ui": "workspace:*",
+		"@repo/ui": "workspace:*",
 		"@tsparticles/engine": "^3.0.2",
 		"@tsparticles/plugin-emitters": "^3.0.2",
 		"@tsparticles/plugin-emitters-shape-square": "^3.0.2",

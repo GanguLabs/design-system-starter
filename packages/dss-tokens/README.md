@@ -10,7 +10,7 @@
 
 ## Overview
 
-Design tokens package is the core dependency for `@ds-starter/ui`  
+Design tokens package is the core dependency for `@repo/ui`  
 and very important for consistent design in the apps.
 
 Design tokens are available in 2 formats - CSS custom properties (variables) and JS objects.

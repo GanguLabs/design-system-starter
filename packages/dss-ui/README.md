@@ -1,6 +1,6 @@
 # DSS UI @ Design System Starter Template
 
-> **@ds-starter/ui** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> **@repo/ui** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
 > See it in action:  
 > - [DSS Storybook](https://ds-starter-storybook.vercel.app/)
@@ -37,7 +37,7 @@ Storybook is set up as a [separate app](/apps/storybook/README.md), consolidatin
 ## Installation
 
 ```sh
-npm i @ds-starter/ui
+npm i @repo/ui
 ```
 
 In the next step make sure to include CSS in your app or project to enable styling.
@@ -45,19 +45,19 @@ In the next step make sure to include CSS in your app or project to enable styli
 In JS:
 
 ```tsx
-import '@ds-starter/ui/css/styles.css';
+import '@repo/ui/css/styles.css';
 ```
 
 Or in CSS:
 
 ```css
-@import '@ds-starter/ui/css/styles.css';
+@import '@repo/ui/css/styles.css';
 ```
 
 ## Usage
 
 ```tsx
-import { Switch } from '@ds-starter/ui';
+import { Switch } from '@repo/ui';
 
 // ...
 <div>
@@ -68,7 +68,7 @@ import { Switch } from '@ds-starter/ui';
 When tree-shaking is supported you can benefit from dedicated import:
 
 ```tsx
-import Switch from '@ds-starter/ui/components/Switch/Switch';
+import Switch from '@repo/ui/components/Switch/Switch';
 ```
 
 ## Development

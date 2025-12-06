@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Button from '@ds-starter/ui/components/Button/Button';
+import Button from '@repo/ui/components/Button/Button';
 
 const THEMES = ['dark', 'light'];
 const DEFAULT_THEME = 'dark';

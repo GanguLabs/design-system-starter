@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import IconX from '@ds-starter/icons/lib/IconX';
-import Button from '@ds-starter/ui/components/Button/Button';
+import Button from '@repo/ui/components/Button/Button';
 
 import styles from './about.module.css';
 
@@ -92,10 +92,10 @@ const About = () => {
 						</li>
 						<li>
 							<a
-								href="https://www.npmjs.com/package/@ds-starter/ui"
-								title="@ds-starter/ui"
+								href="https://www.npmjs.com/package/@repo/ui"
+								title="@repo/ui"
 							>
-								@ds-starter/ui
+								@repo/ui
 							</a>
 						</li>
 						<li>

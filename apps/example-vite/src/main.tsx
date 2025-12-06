@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
-import '@ds-starter/ui/css/styles.css';
+import '@repo/ui/css/styles.css';
 
 import './index.css';
 

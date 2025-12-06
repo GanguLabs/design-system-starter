@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {
 		"@ds-starter/tsconfig": "workspace:*",
-		"@ds-starter/ui": "workspace:*",
+		"@repo/ui": "workspace:*",
 		"@types/node": "^17.0.12",
 		"@types/react": "^18.0.22",
 		"@types/react-dom": "^18.0.7",

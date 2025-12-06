@@ -1,4 +1,4 @@
-# @ds-starter/ui
+# @repo/ui
 
 ## 0.2.0
 

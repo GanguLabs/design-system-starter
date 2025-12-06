@@ -11,7 +11,7 @@ Current example app is the simple demonstration of real-life usage of Design Sys
 It implements the following dependencies:
 - [@ds-starter/fonts](/packages/dss-fonts/) - Fonts
 - [@ds-starter/icons](/packages/dss-icons/) - Iconography (tree-shakeable)
-- [@ds-starter/ui](/packages/dss-ui/) - Core UI library (tree-shakeable)
+- [@repo/ui](/packages/dss-ui/) - Core UI library (tree-shakeable)
 
 and the following configs:
 - [@ds-starter/tsconfig](/config/tsconfig/)

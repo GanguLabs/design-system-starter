@@ -10,7 +10,7 @@
 
 ## Overview
 
-Icons is an optional package and naturally is the dependency for `@ds-starter/ui`.
+Icons is an optional package and naturally is the dependency for `@repo/ui`.
 
 ## Installation
 

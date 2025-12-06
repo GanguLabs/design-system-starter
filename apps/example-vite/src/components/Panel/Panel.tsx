@@ -4,7 +4,7 @@ import IconArrowRight from '@ds-starter/icons/lib/IconArrowRight';
 import IconArrowLeftSrc from '@ds-starter/icons/svg/arrow-left.svg';
 import IconArrowRightSrc from '@ds-starter/icons/svg/arrow-right.svg';
 
-import Button from '@ds-starter/ui/components/Button/Button';
+import Button from '@repo/ui/components/Button/Button';
 
 import styles from './panel.module.css';
 
