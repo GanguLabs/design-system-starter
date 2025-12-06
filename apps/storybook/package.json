@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"@ds-starter/fonts": "workspace:*",
-		"@ds-starter/tokens": "workspace:*",
+		"@repo/tokens": "workspace:*",
 		"@repo/ui": "workspace:*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"

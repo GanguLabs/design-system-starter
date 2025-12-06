@@ -1,4 +1,4 @@
-import { tokens } from '@ds-starter/tokens';
+import { tokens } from '@repo/tokens';
 
 const fontSize = { ...tokens.fontSize };
 type FontSize = typeof fontSize;

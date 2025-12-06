@@ -10,7 +10,7 @@
 
 - Updated dependencies [1fd92bd]
   - @ds-starter/fonts@0.2.0
-  - @ds-starter/tokens@0.2.0
+  - @repo/tokens@0.2.0
   - @repo/ui@0.2.0
 
 ## 0.1.0
@@ -25,7 +25,7 @@
 - Updated dependencies [05a4d78]
 - Updated dependencies [5ae783e]
   - @ds-starter/fonts@0.1.0
-  - @ds-starter/tokens@0.1.0
+  - @repo/tokens@0.1.0
   - @repo/ui@0.1.0
 
 ## 0.0.1
@@ -35,5 +35,5 @@
 - changelog init
 - Updated dependencies
   - @ds-starter/fonts@0.0.1
-  - @ds-starter/tokens@0.0.1
+  - @repo/tokens@0.0.1
   - @repo/ui@0.0.1

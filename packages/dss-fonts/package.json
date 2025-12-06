@@ -34,7 +34,7 @@
 		"build": "vite build && tsc --project tsconfig.build.json"
 	},
 	"devDependencies": {
-		"@ds-starter/tokens": "workspace:*",
+		"@repo/tokens": "workspace:*",
 		"@ds-starter/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@types/react": "^18.2.74",

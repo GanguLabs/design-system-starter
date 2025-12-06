@@ -1,4 +1,4 @@
-import { tokens } from '@ds-starter/tokens';
+import { tokens } from '@repo/tokens';
 
 const theme = {
 	...tokens,
@@ -7,3 +7,4 @@ const theme = {
 };
 
 export { theme };
+

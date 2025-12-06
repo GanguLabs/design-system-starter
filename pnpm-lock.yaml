@@ -47,7 +47,7 @@ importers:
       '@ds-starter/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
       '@nanostores/react':
@@ -215,7 +215,7 @@ importers:
       '@ds-starter/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
       '@repo/ui':
@@ -300,7 +300,7 @@ importers:
       '@ds-starter/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
       '@repo/styles':
@@ -361,7 +361,7 @@ importers:
 
   packages/dss-fonts:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
       '@ds-starter/tsconfig':
@@ -388,7 +388,7 @@ importers:
 
   packages/dss-icons:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
       '@ds-starter/tsconfig':
@@ -455,7 +455,7 @@ importers:
 
   packages/dss-ui:
     dependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
       '@vanilla-extract/css':
@@ -519,7 +519,7 @@ importers:
 
   packages/styles:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
       '@ds-starter/tsconfig':

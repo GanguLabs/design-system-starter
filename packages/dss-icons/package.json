@@ -40,7 +40,7 @@
 		"build": "pnpm gen && pnpm build:icons"
 	},
 	"devDependencies": {
-		"@ds-starter/tokens": "workspace:*",
+		"@repo/tokens": "workspace:*",
 		"@ds-starter/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@svgr/core": "^8.1.0",

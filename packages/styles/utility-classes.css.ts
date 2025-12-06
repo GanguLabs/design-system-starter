@@ -1,4 +1,4 @@
-import { tokens } from '@ds-starter/tokens';
+import { tokens } from '@repo/tokens';
 import { style } from '@vanilla-extract/css';
 
 // #region Padding

@@ -1,6 +1,6 @@
 'use client';
 
-import { tokensDark, tokensLight } from '@ds-starter/tokens';
+import { tokensDark, tokensLight } from '@repo/tokens';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
