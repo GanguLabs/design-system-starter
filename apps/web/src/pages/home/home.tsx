@@ -24,7 +24,7 @@ export default function Home() {
 				<div className={clsx(animatedLogo, mAuto)}>Animated logo</div>
 				<div>
 					<div>
-						<big aria-hidden="true" className={text2xl}>
+						<big aria-hidden="true" tabIndex={-1} className={text2xl}>
 							👋
 						</big>
 						<p className={dInline}>Hi, I am</p>
