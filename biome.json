@@ -4,7 +4,7 @@
 		"ignore": ["dist"]
 	},
 	"organizeImports": {
-		"enabled": false
+		"enabled": true
 	},
 	"linter": {
 		"enabled": true,
@@ -21,7 +21,7 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "space",
+		"indentStyle": "tab",
 		"indentWidth": 2,
 		"lineWidth": 80,
 		"formatWithErrors": true
