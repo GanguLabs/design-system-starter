@@ -21,7 +21,7 @@ export default function Home() {
 					initialInView={false}
 					className={'m-auto animatedLogo'}
 				/> */}
-				<div className={clsx(animatedLogo, mAuto)}>Animated logo</div>
+				<p className={clsx(animatedLogo, mAuto)}>Animated logo</p>
 				<div>
 					<div>
 						<big aria-hidden="true" tabIndex={-1} className={text2xl}>
