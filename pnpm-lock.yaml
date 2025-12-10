@@ -43,15 +43,15 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
+      '@nanostores/react':
+        specifier: ^0.7.2
+        version: 0.7.2(nanostores@0.10.3)(react@18.2.0)
       '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
       '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
-      '@nanostores/react':
-        specifier: ^0.7.2
-        version: 0.7.2(nanostores@0.10.3)(react@18.2.0)
       astro:
         specifier: ^4.12.2
         version: 4.12.2(@types/node@20.10.0)(sass@1.94.2)(terser@5.44.0)(typescript@5.5.4)
@@ -168,6 +168,9 @@ importers:
       '@repo/styles':
         specifier: workspace:*
         version: link:../../packages/styles
+      '@repo/tokens':
+        specifier: workspace:*
+        version: link:../../packages/dss-tokens
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
@@ -180,6 +183,9 @@ importers:
       next:
         specifier: 16.0.7
         version: 16.0.7(@babel/core@7.24.9)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2)
+      next-themes:
+        specifier: ^0.4.6
+        version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -190,6 +196,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.2.0
         version: 2.2.0
+      '@repo/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^20
         version: 20.10.0
@@ -233,12 +242,12 @@ importers:
       '@axe-core/playwright':
         specifier: ^4.9.0
         version: 4.9.0(playwright-core@1.43.0)
-      '@repo/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       '@playwright/test':
         specifier: ^1.43.0
         version: 1.43.0
+      '@repo/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@storybook/addon-a11y':
         specifier: ^8.2.4
         version: 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.7)))
@@ -302,12 +311,12 @@ importers:
       '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@repo/tokens':
-        specifier: workspace:*
-        version: link:../../packages/dss-tokens
       '@repo/styles':
         specifier: workspace:*
         version: link:../../packages/styles
+      '@repo/tokens':
+        specifier: workspace:*
+        version: link:../../packages/dss-tokens
       '@vanilla-extract/css':
         specifier: ^1.12.0
         version: 1.15.3
@@ -24578,6 +24587,11 @@ snapshots:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+
+  next-themes@0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   next@14.2.32(@babel/core@7.24.9)(@playwright/test@1.43.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.94.2):
     dependencies:
