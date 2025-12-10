@@ -1,3 +1,4 @@
+import '@repo/ui/css/styles.css';
 import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans, Geist, Geist_Mono } from 'next/font/google';
 import { siteConfig } from '../../config/site';
