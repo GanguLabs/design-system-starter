@@ -42,7 +42,7 @@ Make sure to update that when changing themes settings.
 ### Customization
 
 There are two similar configurations, responsible for component props table output and story controls.  
-As current example library (`@ds-starter/ui`) depends on `react-aria` as the basis for custom UI library,  
+As current example library (`@repo/ui`) depends on `react-aria` as the basis for custom UI library,  
 there are some properties that are superfluous or redundant for the documentation purposes and can be safely hidden.
 
 Extra controls ([excludedControls](./.storybook/config/excludedControls.ts)) can be tuned and hidden in the story controls panel,  

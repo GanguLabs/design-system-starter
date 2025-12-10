@@ -18,15 +18,15 @@
 		"test": "pnpm test:a11y && pnpm test:vrt"
 	},
 	"dependencies": {
-		"@ds-starter/fonts": "workspace:*",
-		"@ds-starter/tokens": "workspace:*",
-		"@ds-starter/ui": "workspace:*",
+		"@repo/fonts": "workspace:*",
+		"@repo/tokens": "workspace:*",
+		"@repo/ui": "workspace:*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.9.0",
-		"@ds-starter/tsconfig": "workspace:*",
+		"@repo/tsconfig": "workspace:*",
 		"@playwright/test": "^1.43.0",
 		"@storybook/addon-a11y": "^8.2.4",
 		"@storybook/addon-essentials": "^8.2.4",

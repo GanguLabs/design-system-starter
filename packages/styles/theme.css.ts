@@ -1,4 +1,4 @@
-import { tokens, tokensDark, tokensLight } from '@ds-starter/tokens';
+import { tokens, tokensDark, tokensLight } from '@repo/tokens';
 import {
 	createGlobalTheme,
 	createTheme,

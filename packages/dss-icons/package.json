@@ -1,5 +1,5 @@
 {
-	"name": "@ds-starter/icons",
+	"name": "@repo/icons",
 	"version": "0.2.0",
 	"author": "Evgeny Khoroshilov (https://github.com/XOP)",
 	"license": "MIT",
@@ -40,8 +40,8 @@
 		"build": "pnpm gen && pnpm build:icons"
 	},
 	"devDependencies": {
-		"@ds-starter/tokens": "workspace:*",
-		"@ds-starter/tsconfig": "workspace:*",
+		"@repo/tokens": "workspace:*",
+		"@repo/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@svgr/core": "^8.1.0",
 		"@svgr/plugin-jsx": "^8.1.0",

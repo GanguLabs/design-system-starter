@@ -1,5 +1,5 @@
 {
-	"name": "@ds-starter/fonts",
+	"name": "@repo/fonts",
 	"version": "0.2.0",
 	"author": "Evgeny Khoroshilov (https://github.com/XOP)",
 	"license": "MIT",
@@ -34,8 +34,8 @@
 		"build": "vite build && tsc --project tsconfig.build.json"
 	},
 	"devDependencies": {
-		"@ds-starter/tokens": "workspace:*",
-		"@ds-starter/tsconfig": "workspace:*",
+		"@repo/tokens": "workspace:*",
+		"@repo/tsconfig": "workspace:*",
 		"@storybook/blocks": "^8.2.4",
 		"@types/react": "^18.2.74",
 		"@vitejs/plugin-react": "^4.2.0",

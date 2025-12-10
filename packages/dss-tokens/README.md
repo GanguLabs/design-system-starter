@@ -1,6 +1,6 @@
 # DSS Tokens @ Design System Starter Template
 
-> **@ds-starter/tokens** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
+> **@repo/tokens** is the part of the [Design System Starter (DSS) Template](https://github.com/XOP/design-system-starter)  
 > The package is created for demo purposes and is not intended for production usage  
 > See it in action:
 >
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Design tokens package is the core dependency for `@ds-starter/ui`  
+Design tokens package is the core dependency for `@repo/ui`  
 and very important for consistent design in the apps.
 
 Design tokens are available in 2 formats - CSS custom properties (variables) and JS objects.
@@ -30,7 +30,7 @@ Palette is generated with [Unicornix](https://www.npmjs.com/package/unicornix), 
 ## Installation
 
 ```sh
-npm i @ds-starter/tokens
+npm i @repo/tokens
 ```
 
 ## Usage
@@ -40,7 +40,7 @@ As mentioned, there are different scenarios of how tokens can be utilized.
 ### CSS
 
 ```css
-@import '@ds-starter/tokens/css/tokens.css';
+@import '@repo/tokens/css/tokens.css';
 
 /* ... */
 
@@ -56,10 +56,10 @@ body {
 > Note that CSS references only apply to colors.
 
 ```tsx
-import { tokens } from '@ds-starter/tokens';
+import { tokens } from '@repo/tokens';
 
 // note, this import can be alternatively done via CSS
-import '@ds-starter/tokens/css/tokens.css';
+import '@repo/tokens/css/tokens.css';
 
 // ...
 
@@ -76,7 +76,7 @@ the only difference is named import.
 There are 2 themes exported - **light** and **dark**.
 
 ```tsx
-import { tokensLight as tokens } from '@ds-starter/tokens';
+import { tokensLight as tokens } from '@repo/tokens';
 
 // ...
 

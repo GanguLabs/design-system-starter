@@ -1,4 +1,4 @@
-import { tokensDark, tokensLight } from '@ds-starter/tokens';
+import { tokensDark, tokensLight } from '@repo/tokens';
 
 export const backgrounds = {
 	default: 'dark',

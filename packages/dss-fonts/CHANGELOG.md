@@ -1,4 +1,4 @@
-# @ds-starter/fonts
+# @repo/fonts
 
 ## 0.2.0
 

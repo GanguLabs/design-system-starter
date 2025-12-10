@@ -44,10 +44,10 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
       '@nanostores/react':
@@ -108,13 +108,13 @@ importers:
 
   apps/example-vite:
     dependencies:
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/icons':
+      '@repo/icons':
         specifier: workspace:*
         version: link:../../packages/dss-icons
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       '@tsparticles/engine':
@@ -145,7 +145,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
     devDependencies:
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@types/react':
@@ -212,13 +212,13 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       react:
@@ -231,7 +231,7 @@ importers:
       '@axe-core/playwright':
         specifier: ^4.9.0
         version: 4.9.0(playwright-core@1.43.0)
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@playwright/test':
@@ -297,10 +297,10 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/fonts':
+      '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/dss-fonts
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../../packages/dss-tokens
       '@repo/styles':
@@ -325,10 +325,10 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
-      '@ds-starter/ui':
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/dss-ui
       '@types/node':
@@ -361,10 +361,10 @@ importers:
 
   packages/dss-fonts:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -388,10 +388,10 @@ importers:
 
   packages/dss-icons:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -434,7 +434,7 @@ importers:
       '@babel/core':
         specifier: ^7.24.9
         version: 7.24.9
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/blocks':
@@ -455,7 +455,7 @@ importers:
 
   packages/dss-ui:
     dependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
       '@vanilla-extract/css':
@@ -474,7 +474,7 @@ importers:
       '@csstools/normalize.css':
         specifier: ^12.0.0
         version: 12.0.0
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@storybook/react':
@@ -519,10 +519,10 @@ importers:
 
   packages/styles:
     devDependencies:
-      '@ds-starter/tokens':
+      '@repo/tokens':
         specifier: workspace:*
         version: link:../dss-tokens
-      '@ds-starter/tsconfig':
+      '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/react':

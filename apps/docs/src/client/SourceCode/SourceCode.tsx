@@ -1,5 +1,5 @@
-import { tokens } from '@ds-starter/tokens';
 import { useStore } from '@nanostores/react';
+import { tokens } from '@repo/tokens';
 import clsx from 'clsx';
 import jsxToString from 'react-element-to-jsx-string';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';

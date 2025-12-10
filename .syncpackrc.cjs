@@ -6,14 +6,14 @@ module.exports = {
     {
       label: 'Pin local config packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@ds-starter/tsconfig'],
+      dependencies: ['@repo/tsconfig'],
       dependencyTypes: ['dev'],
       pinVersion: 'workspace:*',
     },
     {
       label: 'Pin unpublished local packages to any version (*)',
       packages: ['**'],
-      dependencies: ['@ds-starter/fonts', '@ds-starter/icons', '@ds-starter/tokens', '@ds-starter/ui'],
+      dependencies: ['@repo/fonts', '@repo/icons', '@repo/tokens', '@repo/ui'],
       dependencyTypes: ['dev', 'prod'],
       pinVersion: 'workspace:*',
     },

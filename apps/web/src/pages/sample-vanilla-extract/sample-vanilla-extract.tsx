@@ -1,8 +1,8 @@
 'use client';
 
-import type { ButtonProps as ButtonUiProps } from '@ds-starter/ui/components/Button/Button';
-import ButtonUi from '@ds-starter/ui/components/Button/Button';
 import { button as buttonStyles } from '@repo/styles/button.css';
+import type { ButtonProps as ButtonUiProps } from '@repo/ui/components/Button/Button';
+import ButtonUi from '@repo/ui/components/Button/Button';
 
 import {
 	actions,

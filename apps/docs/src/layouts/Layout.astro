@@ -1,7 +1,7 @@
 ---
 import type { CollectionKey } from 'astro:content';
 
-import { GoogleFonts } from '@ds-starter/fonts';
+import { GoogleFonts } from '@repo/fonts';
 
 import { LS_KEY_META, LS_PREFIX } from '../shared/globals';
 
@@ -20,7 +20,7 @@ const isIndex = Astro.url.pathname === '/';
 const showMenu = showNav && !isIndex;
 
 import '@csstools/normalize.css/normalize.css';
-import '@ds-starter/tokens/css/tokens.css';
+import '@repo/tokens/css/tokens.css';
 
 import '../assets/css/index.css';
 ---
@@ -153,7 +153,7 @@ import '../assets/css/index.css';
 
 		<script>
 			import { EXAMPLE_STATE } from '../shared/globals';
-			import { $exampleState } from '../store/store';
+import { $exampleState } from '../store/store';
 
 			if (location.hash) {
 				const hash = location.hash;

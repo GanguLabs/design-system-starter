@@ -15,7 +15,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: './src/index.ts',
-			name: '@ds-starter/ui',
+			name: '@repo/ui',
 			fileName: (format, alias) => {
 				const extFormat = extensionForFormat(format);
 

@@ -1,4 +1,4 @@
-# @ds-starter/ui
+# @repo/ui
 
 ## 0.2.0
 
@@ -9,7 +9,7 @@
 ### Patch Changes
 
 - Updated dependencies [1fd92bd]
-  - @ds-starter/tokens@0.2.0
+  - @repo/tokens@0.2.0
 
 ## 0.1.0
 
@@ -22,7 +22,7 @@
 - 05a4d78: release preparations
 - Updated dependencies [05a4d78]
 - Updated dependencies [5ae783e]
-  - @ds-starter/tokens@0.1.0
+  - @repo/tokens@0.1.0
 
 ## 0.0.2
 
@@ -36,4 +36,4 @@
 
 - changelog init
 - Updated dependencies
-  - @ds-starter/tokens@0.0.1
+  - @repo/tokens@0.0.1

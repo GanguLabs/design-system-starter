@@ -24,7 +24,7 @@ import { viewport } from './params/viewport';
 import { excludedControls } from './config/excludedControls';
 
 // fonts as base64
-import '@ds-starter/fonts/css/fonts.css';
+import '@repo/fonts/css/fonts.css';
 
 // ui core styles
 import '../../../packages/dss-ui/src/assets/styles/index.css';

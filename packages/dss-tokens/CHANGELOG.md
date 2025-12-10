@@ -1,4 +1,4 @@
-# @ds-starter/tokens
+# @repo/tokens
 
 ## 0.2.0
 
