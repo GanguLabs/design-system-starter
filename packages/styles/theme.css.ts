@@ -15,7 +15,7 @@ const root = createGlobalTheme(':root', {
 		large: tokens.space.large,
 	},
 	fonts: {
-		heading: 'Georgia, Times, Times New Roman, serif',
+		heading: 'Inter, Georgia, Times, Times New Roman, serif',
 		body: 'system-ui',
 	},
 });
