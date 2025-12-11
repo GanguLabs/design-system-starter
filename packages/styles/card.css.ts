@@ -3,7 +3,7 @@ import { vars } from './theme.css';
 
 export const container = style({
 	borderRadius: '.25rem',
-	boxShadow: `0 10px 15px -3px ${vars.color.background},0 4px 6px -2px rgba(0,0,0,.05)`,
+	boxShadow: `0 10px 15px -3px ${vars.colors.background},0 4px 6px -2px rgba(0,0,0,.05)`,
 	overflow: 'hidden',
 	boxSizing: 'border-box',
 	border: '0 solid #e2e8f0',

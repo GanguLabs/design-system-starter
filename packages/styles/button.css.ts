@@ -3,7 +3,7 @@ import { vars } from './theme.css';
 
 export const button = style({
 	borderRadius: '0.375rem',
-	backgroundColor: vars.color.accent,
+	backgroundColor: vars.colors.accent,
 	paddingRight: '0.875rem',
 	paddingLeft: '0.875rem',
 	paddingTop: '0.625rem',
