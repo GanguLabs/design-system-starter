@@ -32,6 +32,19 @@ globalStyle('html', {
 	// colorScheme: 'dark',
 	// WebkitFontSmoothing: 'antialiased',
 	// MozOsxFontSmoothing: 'grayscale',
+
+	'@media': {
+		// 'screen and (min-width: 768px)': {
+		// 	margin: '20px', // Global style for screens 768px and wider
+		// },
+		'(prefers-color-scheme: dark)': {
+			colorScheme: 'dark',
+			// vars: {
+			// //  ref: https://vanilla-extract.style/documentation/api/create-var/
+			// 	[accentVar]: 'lightblue',
+			// },
+		},
+	},
 });
 
 globalStyle('body', {
