@@ -1,5 +1,5 @@
 import HtmlMain from '@/components/html-main/html-main';
-import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
+import ThemeSwitcher from '@/components/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
