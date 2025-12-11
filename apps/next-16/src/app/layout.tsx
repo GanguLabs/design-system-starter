@@ -1,15 +1,16 @@
 import HtmlMain from '@/components/html-main/html-main';
 import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
-import '@repo/styles/globals.css';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
-import '@repo/tokens/css/tokens.css';
-import '@repo/ui/css/styles.css';
 import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans, Geist, Geist_Mono } from 'next/font/google';
 import Image from 'next/image';
 import { siteConfig } from '../../config/site';
+
+import '@repo/styles/globals.css';
+import '@repo/tokens/css/tokens.css';
+import '@repo/ui/css/styles.css';
 import './globals.css';
 
 const geistSans = Geist({
@@ -68,7 +69,6 @@ export const viewport: Viewport = {
 	// viewport-fit: "cover" // this is default to cover in nextjs
 };
 
-
 export default function RootLayout({
 	children,
 }: {
@@ -108,4 +108,3 @@ export default function RootLayout({
 		</html>
 	);
 }
-
