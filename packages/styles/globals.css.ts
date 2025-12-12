@@ -49,7 +49,7 @@ globalStyle('html', {
 
 globalStyle('body', {
 	fontFamily:
-		'var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+		'Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
 	minHeight: '100vh',
 	// maxWidth: '500px',
 	margin: '0px auto',

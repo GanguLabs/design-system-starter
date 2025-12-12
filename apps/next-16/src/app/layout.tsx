@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/providers/theme-provider';
 import { container } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
 import type { Metadata, Viewport } from 'next';
-import { Inter as FontSans, Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter as InterFontSans } from 'next/font/google';
 import Image from 'next/image';
 import { siteConfig } from '../../config/site';
 
@@ -23,9 +23,14 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export const fontSans = FontSans({
+export const interFont = InterFontSans({
 	subsets: ['latin'],
-	variable: '--font-sans',
+	display: 'swap',
+
+	/**
+	 * use fontSans.variable instead of fontSans.className in HTML element class to generate css variable defined above
+	 */
+	variable: '--inter-font-sans',
 });
 
 export const metadata: Metadata = {
@@ -75,7 +80,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={interFont.className}>
 			<body>
 				<ThemeProvider
 					// ref: https://www.npmjs.com/package/next-themes
