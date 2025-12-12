@@ -2,6 +2,26 @@ import { globalStyle } from '@vanilla-extract/css';
 import { vars } from './theme.css';
 
 globalStyle('html', {
+	'@media': {
+		// 'screen and (min-width: 768px)': {
+		// 	margin: '20px', // Global style for screens 768px and wider
+		// },
+		'(prefers-color-scheme: dark)': {
+			colorScheme: 'dark',
+			// vars: {
+			// //  ref: https://vanilla-extract.style/documentation/api/create-var/
+			// 	[accentVar]: 'lightblue',
+			// },
+		},
+	},
+});
+
+globalStyle('html, body', {
+	maxWidth: '100vw',
+	overflowX: 'hidden',
+});
+
+globalStyle('html', {
 	// scrollBehavior: 'smooth', // #TODO: investigate - somehow smooth scroll-behavior is automatically added
 	scrollPaddingTop: '4rem',
 	// background: vars.colors.background,
@@ -23,6 +43,17 @@ globalStyle('body', {
 	// marginBottom: '2rem',
 	// background: `linear-gradient(${vars.color.background}, #000)`,
 	background: Object.values(vars.colors.background),
+});
+
+globalStyle('*', {
+	boxSizing: 'border-box',
+	padding: 0,
+	margin: 0,
+});
+
+globalStyle('a', {
+	color: 'inherit',
+	textDecoration: 'none',
 });
 
 globalStyle('p', {
