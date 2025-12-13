@@ -1,3 +1,4 @@
+import { vars } from '@repo/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const grid = style({
@@ -7,11 +8,15 @@ export const grid = style({
 });
 
 export const hero = style({
-	display: 'grid',
+	// gridColumn: 2,
+	gridColumn: '1/-1',
+	margin: 'auto',
+
+	display: 'flex',
 	// gridColumn: '1/-1' /* full width */,
 	/* height: 400px; */
-	gridTemplateColumns: '1fr 1fr minmax(auto, 700px) 1fr',
-	columnGap: '16px',
+	// gridTemplateColumns: '1fr 1fr minmax(auto, 700px) 1fr',
+	columnGap: vars.space.medium,
 	// flexWrap: 'wrap',
 	position: 'relative',
 	alignItems: 'center',
