@@ -8,6 +8,7 @@ import { Geist, Geist_Mono, Inter as InterFontSans } from 'next/font/google';
 import Image from 'next/image';
 import { siteConfig } from '../../config/site';
 
+import '@csstools/normalize.css';
 import '@repo/styles/globals.css';
 import '@repo/tokens/css/tokens.css';
 import '@repo/ui/css/styles.css';
