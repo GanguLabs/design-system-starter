@@ -1,4 +1,8 @@
-# Basic Style Dictionary
+# AG Styled Dictionary
+
+Reference: https://www.alwaystwisted.com/articles/a-design-tokens-workflow-part-1
+
+## Basic Style Dictionary
 
 This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
 
