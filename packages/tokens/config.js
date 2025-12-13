@@ -13,6 +13,19 @@ const myStyleDictionary = new StyleDictionary({
 				},
 			],
 		},
+		scss: {
+			transformGroup: 'scss',
+			buildPath: 'build/scss/',
+			files: [
+				{
+					destination: '_variables.scss',
+					format: 'scss/map-deep',
+					options: {
+						mapName: 'ag-tokens',
+					},
+				},
+			],
+		},
 		android: {
 			transformGroup: 'android',
 			buildPath: 'build/android/',
