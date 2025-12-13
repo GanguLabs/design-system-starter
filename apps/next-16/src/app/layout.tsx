@@ -90,7 +90,7 @@ export default function RootLayout({
 					// forcedTheme="dark"
 					enableSystem
 					// enableColorScheme
-					disableTransitionOnChange // enabling this since transition is staggered
+					// disableTransitionOnChange // enabling this since transition is staggered
 					// themes={['light', 'dark']}
 					// Note! When you pass themes, the default set of themes ("light" and "dark") are overridden. Make sure you include those if you still want your light and dark themes:
 					// ref: https://www.npmjs.com/package/next-themes#more-than-light-and-dark-mode
