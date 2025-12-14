@@ -26,6 +26,34 @@ const myStyleDictionary = new StyleDictionary({
 				},
 			],
 		},
+		// js: {
+		// 	transformGroup: 'js',
+		// 	buildPath: 'build/js/',
+		// 	files: [
+		// 		{
+		// 			format: 'javascript/esm',
+		// 			destination: 'colors.js',
+		// 			options: {
+		// 				minify: true,
+		// 			},
+		// 		},
+		// 	],
+		// },
+		ts: {
+			transformGroup: 'js',
+			buildPath: 'build/ts/',
+			files: [
+				{
+					format: 'javascript/module',
+					destination: 'colors.js',
+				},
+				{
+					format: 'typescript/module-declarations',
+					destination: 'colors.d.ts',
+				},
+			],
+		},
+
 		// android: {
 		// 	transformGroup: 'android',
 		// 	buildPath: 'build/android/',
