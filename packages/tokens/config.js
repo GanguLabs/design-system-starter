@@ -2,6 +2,11 @@ import StyleDictionary from 'style-dictionary';
 
 const myStyleDictionary = new StyleDictionary({
 	source: ['tokens/**/*.json'],
+	hooks: {
+		transformGroups: {
+			css: ['attribute/cti', 'color/hsl', 'name/kebab', 'size/pxToRem'],
+		},
+	},
 	platforms: {
 		css: {
 			transformGroup: 'css',
