@@ -1,10 +1,35 @@
+import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 
+register(StyleDictionary);
 const myStyleDictionary = new StyleDictionary({
 	source: ['tokens/**/*.json'],
+	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	hooks: {
 		transformGroups: {
-			css: ['attribute/cti', 'color/hsl', 'name/kebab', 'size/pxToRem'],
+			css: [
+				'ts/resolveMath', // (Optional) Good for math in other tokens
+				'ts/color/modifiers', // <--- CRITICAL: THIS is what handles lighten/darken, This reads your $extensions.studio.tokens.modify
+				'attribute/cti',
+				'color/hsl', // (Optional) If you want final output in HSL
+				'name/kebab',
+				'size/pxToRem',
+			],
+			// Create a custom group for SCSS to include the modifier
+			scss: [
+				'ts/resolveMath',
+				'ts/color/modifiers', // <--- THIS is what handles lighten/darken
+				'attribute/cti',
+				'name/kebab',
+			],
+			// Create a custom group for JS/TS to include the modifier
+			js: [
+				'ts/resolveMath',
+				'ts/color/modifiers', // <--- THIS is what handles lighten/darken
+				'attribute/cti',
+				'color/hsl', // (Optional) If you want final output in HSL
+				'name/pascal',
+			],
 		},
 	},
 	platforms: {
