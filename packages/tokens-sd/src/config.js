@@ -3,7 +3,7 @@ import StyleDictionary from 'style-dictionary';
 
 register(StyleDictionary);
 const myStyleDictionary = new StyleDictionary({
-	source: ['tokens/**/*.json'],
+	source: ['src/tokens/**/*.json'],
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	hooks: {
 		transformGroups: {
