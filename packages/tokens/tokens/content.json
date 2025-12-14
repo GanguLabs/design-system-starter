@@ -1,0 +1,21 @@
+{
+	"content": {
+		"$type": "dimension",
+		"xs": { "$value": "0.64rem" },
+		"s": { "$value": "{dimensions.3}" },
+		"n": { "$value": "{dimensions.4}" },
+		"l": { "$value": "1.25rem" },
+		"xl": { "$value": "1.563rem" },
+		"xxl": { "$value": "1.953rem" },
+		"xxxl": { "$value": "2.441rem" },
+		"icons": {
+			"xs": { "$value": "{dimensions.3}" },
+			"s": { "$value": "{dimensions.4}" },
+			"n": { "$value": "1.25rem" },
+			"l": { "$value": "1.563rem" },
+			"xl": { "$value": "1.953rem" },
+			"xxl": { "$value": "2.441rem" },
+			"xxxl": { "$value": "3.051rem" }
+		}
+	}
+}
