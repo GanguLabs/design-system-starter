@@ -35,6 +35,35 @@
 			"900": {
 				"$value": "#7b341e"
 			}
+		},
+		"red": {
+			"100": {
+				"$value": "{colors.red.500}"
+			},
+			"200": {
+				"$value": "{colors.red.500}"
+			},
+			"300": {
+				"$value": "{colors.red.500}"
+			},
+			"400": {
+				"$value": "{colors.red.500}"
+			},
+			"500": {
+				"$value": "#f56565"
+			},
+			"600": {
+				"$value": "{colors.red.500}"
+			},
+			"700": {
+				"$value": "{colors.red.500}"
+			},
+			"800": {
+				"$value": "{colors.red.500}"
+			},
+			"900": {
+				"$value": "{colors.red.500}"
+			}
 		}
 	}
 }
