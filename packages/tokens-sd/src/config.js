@@ -1,10 +1,22 @@
 import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
+import {
+	logBrokenReferenceLevels,
+	logVerbosityLevels,
+	logWarningLevels,
+} from 'style-dictionary/enums';
 
 register(StyleDictionary);
 const myStyleDictionary = new StyleDictionary({
 	source: ['src/tokens/**/*.json'],
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
+	log: {
+		warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
+		verbosity: logVerbosityLevels.default, // 'default' | 'silent' | 'verbose'
+		errors: {
+			brokenReferences: logBrokenReferenceLevels.throw, // 'throw' | 'console'
+		},
+	},
 	hooks: {
 		transformGroups: {
 			css: [
