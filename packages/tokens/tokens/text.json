@@ -7,6 +7,12 @@
 			},
 			"sans": {
 				"$value": "Open Sans, sans-serif"
+			},
+			"inter": {
+				"$value": "'Inter', 'Inter Fallback'"
+			},
+			"main": {
+				"$value": "{text.fonts.inter}, {text.fonts.sans}"
 			}
 		},
 		"sizes": {
@@ -32,12 +38,16 @@
 		},
 		"lineHeights": {
 			"$type": "number",
-			"normal": {
-				"$value": 1.2
-			},
 			"large": {
 				"$value": 1.8
-			}
+			},
+			"none": { "$value": 0 },
+			"reset": { "$value": 1 },
+			"tight": { "$value": 1.106 },
+			"snug": { "$value": 1.244 },
+			"normal": { "$value": 1.4 },
+			"relaxed": { "$value": 1.575 },
+			"loose": { "$value": 1.77 }
 		},
 		"typography": {
 			"$type": "typography",

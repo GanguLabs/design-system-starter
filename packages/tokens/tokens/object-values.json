@@ -24,7 +24,7 @@
 		"$type": "transition",
 		"emphasis": {
 			"$value": {
-				"duration": "{transitions.durations.medium}",
+				"duration": "{transitions.durations.regular}",
 				"delay": "{transitions.durations.instant}",
 				"timingFunction": "{transitions.easingFunctions.accelerate}"
 			}
@@ -51,13 +51,16 @@
 				"$value": "0ms"
 			},
 			"short": {
-				"$value": "100ms"
+				"$value": "173ms"
 			},
-			"medium": {
-				"$value": "300ms"
+			"regular": {
+				"$value": "245ms"
 			},
 			"long": {
-				"$value": "600ms"
+				"$value": "346ms"
+			},
+			"extra": {
+				"$value": "490ms"
 			}
 		}
 	},
