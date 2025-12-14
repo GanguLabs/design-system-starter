@@ -5,7 +5,7 @@
 	"type": "module",
 	"main": "config.js",
 	"scripts": {
-		"build": "node config.js"
+		"build": "style-dictionary build --config config.js"
 	},
 	"keywords": [],
 	"author": "",
