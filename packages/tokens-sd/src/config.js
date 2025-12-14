@@ -12,7 +12,7 @@ const myStyleDictionary = new StyleDictionary({
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
 		warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
-		verbosity: logVerbosityLevels.default, // 'default' | 'silent' | 'verbose'
+		verbosity: logVerbosityLevels.verbose, // 'default' | 'silent' | 'verbose'
 		errors: {
 			brokenReferences: logBrokenReferenceLevels.throw, // 'throw' | 'console'
 		},
