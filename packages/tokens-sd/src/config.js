@@ -1,4 +1,5 @@
 import { register } from '@tokens-studio/sd-transforms';
+import fs from 'node:fs';
 import StyleDictionary from 'style-dictionary';
 import {
 	logBrokenReferenceLevels,
@@ -7,8 +8,14 @@ import {
 } from 'style-dictionary/enums';
 
 register(StyleDictionary);
+
+const tokensFolder = 'src/tokens';
+const tokenFiles = fs
+	.readdirSync(tokensFolder)
+	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
+
 const myStyleDictionary = new StyleDictionary({
-	source: ['src/tokens/**/*.json'],
+	source: tokenFiles.map((file) => tokensFolder + '/' + file),
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
 		warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
