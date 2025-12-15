@@ -1,4 +1,5 @@
 {
+	"$schema": "https://designtokens.org/schema.json",
 	"text": {
 		"typography": {
 			"$type": "typography",

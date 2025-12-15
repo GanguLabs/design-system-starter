@@ -1,4 +1,5 @@
 {
+	"$schema": "https://designtokens.org/schema.json",
 	"text": {
 		"fonts": {
 			"$type": "fontFamily",
