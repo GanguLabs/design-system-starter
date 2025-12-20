@@ -17,7 +17,7 @@ const tokenFiles = fs
 	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
 
 const sd = new StyleDictionary({
-	source: tokenFiles.map((file) => tokensFolder + '/' + file),
+	source: ['src/tokens/**/*.json'],
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
 		warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
