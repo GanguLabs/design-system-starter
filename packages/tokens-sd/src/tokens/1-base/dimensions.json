@@ -1,5 +1,4 @@
 {
-	"$schema": "https://designtokens.org/schema.json",
 	"dimensions": {
 		"$type": "dimension",
 		"0": { "$value": "0px" },

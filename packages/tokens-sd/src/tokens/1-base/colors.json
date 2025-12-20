@@ -1,5 +1,4 @@
 {
-	"$schema": "https://designtokens.org/schema.json",
 	"colors": {
 		"$type": "color",
 		"black": { "$value": "#000000" },
