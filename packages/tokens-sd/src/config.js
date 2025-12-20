@@ -1,13 +1,15 @@
 import { register } from '@tokens-studio/sd-transforms';
 import fs from 'node:fs';
 import StyleDictionary from 'style-dictionary';
-import {
-	logBrokenReferenceLevels,
-	logVerbosityLevels,
-	logWarningLevels,
-} from 'style-dictionary/enums';
+// prettier-ignore
+import { formats, logBrokenReferenceLevels, logVerbosityLevels, logWarningLevels, transforms } from 'style-dictionary/enums';
 
 register(StyleDictionary);
+
+const tokensStudioTransforms = Object.freeze({
+	resolveMath: 'ts/resolveMath',
+	colorModifiers: 'ts/color/modifiers',
+});
 
 const tokensFolder = 'src/tokens';
 const tokenFiles = fs
@@ -27,27 +29,27 @@ const myStyleDictionary = new StyleDictionary({
 	hooks: {
 		transformGroups: {
 			css: [
-				'ts/resolveMath', // (Optional) Good for math in other tokens
-				'ts/color/modifiers', // <--- CRITICAL: THIS is what handles lighten/darken, This reads your $extensions.studio.tokens.modify
-				'attribute/cti',
-				'color/hsl', // (Optional) If you want final output in HSL
-				'name/kebab',
-				'size/pxToRem',
+				tokensStudioTransforms.resolveMath, // (Optional) Good for math in other tokens
+				tokensStudioTransforms.colorModifiers, // <--- CRITICAL: THIS is what handles lighten/darken, This reads your $extensions.studio.tokens.modify
+				transforms.attributeCti,
+				transforms.colorHsl, // (Optional) If you want final output in HSL
+				transforms.nameKebab,
+				transforms.sizePxToRem,
 			],
 			// Create a custom group for SCSS to include the modifier
 			scss: [
-				'ts/resolveMath',
-				'ts/color/modifiers', // <--- THIS is what handles lighten/darken
-				'attribute/cti',
-				'name/kebab',
+				tokensStudioTransforms.resolveMath,
+				tokensStudioTransforms.colorModifiers, // <--- THIS is what handles lighten/darken
+				transforms.attributeCti,
+				transforms.nameKebab,
 			],
 			// Create a custom group for JS/TS to include the modifier
 			js: [
-				'ts/resolveMath',
-				'ts/color/modifiers', // <--- THIS is what handles lighten/darken
-				'attribute/cti',
-				'color/hsl', // (Optional) If you want final output in HSL
-				'name/pascal',
+				tokensStudioTransforms.resolveMath,
+				tokensStudioTransforms.colorModifiers, // <--- THIS is what handles lighten/darken
+				transforms.attributeCti,
+				transforms.colorHsl, // (Optional) If you want final output in HSL
+				transforms.namePascal,
 			],
 		},
 	},
@@ -55,7 +57,7 @@ const myStyleDictionary = new StyleDictionary({
 		css: {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
-			files: [{ destination: '_variables.css', format: 'css/variables' }],
+			files: [{ destination: '_variables.css', format: formats.cssVariables }],
 		},
 		scss: {
 			transformGroup: 'scss',
@@ -63,7 +65,7 @@ const myStyleDictionary = new StyleDictionary({
 			files: [
 				{
 					destination: '_variables.scss',
-					format: 'scss/map-deep',
+					format: formats.scssMapDeep,
 					options: { mapName: 'ag-tokens' },
 				},
 			],
@@ -85,9 +87,9 @@ const myStyleDictionary = new StyleDictionary({
 			transformGroup: 'js',
 			buildPath: 'build/ts/',
 			files: [
-				{ format: 'javascript/module', destination: 'colors.js' },
+				{ format: formats.javascriptModule, destination: 'colors.js' },
 				{
-					format: 'typescript/module-declarations',
+					format: formats.typescriptModuleDeclarations,
 					destination: 'colors.d.ts',
 				},
 			],
