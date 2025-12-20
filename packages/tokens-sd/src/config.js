@@ -16,7 +16,7 @@ const tokenFiles = fs
 	.readdirSync(tokensFolder)
 	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
 
-const myStyleDictionary = new StyleDictionary({
+const sd = new StyleDictionary({
 	source: tokenFiles.map((file) => tokensFolder + '/' + file),
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
@@ -246,4 +246,17 @@ const myStyleDictionary = new StyleDictionary({
 		// },
 	},
 });
-await myStyleDictionary.buildAllPlatforms();
+
+/**
+ * Clean and Build All Platforms
+ * @param {StyleDictionary} sd The first number.
+ */
+async function cleanAndBuild(sd) {
+	console.log('Cleaning platforms...');
+	await sd.cleanAllPlatforms(); // Removes previous build files
+
+	console.log('Building platforms...');
+	await sd.buildAllPlatforms(); // Generates new files
+	console.log('Build complete!');
+}
+cleanAndBuild(sd);
