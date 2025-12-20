@@ -1,6 +1,16 @@
 {
   "version": "0.2.0",
   "configurations": [
+	{
+		"name": "Debug Style Dictionary",
+		"type": "node",
+		"request": "launch",
+		"program": "${workspaceFolder}/packages/tokens-sd/src/config.js",
+		"skipFiles": [
+			"<node_internals>/**"
+		],
+	},
+	
     {
       "name": "Next.js: debug server-side",
       "port": 9230,
