@@ -259,4 +259,4 @@ async function cleanAndBuild(sd) {
 	await sd.buildAllPlatforms(); // Generates new files
 	console.log('Build complete!');
 }
-cleanAndBuild(sd);
+await cleanAndBuild(sd);
