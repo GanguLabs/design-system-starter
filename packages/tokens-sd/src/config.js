@@ -55,12 +55,7 @@ const myStyleDictionary = new StyleDictionary({
 		css: {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
-			files: [
-				{
-					destination: '_variables.css',
-					format: 'css/variables',
-				},
-			],
+			files: [{ destination: '_variables.css', format: 'css/variables' }],
 		},
 		scss: {
 			transformGroup: 'scss',
@@ -69,9 +64,7 @@ const myStyleDictionary = new StyleDictionary({
 				{
 					destination: '_variables.scss',
 					format: 'scss/map-deep',
-					options: {
-						mapName: 'ag-tokens',
-					},
+					options: { mapName: 'ag-tokens' },
 				},
 			],
 		},
@@ -92,10 +85,7 @@ const myStyleDictionary = new StyleDictionary({
 			transformGroup: 'js',
 			buildPath: 'build/ts/',
 			files: [
-				{
-					format: 'javascript/module',
-					destination: 'colors.js',
-				},
+				{ format: 'javascript/module', destination: 'colors.js' },
 				{
 					format: 'typescript/module-declarations',
 					destination: 'colors.d.ts',

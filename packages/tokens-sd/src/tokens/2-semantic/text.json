@@ -3,45 +3,25 @@
 	"text": {
 		"fonts": {
 			"$type": "fontFamily",
-			"serif": {
-				"$value": "Times New Roman, serif"
-			},
-			"sans": {
-				"$value": "Open Sans, sans-serif"
-			},
-			"inter": {
-				"$value": "'Inter', 'Inter Fallback'"
-			},
-			"main": {
-				"$value": "{text.fonts.inter}, {text.fonts.sans}"
-			}
+			"serif": { "$value": "Times New Roman, serif" },
+			"sans": { "$value": "Open Sans, sans-serif" },
+			"inter": { "$value": "'Inter', 'Inter Fallback'" },
+			"main": { "$value": "{text.fonts.inter}, {text.fonts.sans}" }
 		},
 		"sizes": {
 			"$type": "fontSize",
-			"heading": {
-				"$value": "{dimensions.7}"
-			},
-			"body": {
-				"$value": "{dimensions.4}"
-			}
+			"heading": { "$value": "{dimensions.7}" },
+			"body": { "$value": "{dimensions.4}" }
 		},
 		"weights": {
 			"$type": "fontWeight",
-			"light": {
-				"$value": "thin"
-			},
-			"regular": {
-				"$value": "regular"
-			},
-			"bold": {
-				"$value": "extra-bold"
-			}
+			"light": { "$value": "thin" },
+			"regular": { "$value": "regular" },
+			"bold": { "$value": "extra-bold" }
 		},
 		"lineHeights": {
 			"$type": "number",
-			"large": {
-				"$value": 1.8
-			},
+			"large": { "$value": 1.8 },
 			"none": { "$value": 0 },
 			"reset": { "$value": 1 },
 			"tight": { "$value": 1.106 },

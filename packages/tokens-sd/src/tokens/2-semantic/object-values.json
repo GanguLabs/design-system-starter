@@ -39,30 +39,16 @@
 		},
 		"easingFunctions": {
 			"$type": "cubicBezier",
-			"accelerate": {
-				"$value": [0.5, 0, 1, 1]
-			},
-			"decelerate": {
-				"$value": [0, 0, 0.5, 1]
-			}
+			"accelerate": { "$value": [0.5, 0, 1, 1] },
+			"decelerate": { "$value": [0, 0, 0.5, 1] }
 		},
 		"durations": {
 			"$type": "duration",
-			"instant": {
-				"$value": "0ms"
-			},
-			"short": {
-				"$value": "173ms"
-			},
-			"regular": {
-				"$value": "245ms"
-			},
-			"long": {
-				"$value": "346ms"
-			},
-			"extra": {
-				"$value": "490ms"
-			}
+			"instant": { "$value": "0ms" },
+			"short": { "$value": "173ms" },
+			"regular": { "$value": "245ms" },
+			"long": { "$value": "346ms" },
+			"extra": { "$value": "490ms" }
 		}
 	},
 	"borders": {
@@ -83,14 +69,9 @@
 		},
 		"styles": {
 			"$type": "strokeStyle",
-			"solid": {
-				"$value": "solid"
-			},
+			"solid": { "$value": "solid" },
 			"dashed": {
-				"$value": {
-					"dashArray": ["0.5rem", "0.25rem"],
-					"lineCap": "round"
-				}
+				"$value": { "dashArray": ["0.5rem", "0.25rem"], "lineCap": "round" }
 			}
 		}
 	},
@@ -112,8 +93,6 @@
 				"blur": "{dimensions.4}"
 			}
 		},
-		"multi": {
-			"$value": ["{shadows.sm}", "{shadows.lg}"]
-		}
+		"multi": { "$value": ["{shadows.sm}", "{shadows.lg}"] }
 	}
 }
