@@ -1,0 +1,23 @@
+{
+	"z-index": {
+		"$type": "number",
+		"default": {
+			"$value": 1
+		},
+		"sticky": {
+			"$value": 100
+		},
+		"navigation": {
+			"$value": 200
+		},
+		"spinner": {
+			"$value": 300
+		},
+		"toast": {
+			"$value": 400
+		},
+		"modal": {
+			"$value": 500
+		}
+	}
+}
