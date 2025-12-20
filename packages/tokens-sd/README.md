@@ -1,6 +1,14 @@
-# AG Styled Dictionary
+# AG Design Tokens
 
-Reference: https://www.alwaystwisted.com/articles/a-design-tokens-workflow-part-1
+Reference:
+
+- Styled Dictionary
+  - https://www.alwaystwisted.com/articles/a-design-tokens-workflow-part-1
+
+- Naming & Organizing Tokens
+  - https://medium.com/design-bootcamp/design-tokens-2-0-the-ultimate-guide-32b4a047503
+  - https://firefoxux.github.io/firefox-desktop-components/?path=/docs/docs-design-tokens--docs
+  - https://samiamdesigns.substack.com/p/a-new-approach-to-naming-design-tokens
 
 ## Basic Style Dictionary
 
