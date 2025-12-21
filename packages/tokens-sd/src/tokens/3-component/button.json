@@ -1,1 +1,15 @@
-{}
+{
+	"button": {
+		"primary": {
+			"background": {
+				"$value": "{colors.black}",
+				"$type": "color",
+				"$description": "The background color for primary buttons."
+			},
+			"padding": {
+				"horizontal": { "$value": "{dimensions.3}", "$type": "dimension" }
+			},
+			"font": { "$value": "{text.typography.body}", "$type": "typography" }
+		}
+	}
+}
