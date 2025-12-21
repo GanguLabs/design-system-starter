@@ -82,6 +82,26 @@ const nonEmptyJsonFiles = allTokenFiles.filter((filePath) => {
 
 const filesToUse = nonEmptyJsonFiles; // allTokenFiles;
 // console.log({ tokenFiles });
+
+StyleDictionary.registerFileHeader({
+	name: 'myCustomHeader',
+	fileHeader: (defaultMessage) => {
+		// defaultMessage is an array of strings with the 'Do not edit' message and timestamp
+		const customHeader = [
+			...defaultMessage, // Keep the default messages
+			`\n`,
+			`Style Dictionary Design Tokens`,
+		];
+		return customHeader;
+	},
+});
+
+const defaultOptions = {
+	fileHeader: 'myCustomHeader',
+	showFileHeader: true,
+	formatting: { fileHeaderTimestamp: true },
+};
+
 const mySd = new StyleDictionary({
 	// source: ['src/tokens/**/*.json', 'src/tokens/**/*.tokens'],
 	source: filesToUse,
@@ -148,8 +168,8 @@ const mySd = new StyleDictionary({
 						return token.filePath.endsWith(relativeFilePath);
 					},
 					options: {
-						showFileHeader: true,
-						// selector: '.abc',
+						...defaultOptions,
+						// selector: '.my-css-class',
 						outputReferences: !file.includes('base'),
 					},
 				};
