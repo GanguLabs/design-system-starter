@@ -105,7 +105,7 @@ const mySd = new StyleDictionary({
 					options: {
 						showFileHeader: true,
 						// selector: '.abc',
-						outputReferences: file.includes('semantic'),
+						outputReferences: !file.includes('base'),
 					},
 				};
 			}),
