@@ -1,5 +1,6 @@
 import { register } from '@tokens-studio/sd-transforms';
 import { globSync } from 'glob';
+import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import StyleDictionary from 'style-dictionary';
 // prettier-ignore
@@ -26,7 +27,7 @@ const tokensStudioTransforms = Object.freeze({
 // 	.readdirSync(tokensFolder)
 // 	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
 
-const tokenFiles = globSync('src/tokens/**/*.{json,tokens}', {
+const allTokenFiles = globSync('src/tokens/**/*.{json,tokens}', {
 	posix: true,
 	// dotRelative: true,
 });
@@ -36,10 +37,54 @@ const tokenFiles = globSync('src/tokens/**/*.{json,tokens}', {
 // });
 // const tokenFilesAwait = await glob('src/tokens/**/*.{json,tokens}');
 
+/** Remove empty json files without any tokens */
+const nonEmptyJsonFiles = allTokenFiles.filter((filePath) => {
+	try {
+		// Get file statistics synchronously
+		const stats = statSync(filePath);
+		// Return true if the file size is greater than 0 bytes
+		if (stats.size == 0) {
+			return false;
+		}
+
+		const content = readFileSync(filePath, 'utf-8');
+
+		if (content.trim().length === 0) {
+			// Check if the file is empty (e.g., has a length of 0)
+			return false;
+		}
+
+		// Attempt to parse the JSON content
+		const jsonObject = JSON.parse(content);
+
+		if (typeof jsonObject === 'object' && jsonObject !== null) {
+			// Check if the parsed object is an empty object or an empty array
+			// Check for empty object {} or empty array []
+			if (
+				Object.keys(jsonObject).length === 0 &&
+				Array.isArray(jsonObject) === false
+			) {
+				return false;
+			}
+			if (Array.isArray(jsonObject) && jsonObject.length === 0) {
+				return false;
+			}
+		}
+
+		// If not empty, include it in the filtered list
+		return true;
+	} catch (error) {
+		// Handle potential JSON parsing errors (e.g., malformed JSON)
+		console.error(`Error processing file ${filePath}: ${error.message}`);
+		return false; // Exclude files with errors
+	}
+});
+
+const filesToUse = nonEmptyJsonFiles; // allTokenFiles;
 // console.log({ tokenFiles });
 const mySd = new StyleDictionary({
 	// source: ['src/tokens/**/*.json', 'src/tokens/**/*.tokens'],
-	source: tokenFiles,
+	source: filesToUse,
 	// source: tokenFilesAwait,
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
@@ -81,7 +126,7 @@ const mySd = new StyleDictionary({
 			transformGroup: 'css',
 			buildPath: 'build/css/',
 			// files: [{ destination: '_variables.css', format: formats.cssVariables }],
-			files: tokenFiles.map((file) => {
+			files: filesToUse.map((file) => {
 				const relativeFilePath = path
 					.relative('src/tokens', file)
 					.replace(/\\/g, '/');
