@@ -1,5 +1,6 @@
 import { register } from '@tokens-studio/sd-transforms';
-import fs from 'node:fs';
+import { globSync } from 'glob';
+import path from 'node:path';
 import StyleDictionary from 'style-dictionary';
 // prettier-ignore
 import { formats, logBrokenReferenceLevels, logVerbosityLevels, logWarningLevels, transforms } from 'style-dictionary/enums';
@@ -11,13 +12,35 @@ const tokensStudioTransforms = Object.freeze({
 	colorModifiers: 'ts/color/modifiers',
 });
 
-const tokensFolder = 'src/tokens';
-const tokenFiles = fs
-	.readdirSync(tokensFolder)
-	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
+// const tokensFolder = 'src/tokens';
+// const tokenFiles = [
+// 	// 'src/tokens/2-semantic/z-index.json',
+// 	'src/tokens/2-semantic/text.json',
+// 	// 'src/tokens/2-semantic/object-values.json',
+// 	// 'src/tokens/2-semantic/content.json',
+// 	'src/tokens/1-base/dimensions.json',
+// 	'src/tokens/1-base/colors.json',
+// 	'src/tokens/3-component/button.json',
+// ];
+// const tokenFiles = fs
+// 	.readdirSync(tokensFolder)
+// 	.filter((file) => file.endsWith('.json') || file.endsWith('.tokens'));
 
-const sd = new StyleDictionary({
-	source: ['src/tokens/**/*.json'],
+const tokenFiles = globSync('src/tokens/**/*.{json,tokens}', {
+	posix: true,
+	// dotRelative: true,
+});
+// const tokenFiles = globSync('src/tokens/1-base/*.json', {
+// 	posix: true,
+// 	// dotRelative: true,
+// });
+// const tokenFilesAwait = await glob('src/tokens/**/*.{json,tokens}');
+
+// console.log({ tokenFiles });
+const mySd = new StyleDictionary({
+	// source: ['src/tokens/**/*.json', 'src/tokens/**/*.tokens'],
+	source: tokenFiles,
+	// source: tokenFilesAwait,
 	preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
 	log: {
 		warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
@@ -57,7 +80,35 @@ const sd = new StyleDictionary({
 		css: {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
-			files: [{ destination: '_variables.css', format: formats.cssVariables }],
+			// files: [{ destination: '_variables.css', format: formats.cssVariables }],
+			files: tokenFiles.map((file) => {
+				const relativeFilePath = path
+					.relative('src/tokens', file)
+					.replace(/\\/g, '/');
+				console.log({ relativeFilePath });
+				return {
+					destination: relativeFilePath
+						.replace('.json', '.css')
+						.replace('.tokens', '.css'),
+					format: formats.cssVariables,
+					filter: async (token, options) => {
+						// console.log({
+						// 	options,
+						// 	// token,
+						// 	// // // tokenKey: token.key,
+						// 	// // // tokenFilePath: token.filePath,
+						// 	// // relativeFilePath,
+						// 	// file,
+						// });
+						return token.filePath.endsWith(relativeFilePath);
+					},
+					options: {
+						showFileHeader: true,
+						// selector: '.abc',
+						outputReferences: file.includes('semantic'),
+					},
+				};
+			}),
 		},
 		scss: {
 			transformGroup: 'scss',
@@ -252,11 +303,11 @@ const sd = new StyleDictionary({
  * @param {StyleDictionary} sd The first number.
  */
 async function cleanAndBuild(sd) {
-	console.log('Cleaning platforms...');
+	console.log('\n------------------\nCleaning platforms...');
 	await sd.cleanAllPlatforms(); // Removes previous build files
 
-	console.log('Building platforms...');
+	console.log('\n------------------\nBuilding platforms...');
 	await sd.buildAllPlatforms(); // Generates new files
-	console.log('Build complete!');
+	console.log('\n------------------\nBuild complete!\n------------------\n');
 }
-await cleanAndBuild(sd);
+await cleanAndBuild(mySd);
