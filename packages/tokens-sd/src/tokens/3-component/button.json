@@ -2,7 +2,7 @@
 	"button": {
 		"primary": {
 			"background": {
-				"$value": "{colors.black}",
+				"$value": "{color.black}",
 				"$type": "color",
 				"$description": "The background color for primary buttons."
 			},

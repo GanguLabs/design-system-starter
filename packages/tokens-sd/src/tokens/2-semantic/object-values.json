@@ -54,14 +54,14 @@
 		"$type": "border",
 		"heavy": {
 			"$value": {
-				"color": "{colors.black}",
+				"color": "{color.black}",
 				"width": "{dimensions.1}",
 				"style": "{borders.styles.solid}"
 			}
 		},
 		"wireframe": {
 			"$value": {
-				"color": "{colors.orange.600}",
+				"color": "{color.orange.600}",
 				"width": "{dimensions.2}",
 				"style": "{borders.styles.dashed}"
 			}
@@ -78,7 +78,7 @@
 		"$type": "shadow",
 		"sm": {
 			"$value": {
-				"color": "{colors.black}",
+				"color": "{color.black}",
 				"offsetX": "{dimensions.0}",
 				"offsetY": "{dimensions.1}",
 				"blur": "{dimensions.3}"
@@ -86,7 +86,7 @@
 		},
 		"lg": {
 			"$value": {
-				"color": "{colors.black}",
+				"color": "{color.black}",
 				"offsetX": "{dimensions.0}",
 				"offsetY": "{dimensions.2}",
 				"blur": "{dimensions.4}"
