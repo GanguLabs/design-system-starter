@@ -7,6 +7,9 @@ type Breakpoints = {
 	mobile: string;
 	tablet: string;
 	desktop: string;
+	/**
+	 * @deprecated dark mode only works with media queries
+	 */
 	dark: string;
 };
 
