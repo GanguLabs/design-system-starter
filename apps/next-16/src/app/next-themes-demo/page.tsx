@@ -1,5 +1,5 @@
+import ThemedImage from '@/components/themed-image';
 import type { ThemeImages } from '@/components/themed-image/next-themes';
-import NextThemedImage from '@/components/themed-image/next-themes';
 import { vars } from '@repo/styles/theme.css';
 import type { Metadata } from 'next';
 import darkModeImage from './dark-mode.jpg';
@@ -41,8 +41,25 @@ export default function NextThemesDemo() {
 				</ul>
 			</div>
 			<div>
-				<h3>Theme based Images</h3>
-				<NextThemedImage images={themedImageData} />
+				<h3>Theme based Images (Next-Themes)</h3>
+				<ThemedImage.NextThemed images={themedImageData} />
+			</div>
+			<div>
+				<h3>Theme based Images</h3>*{' '}
+				<ThemedImage.ThemeColorScheme
+					light={{
+						src: lightModeImage,
+						alt: 'alt text light',
+						width: 800,
+						height: 400,
+					}}
+					dark={{
+						src: darkModeImage,
+						alt: 'alt text dark',
+						width: 800,
+						height: 400,
+					}}
+				/>
 			</div>
 		</div>
 	);

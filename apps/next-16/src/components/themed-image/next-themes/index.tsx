@@ -22,6 +22,7 @@ interface ThemeImageProps {
 }
 
 /**
+ * @deprecated
  * Change image based on theme using next-themes
  * * ref: https://www.npmjs.com/package/next-themes
  */
