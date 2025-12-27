@@ -41,11 +41,28 @@ export default function NextThemesDemo() {
 				</ul>
 			</div>
 			<div>
+				<h3>Theme based Images (Nextjs + Vanilla Extract + Next-Themes)</h3>
+				<ThemedImage.NextJsImagesThemed
+					light={{
+						src: lightModeImage,
+						alt: 'alt text light',
+						// width: 800,
+						// height: 400,
+					}}
+					dark={{
+						src: darkModeImage,
+						alt: 'alt text dark',
+						// width: 800,
+						// height: 400,
+					}}
+				/>
+			</div>
+			<div>
 				<h3>Theme based Images (Next-Themes)</h3>
 				<ThemedImage.NextThemed images={themedImageData} />
 			</div>
 			<div>
-				<h3>Theme based Images</h3>*{' '}
+				<h3>Theme based Images (Media Queries)</h3>
 				<ThemedImage.ThemeColorScheme
 					light={{
 						src: lightModeImage,

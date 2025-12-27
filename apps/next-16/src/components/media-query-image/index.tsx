@@ -29,9 +29,9 @@ interface ImageSource {
 	/** The alt text is required for accessibility */
 	alt: string;
 	/** The intrinsic width of this specific source */
-	width: number;
+	width?: number;
 	/** The intrinsic height of this specific source */
-	height: number;
+	height?: number;
 	/** * Required for alternative sources, but optional for the default fallback.
 	 * A key from predefined breakpoints OR
 	 * * A custom CSS media query string. For Example:
