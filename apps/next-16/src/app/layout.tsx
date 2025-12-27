@@ -2,7 +2,7 @@ import HtmlMain from '@/components/html-main/html-main';
 import ThemeSwitcher from '@/components/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { container, navBar } from '@repo/styles/header.css';
-import { darkTheme, lightTheme } from '@repo/styles/theme.css';
+import { agTheme } from '@repo/styles/theme.css';
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Inter as InterFontSans } from 'next/font/google';
@@ -100,8 +100,8 @@ export default function RootLayout({
 					// Note! Tailwind supports dark theme by  using class or data-attributes, which can be configured in tailwind.config.js. If you use class, you can set attribute to class and it will work out of the box. If you use data-attribute, you need to set attribute to data-theme="dark" (or whatever your data-attribute is).
 					// https://www.npmjs.com/package/next-themes#with-tailwind
 					value={{
-						light: lightTheme,
-						dark: darkTheme,
+						light: agTheme.light,
+						dark: agTheme.dark,
 					}}
 				>
 					<nav className={clsx(container, navBar)}>

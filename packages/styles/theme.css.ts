@@ -36,7 +36,7 @@ const colors = createThemeContract({
 	},
 });
 
-export const lightTheme = createTheme(colors, {
+const lightTheme = createTheme(colors, {
 	primary: '#1E40AF',
 	secondary: '#DB2777',
 	background: {
@@ -52,7 +52,7 @@ export const lightTheme = createTheme(colors, {
 	},
 });
 
-export const darkTheme = createTheme(colors, {
+const darkTheme = createTheme(colors, {
 	primary: '#60A5FA',
 	secondary: '#F472B6',
 	background: {
@@ -70,3 +70,7 @@ export const darkTheme = createTheme(colors, {
 
 createGlobalTheme;
 export const vars = { ...root, colors };
+export const agTheme = {
+	light: lightTheme,
+	dark: darkTheme,
+};
