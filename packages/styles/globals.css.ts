@@ -1,21 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { vars } from './theme.css';
 
-globalStyle('html', {
-	'@media': {
-		// 'screen and (min-width: 768px)': {
-		// 	margin: '20px', // Global style for screens 768px and wider
-		// },
-		'(prefers-color-scheme: dark)': {
-			colorScheme: 'dark',
-			// vars: {
-			// //  ref: https://vanilla-extract.style/documentation/api/create-var/
-			// 	[accentVar]: 'lightblue',
-			// },
-		},
-	},
-});
-
 globalStyle('html, body', {
 	maxWidth: '100vw',
 	overflowX: 'hidden',
@@ -56,6 +41,8 @@ globalStyle('body', {
 	// marginBottom: '2rem',
 	// background: `linear-gradient(${vars.color.background}, #000)`,
 	background: Object.values(vars.colors.background),
+
+	overflow: 'visible', // This is needed for position sticky to work with Navbar
 });
 
 globalStyle('*', {

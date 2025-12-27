@@ -16,3 +16,8 @@ export const container = style({
 	marginBottom: '1rem',
 	gap: '0.5rem',
 });
+
+export const navBar = style({
+	position: 'sticky',
+	top: 0,
+});

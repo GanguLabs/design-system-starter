@@ -1,8 +1,9 @@
 import HtmlMain from '@/components/html-main/html-main';
 import ThemeSwitcher from '@/components/theme-switcher';
 import { ThemeProvider } from '@/providers/theme-provider';
-import { container } from '@repo/styles/header.css';
+import { container, navBar } from '@repo/styles/header.css';
 import { darkTheme, lightTheme } from '@repo/styles/theme.css';
+import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Inter as InterFontSans } from 'next/font/google';
 import Image from 'next/image';
@@ -103,11 +104,11 @@ export default function RootLayout({
 						dark: darkTheme,
 					}}
 				>
-					<div className={`${container} `}>
+					<nav className={clsx(container, navBar)}>
 						<Image src="/react.png" width={25} height={25} alt="React Logo" />
 						<div>NextJS App Router</div>
 						<ThemeSwitcher />
-					</div>
+					</nav>
 					<HtmlMain>{children}</HtmlMain>
 				</ThemeProvider>
 			</body>
