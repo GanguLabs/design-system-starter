@@ -31,12 +31,27 @@ const ThemeSwitcher = () => {
 			document.head.appendChild(colorSchemeMeta);
 		}
 
-		if (theme === 'dark') {
-			themeColorMeta.content = tokensDark.color.background.regular;
-			colorSchemeMeta.content = 'dark';
-		} else {
-			themeColorMeta.content = tokensLight.color.background.regular;
-			colorSchemeMeta.content = 'light';
+		switch (theme) {
+			case 'dark':
+				themeColorMeta.content = tokensDark.color.background.regular;
+				colorSchemeMeta.content = 'dark';
+
+				break;
+
+			case 'light':
+				themeColorMeta.content = tokensLight.color.background.regular;
+				colorSchemeMeta.content = 'light';
+				break;
+
+			case 'system':
+				// themeColorMeta.content = tokensLight.color.background.regular;
+				colorSchemeMeta.content = 'light dark';
+				break;
+
+			default:
+				themeColorMeta.content = tokensLight.color.background.regular;
+				colorSchemeMeta.content = 'light';
+				break;
 		}
 	}, [theme]);
 
