@@ -1,5 +1,5 @@
-import type { ThemeImages } from '@/components/themed-image';
-import ThemedImage from '@/components/themed-image';
+import type { ThemeImages } from '@/components/themed-image/next-themes';
+import NextThemedImage from '@/components/themed-image/next-themes';
 import { vars } from '@repo/styles/theme.css';
 import type { Metadata } from 'next';
 import darkModeImage from './dark-mode.jpg';
@@ -42,7 +42,7 @@ export default function NextThemesDemo() {
 			</div>
 			<div>
 				<h3>Theme based Images</h3>
-				<ThemedImage images={themedImageData} />
+				<NextThemedImage images={themedImageData} />
 			</div>
 		</div>
 	);

@@ -22,11 +22,14 @@ interface ThemeImageProps {
 }
 
 /**
- *
  * Change image based on theme using next-themes
  * * ref: https://www.npmjs.com/package/next-themes
  */
-function ThemedImage({ children, images, ...props }: ThemeImageProps) {
+export default function NextThemedImage({
+	children,
+	images,
+	...props
+}: ThemeImageProps) {
 	const { resolvedTheme } = useTheme();
 	let src: ImageData;
 
@@ -49,5 +52,3 @@ function ThemedImage({ children, images, ...props }: ThemeImageProps) {
 
 	return <Image {...src} />;
 }
-
-export default ThemedImage;
