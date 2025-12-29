@@ -13,6 +13,11 @@ const tokensStudioTransforms = Object.freeze({
 	colorModifiers: 'ts/color/modifiers',
 });
 
+const CWD = process.cwd();
+const buildDir = path.join(CWD, 'build');
+const buildFolder = (folderName) =>
+	path.relative(CWD, buildDir + '/' + folderName);
+
 // const tokensFolder = 'src/tokens';
 // const tokenFiles = [
 // 	// 'src/tokens/2-semantic/z-index.json',
@@ -145,7 +150,7 @@ const mySd = new StyleDictionary({
 	platforms: {
 		css: {
 			transformGroup: 'css',
-			buildPath: 'build/css/',
+			buildPath: buildFolder('css'),
 			// files: [{ destination: '_variables.css', format: formats.cssVariables }],
 			files: filesToUse.map((file) => {
 				const relativeFilePath = path
@@ -178,7 +183,7 @@ const mySd = new StyleDictionary({
 		},
 		scss: {
 			transformGroup: 'scss',
-			buildPath: 'build/scss/',
+			buildPath: buildFolder('scss'),
 			files: [
 				{
 					destination: '_variables.scss',
@@ -189,7 +194,7 @@ const mySd = new StyleDictionary({
 		},
 		// js: {
 		// 	transformGroup: 'js',
-		// 	buildPath: 'build/js/',
+		// 	buildPath: buildFolder('js'),
 		// 	files: [
 		// 		{
 		// 			format: 'javascript/esm',
@@ -202,7 +207,7 @@ const mySd = new StyleDictionary({
 		// },
 		ts: {
 			transformGroup: 'js',
-			buildPath: 'build/ts/',
+			buildPath: buildFolder('ts'),
 			files: [
 				{ format: formats.javascriptModule, destination: 'colors.js' },
 				{
