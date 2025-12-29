@@ -98,6 +98,7 @@ StyleDictionary.registerFileHeader({
 
 const defaultOptions = {
 	fileHeader: 'myCustomHeader',
+	footer: 'Anwesh Gangula Design System using Style Dictionary',
 	showFileHeader: true,
 	formatting: { fileHeaderTimestamp: true },
 };
