@@ -5,7 +5,10 @@
 	"type": "module",
 	"main": "config.js",
 	"scripts": {
-		"build": "style-dictionary build --config ./src/config.js"
+		"build:tokens": "npx tsx node_modules/.bin/style-dictionary build --config ./src/sd.config.ts",
+		"dev": "npm run build:tokens && vite",
+		"build": "npm run build:tokens && tsc && vite build",
+		"preview": "vite preview"
 	},
 	"keywords": [],
 	"author": "",
@@ -17,7 +20,9 @@
 		"glob": "^13.0.0",
 		"prettier": "^3.7.4",
 		"style-dictionary": "^5.1.1",
+		"tsx": "^4.16.2",
 		"typescript": "^5.9.3",
-		"vite": "^5.3.4"
+		"vite": "^5.3.4",
+		"vite-plugin-checker": "^0.12.0"
 	}
 }
