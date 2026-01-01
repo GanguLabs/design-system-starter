@@ -582,6 +582,9 @@ importers:
       prettier:
         specifier: ^3.7.4
         version: 3.7.4
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.5
       style-dictionary:
         specifier: ^5.1.1
         version: 5.1.1
@@ -597,6 +600,9 @@ importers:
       vite-plugin-checker:
         specifier: ^0.12.0
         version: 0.12.0(@biomejs/biome@2.2.0)(meow@13.2.0)(optionator@0.9.4)(typescript@5.9.3)(vite@5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0))
+      vite-plugin-dts:
+        specifier: ^3.8.1
+        version: 3.8.1(@types/node@25.0.3)(rollup@4.13.1)(typescript@5.9.3)(vite@5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0))
 
   packages/tsconfig: {}
 
@@ -862,11 +868,6 @@ packages:
 
   '@babel/parser@7.23.5':
     resolution: {integrity: sha512-hOOqoiNXrmGdFbhgCzu6GiURxUgM27Xwd/aPuu8RfHEZPBzL1Z54okAHAQjXfcQNwvrlkAmAp4SlRTZ45vlthQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
-  '@babel/parser@7.24.1':
-    resolution: {integrity: sha512-Zo9c7N3xdOIQrNip7Lc9wvRPzlRtovHVE4lkz8WEDr7uYh/GMQhSiIgFxGIArRHYdJE5kxtZjAf8rT0xhdLCzg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -5759,10 +5760,6 @@ packages:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
 
-  foreground-child@3.1.1:
-    resolution: {integrity: sha512-TMKDUnIte6bfb5nWv7V/caI169OHgvwjb7V4WkeUvbQQdjr5rWKqHFiKWb/fcOwB+CzBT+qbWjvj+DVwRskpIg==}
-    engines: {node: '>=14'}
-
   foreground-child@3.3.1:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
     engines: {node: '>=14'}
@@ -6829,10 +6826,6 @@ packages:
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
 
-  magic-string@0.30.8:
-    resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
-    engines: {node: '>=12'}
-
   make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
@@ -7130,10 +7123,6 @@ packages:
   minipass@5.0.0:
     resolution: {integrity: sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ==}
     engines: {node: '>=8'}
-
-  minipass@7.0.4:
-    resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
-    engines: {node: '>=16 || 14 >=14.17'}
 
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
@@ -9780,7 +9769,7 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.8
       '@babel/helper-plugin-utils': 7.24.8
-      debug: 4.3.5
+      debug: 4.4.3
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -9791,7 +9780,7 @@ snapshots:
       '@babel/core': 7.24.9
       '@babel/helper-compilation-targets': 7.24.8
       '@babel/helper-plugin-utils': 7.24.8
-      debug: 4.3.5
+      debug: 4.4.3
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -9998,10 +9987,6 @@ snapshots:
       picocolors: 1.1.1
 
   '@babel/parser@7.23.5':
-    dependencies:
-      '@babel/types': 7.24.9
-
-  '@babel/parser@7.24.1':
     dependencies:
       '@babel/types': 7.24.9
 
@@ -11320,7 +11305,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.7
       '@babel/parser': 7.24.7
       '@babel/types': 7.24.9
-      debug: 4.3.5
+      debug: 4.4.3
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -13352,7 +13337,7 @@ snapshots:
 
   '@rollup/pluginutils@5.1.0(rollup@4.13.1)':
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       estree-walker: 2.0.2
       picomatch: 2.3.1
     optionalDependencies:
@@ -14277,7 +14262,7 @@ snapshots:
 
   '@types/acorn@4.0.6':
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
 
   '@types/argparse@1.0.38': {}
 
@@ -14502,7 +14487,7 @@ snapshots:
       '@typescript-eslint/types': 8.44.0
       '@typescript-eslint/typescript-estree': 8.44.0(typescript@5.5.4)
       '@typescript-eslint/visitor-keys': 8.44.0
-      debug: 4.3.5
+      debug: 4.4.3
       eslint: 7.32.0
       typescript: 5.5.4
     transitivePeerDependencies:
@@ -14512,7 +14497,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.44.0(typescript@5.5.4)
       '@typescript-eslint/types': 8.44.0
-      debug: 4.3.5
+      debug: 4.4.3
       typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
@@ -14531,7 +14516,7 @@ snapshots:
       '@typescript-eslint/types': 8.44.0
       '@typescript-eslint/typescript-estree': 8.44.0(typescript@5.5.4)
       '@typescript-eslint/utils': 8.44.0(eslint@7.32.0)(typescript@5.5.4)
-      debug: 4.3.5
+      debug: 4.4.3
       eslint: 7.32.0
       ts-api-utils: 2.1.0(typescript@5.5.4)
       typescript: 5.5.4
@@ -14546,7 +14531,7 @@ snapshots:
       '@typescript-eslint/tsconfig-utils': 8.44.0(typescript@5.5.4)
       '@typescript-eslint/types': 8.44.0
       '@typescript-eslint/visitor-keys': 8.44.0
-      debug: 4.3.5
+      debug: 4.4.3
       fast-glob: 3.3.2
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -14826,7 +14811,7 @@ snapshots:
       '@vanilla-extract/integration': 8.0.4
       debug: 4.3.5
       loader-utils: 2.0.4
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       webpack: 5.101.3(@swc/core@1.3.101(@swc/helpers@0.5.15))
     transitivePeerDependencies:
       - babel-plugin-macros
@@ -14909,7 +14894,7 @@ snapshots:
 
   '@vue/compiler-core@3.3.9':
     dependencies:
-      '@babel/parser': 7.24.1
+      '@babel/parser': 7.24.8
       '@vue/shared': 3.3.9
       estree-walker: 2.0.2
       source-map-js: 1.2.0
@@ -14932,6 +14917,20 @@ snapshots:
       vue-template-compiler: 2.7.15
     optionalDependencies:
       typescript: 5.5.4
+
+  '@vue/language-core@1.8.27(typescript@5.9.3)':
+    dependencies:
+      '@volar/language-core': 1.11.1
+      '@volar/source-map': 1.11.1
+      '@vue/compiler-dom': 3.3.9
+      '@vue/shared': 3.3.9
+      computeds: 0.0.1
+      minimatch: 9.0.5
+      muggle-string: 0.3.1
+      path-browserify: 1.0.1
+      vue-template-compiler: 2.7.15
+    optionalDependencies:
+      typescript: 5.9.3
 
   '@vue/shared@3.3.9': {}
 
@@ -15056,7 +15055,7 @@ snapshots:
 
   agent-base@7.1.0:
     dependencies:
-      debug: 4.3.5
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -16347,7 +16346,7 @@ snapshots:
 
   esbuild-register@3.5.0(esbuild@0.21.5):
     dependencies:
-      debug: 4.3.5
+      debug: 4.4.3
       esbuild: 0.21.5
     transitivePeerDependencies:
       - supports-color
@@ -16638,7 +16637,7 @@ snapshots:
 
   estree-util-attach-comments@3.0.0:
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
 
   estree-util-build-jsx@3.0.1:
     dependencies:
@@ -16870,11 +16869,6 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  foreground-child@3.1.1:
-    dependencies:
-      cross-spawn: 7.0.3
-      signal-exit: 4.1.0
-
   foreground-child@3.3.1:
     dependencies:
       cross-spawn: 7.0.6
@@ -17003,7 +16997,7 @@ snapshots:
     dependencies:
       basic-ftp: 5.0.3
       data-uri-to-buffer: 6.0.1
-      debug: 4.3.5
+      debug: 4.4.3
       fs-extra: 8.1.0
     transitivePeerDependencies:
       - supports-color
@@ -17039,10 +17033,10 @@ snapshots:
 
   glob@10.3.10:
     dependencies:
-      foreground-child: 3.1.1
+      foreground-child: 3.3.1
       jackspeak: 2.3.6
-      minimatch: 9.0.3
-      minipass: 7.0.4
+      minimatch: 9.0.5
+      minipass: 7.1.2
       path-scurry: 1.10.1
 
   glob@11.1.0:
@@ -17718,7 +17712,7 @@ snapshots:
 
   is-reference@3.0.2:
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
 
   is-regex@1.1.4:
     dependencies:
@@ -18132,10 +18126,6 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  magic-string@0.30.8:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-
   make-dir@2.1.0:
     dependencies:
       pify: 4.0.1
@@ -18461,7 +18451,7 @@ snapshots:
 
   micromark-extension-mdx-expression@3.0.0:
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       devlop: 1.1.0
       micromark-factory-mdx-expression: 2.0.1
       micromark-factory-space: 2.0.0
@@ -18473,7 +18463,7 @@ snapshots:
   micromark-extension-mdx-jsx@3.0.0:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       devlop: 1.1.0
       estree-util-is-identifier-name: 3.0.0
       micromark-factory-mdx-expression: 2.0.1
@@ -18489,7 +18479,7 @@ snapshots:
 
   micromark-extension-mdxjs-esm@3.0.0:
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.0
       micromark-util-character: 2.0.1
@@ -18525,7 +18515,7 @@ snapshots:
 
   micromark-factory-mdx-expression@2.0.1:
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       devlop: 1.1.0
       micromark-util-character: 2.0.1
       micromark-util-events-to-acorn: 2.0.2
@@ -18589,7 +18579,7 @@ snapshots:
   micromark-util-events-to-acorn@2.0.2:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.8
       '@types/unist': 3.0.2
       devlop: 1.1.0
       estree-util-visit: 2.0.0
@@ -18627,7 +18617,7 @@ snapshots:
   micromark@4.0.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.5
+      debug: 4.4.3
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.0
@@ -18698,8 +18688,6 @@ snapshots:
       yallist: 4.0.0
 
   minipass@5.0.0: {}
-
-  minipass@7.0.4: {}
 
   minipass@7.1.2: {}
 
@@ -19066,7 +19054,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.0
-      debug: 4.3.5
+      debug: 4.4.3
       get-uri: 6.0.2
       http-proxy-agent: 7.0.0
       https-proxy-agent: 7.0.2
@@ -19832,7 +19820,7 @@ snapshots:
 
   resolve@1.19.0:
     dependencies:
-      is-core-module: 2.13.1
+      is-core-module: 2.16.1
       path-parse: 1.0.7
 
   resolve@1.22.8:
@@ -20016,8 +20004,7 @@ snapshots:
 
   semver@7.7.2: {}
 
-  semver@7.7.3:
-    optional: true
+  semver@7.7.3: {}
 
   send@0.18.0:
     dependencies:
@@ -20243,7 +20230,7 @@ snapshots:
   socks-proxy-agent@8.0.2:
     dependencies:
       agent-base: 7.1.0
-      debug: 4.3.5
+      debug: 4.4.3
       socks: 2.7.1
     transitivePeerDependencies:
       - supports-color
@@ -21274,7 +21261,7 @@ snapshots:
   vite-node@1.4.0(@types/node@20.10.0)(sass@1.94.2)(terser@5.44.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.5
+      debug: 4.4.3
       pathe: 1.1.2
       picocolors: 1.1.1
       vite: 5.3.4(@types/node@20.10.0)(sass@1.94.2)(terser@5.44.0)
@@ -21291,7 +21278,7 @@ snapshots:
   vite-node@1.4.0(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.5
+      debug: 4.4.3
       pathe: 1.1.2
       picocolors: 1.1.1
       vite: 5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0)
@@ -21344,11 +21331,28 @@ snapshots:
       '@microsoft/api-extractor': 7.43.0(@types/node@25.0.3)
       '@rollup/pluginutils': 5.1.0(rollup@4.13.1)
       '@vue/language-core': 1.8.27(typescript@5.5.4)
-      debug: 4.3.4
+      debug: 4.4.3
       kolorist: 1.8.0
-      magic-string: 0.30.8
+      magic-string: 0.30.10
       typescript: 5.5.4
       vue-tsc: 1.8.27(typescript@5.5.4)
+    optionalDependencies:
+      vite: 5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - rollup
+      - supports-color
+
+  vite-plugin-dts@3.8.1(@types/node@25.0.3)(rollup@4.13.1)(typescript@5.9.3)(vite@5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0)):
+    dependencies:
+      '@microsoft/api-extractor': 7.43.0(@types/node@25.0.3)
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.1)
+      '@vue/language-core': 1.8.27(typescript@5.9.3)
+      debug: 4.4.3
+      kolorist: 1.8.0
+      magic-string: 0.30.10
+      typescript: 5.9.3
+      vue-tsc: 1.8.27(typescript@5.9.3)
     optionalDependencies:
       vite: 5.3.4(@types/node@25.0.3)(sass@1.94.2)(terser@5.44.0)
     transitivePeerDependencies:
@@ -21426,8 +21430,15 @@ snapshots:
     dependencies:
       '@volar/typescript': 1.11.1
       '@vue/language-core': 1.8.27(typescript@5.5.4)
-      semver: 7.5.4
+      semver: 7.7.3
       typescript: 5.5.4
+
+  vue-tsc@1.8.27(typescript@5.9.3):
+    dependencies:
+      '@volar/typescript': 1.11.1
+      '@vue/language-core': 1.8.27(typescript@5.9.3)
+      semver: 7.7.3
+      typescript: 5.9.3
 
   w3c-xmlserializer@5.0.0:
     dependencies:

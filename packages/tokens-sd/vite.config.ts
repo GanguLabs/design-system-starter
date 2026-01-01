@@ -1,42 +1,37 @@
-// vite.config.ts
-import { execSync } from 'child_process';
 import path from 'path';
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 import { outDir } from './shared-constants';
+// import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-	root: 'src',
+	// 1. Keep root at project level for library builds
 	build: {
 		outDir,
-		emptyOutDir: true,
-		sourcemap: true,
-		minify: 'esbuild', // Use esbuild for minification (default)
-		assetsDir: 'assets',
-		rollupOptions: {
-			input: path.resolve(__dirname, 'src/index.html'),
-			output: {
-				assetFileNames: 'assets/[name]-[hash][extname]', // Hashing for cache busting
-			},
+		emptyOutDir: false, // Don't delete Style Dictionary's work
+		lib: {
+			// Use absolute path for the entry point
+			entry: path.resolve(__dirname, 'src/index.ts'),
+			name: 'MyDesignTokens',
+			fileName: (format) => `index.${format}.js`,
+			formats: ['es', 'cjs'],
 		},
+		rollupOptions: { external: ['style-dictionary', 'path', 'child_process'] },
 	},
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, 'src'), // Optional alias for cleaner imports
-		},
-	},
-	// define: {
-	// 	'process.env.NODE_ENV': '"production"', // Inject environment variables
-	// },
 	plugins: [
-		{
-			name: 'style-dictionary-watcher',
-			handleHotUpdate({ file }) {
-				// Trigger a rebuild if a token file changes
-				if (file.endsWith('.json')) {
-					console.log('Token changed, rebuilding...');
-					execSync('npx style-dictionary build');
-				}
-			},
-		},
+		dts({ insertTypesEntry: true }), // Generates the index.d.ts file
+		// viteStaticCopy({
+		// 	targets: [
+		// 		{
+		// 			// 2. Use normalizePath and absolute paths to prevent EINVAL
+		// 			src: normalizePath(path.resolve(__dirname, 'build/css/**/*')),
+		// 			dest: 'css',
+		// 		},
+		// 		{
+		// 			src: normalizePath(path.resolve(__dirname, 'build/scss/**/*')),
+		// 			dest: 'scss',
+		// 		},
+		// 	],
+		// }),
 	],
 });
