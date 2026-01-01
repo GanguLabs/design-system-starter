@@ -1,7 +1,7 @@
 {
 	"extends": "@repo/tsconfig/lib-react.json",
 	"include": ["src", "sd-build/tokens/ts"],
-	"exclude": ["dist", "build", "node_modules"],
+	"exclude": ["dist", "build", "node_modules", "sd.config.ts", "sd-config"],
 	// Visit https://aka.ms/tsconfig to read more about this file
 	"compilerOptions": {
 		// File Layout

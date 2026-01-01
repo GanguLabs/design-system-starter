@@ -1,7 +1,7 @@
 import { globSync } from 'glob';
 import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { tokensOutDir } from '../../shared-constants.ts';
+import { tokensOutDir } from '../shared-constants.ts';
 
 export const CWD = process.cwd();
 export const buildDir = path.join(CWD, tokensOutDir);
