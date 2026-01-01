@@ -5,9 +5,9 @@
 	"type": "module",
 	"main": "config.js",
 	"scripts": {
-		"build:tokens": "npx tsx node_modules/.bin/style-dictionary build --config ./src/sd.config.ts",
-		"dev": "npm run build:tokens && vite",
-		"build": "npm run build:tokens && tsc && vite build",
+		"build:tokens": "npx tsx node_modules/style-dictionary/bin/style-dictionary build --config ./src/sd.config.ts",
+		"dev": "pnpm build:tokens && vite",
+		"build": "pnpm build:tokens && tsc && vite build",
 		"preview": "vite preview"
 	},
 	"keywords": [],
@@ -17,6 +17,7 @@
 		"@repo/tsconfig": "workspace:*",
 		"@tokens-studio/sd-transforms": "^2.0.3",
 		"@types/node": "^25.0.3",
+		"dedent": "^1.5.3",
 		"glob": "^13.0.0",
 		"prettier": "^3.7.4",
 		"style-dictionary": "^5.1.1",

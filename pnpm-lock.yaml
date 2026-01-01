@@ -573,6 +573,9 @@ importers:
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3
+      dedent:
+        specifier: ^1.5.3
+        version: 1.5.3
       glob:
         specifier: ^13.0.0
         version: 13.0.0
