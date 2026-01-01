@@ -16,6 +16,33 @@ interface TokenScaleConfig extends ColorBase {
 	isBackground?: boolean;
 }
 
+/**
+ * Individual W3C Color Token leaf node
+ */
+interface W3CColorToken {
+	$value: string;
+	$type: 'color';
+	$description?: string;
+}
+
+/**
+ * A group of tokens (e.g., 'neutral' or 'blue')
+ * Using a Record allows for dynamic keys like '0', '100', etc.
+ */
+interface W3CColorGroup {
+	[step: string]: W3CColorToken;
+}
+
+/**
+ * The root structure of the generated JSON
+ */
+interface W3CTokenExport {
+	color: {
+		$type: 'color';
+		[scaleName: string]: W3CColorGroup | string; // 'string' accounts for the $type property
+	};
+}
+
 const scalesConfig: TokenScaleConfig[] = [
 	{
 		name: 'neutral',
@@ -86,36 +113,33 @@ const myTheme = new Theme({
  * 3. W3C Token Generation
  */
 function generateTokens() {
-	// Initialize W3C structure
-	const colorTokens: any = {
-		color: {
-			$type: 'color',
-			neutral: {}, // We will pre-populate the neutral object
-		},
-	};
+	const colorTokens: W3CTokenExport = { color: { $type: 'color' } };
 
-	// Skip the internal BackgroundColorAnchor (Index 0)
 	const [, ...scales] = myTheme.contrastColors;
 
 	scales.forEach((scale) => {
 		const scaleName = scale.name;
-		const keys = namingMap.get(scaleName);
-		if (!keys) return;
 
-		// Ensure the scale object exists (especially for brand colors)
-		if (!colorTokens.color[scaleName]) {
-			colorTokens.color[scaleName] = {};
-		}
+		const originalConfig = scalesConfig.find((c) => c.name === scaleName);
+		if (!originalConfig || !originalConfig.ratios) return;
+
+		const keys = Object.keys(originalConfig.ratios);
+
+		const group: W3CColorGroup = {};
 
 		scale.values.forEach((swatch, index) => {
 			const stepKey = keys[index] || (index + 1).toString();
 
-			colorTokens.color[scaleName][stepKey] = {
+			const token: W3CColorToken = {
 				$value: swatch.value,
 				$type: 'color',
 				$description: `Contrast ratio: ${swatch.contrast}:1`,
 			};
+
+			group[stepKey] = token;
 		});
+
+		colorTokens.color[scaleName] = group;
 	});
 
 	const outputPath = path.resolve(
