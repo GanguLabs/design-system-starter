@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { packageOutDir } from './scripts/shared-constants';
@@ -22,6 +23,19 @@ export default defineConfig({
 		rollupOptions: { external: ['style-dictionary', 'path', 'child_process'] },
 	},
 	plugins: [
+		{
+			name: 'post-build-copy',
+			closeBundle: async () => {
+				const srcDir = path.resolve(__dirname, 'src/sd-build');
+				const destDir = path.resolve(__dirname, 'dist/sd-build');
+
+				if (fs.existsSync(srcDir)) {
+					// Recursive copy (Requires Node 16.7.0+)
+					fs.cpSync(srcDir, destDir, { recursive: true });
+					console.log('Successfully copied sd-build contents to dist');
+				}
+			},
+		},
 		{
 			name: 'style-dictionary-watcher',
 			// During 'vite' (dev mode), this watches for token changes
