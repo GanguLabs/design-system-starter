@@ -39,12 +39,16 @@ export default defineConfig({
 		},
 		dts({
 			insertTypesEntry: true,
+			// 3. Ensure the plugin includes both your src and the generated tokens
 			// CRITICAL: Include the generated TS tokens so types are created for them
-			include: ['src/**/*.ts', 'public/tokens/ts/**/*.ts'],
-			// Ensure it points to your app's tsconfig
+			include: ['src/**/*.ts', 'src/sd-build/tokens/ts/**/*.ts'],
+			// 1. Explicitly point to the correct tsconfig
+			// Vite templates often use 'tsconfig.app.json'. Ensure this matches yours.
 			tsconfigPath: './tsconfig.json',
-			// Optional: merges all declarations into one index.d.ts
-			// rollupTypes: true,
+
+			// 4. Sometimes helpful if API Extractor gets confused about the root
+			entryRoot: 'src',
+			rollupTypes: true,
 		}),
 		// viteStaticCopy({
 		// 	targets: [
