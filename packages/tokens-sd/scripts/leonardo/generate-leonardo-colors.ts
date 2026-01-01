@@ -2,30 +2,21 @@ import { BackgroundColor, Color, Theme } from '@adobe/leonardo-contrast-colors';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// 1. Use Objects for ratios to define explicit names
-// For brand, we stick to the 100-900 convention
+// 1. Define Scale Ratios
 const brandRatios = {
 	'100': 1.1,
 	'200': 1.5,
 	'300': 2,
 	'400': 3,
-	'500': 4.5, // Standard accessible body text
+	'500': 4.5,
 	'600': 6,
 	'700': 7.5,
 	'800': 9,
 	'900': 11,
 };
+const surfaceRatios = { '10': 1.05, '20': 1.1, '30': 1.2 };
 
-/** Define Surface Ratios (Subtle contrast for UI elements like dialogs, admonitions, quotes, highlights etc...).
- * * 1.05 and 1.1 are great for cards, dialogs, and code blocks
- * * For surfaces, we use semantic names or a 10-30 scale
- */
-const surfaceRatios = {
-	'10': 1.05, // Dialog / Modal
-	'20': 1.1, // Admonition / Quote
-	'30': 1.2, // Details / Hover states
-};
-
+// 2. Define Colors
 const neutralBase = new BackgroundColor({
 	name: 'neutral',
 	colorKeys: ['#ffffff'],
@@ -47,22 +38,39 @@ const myTheme = new Theme({
 });
 
 function generateTokens() {
+	// Initialize W3C structure
 	const colorTokens: any = {
-		// Top-level $type can be used to set the type for all nested tokens
-		color: { $type: 'color' },
+		color: {
+			$type: 'color',
+			neutral: {}, // We will pre-populate the neutral object
+		},
 	};
 
+	/**
+	 * STEP 1: Capture the actual Background base color.
+	 * Leonardo stores the background anchor in 'myTheme.backgroundColor'
+	 */
+	const bgBase = myTheme.backgroundColor;
+	colorTokens.color.neutral['0'] = {
+		$value: bgBase.value,
+		$type: 'color',
+		$description: 'Base background anchor (0 contrast)',
+	};
+
+	/**
+	 * STEP 2: Capture all scales (Neutral surfaces and Brand colors)
+	 */
 	myTheme.contrastColors.forEach((colorObj) => {
 		if ('values' in colorObj && 'name' in colorObj) {
 			const scaleName = colorObj.name;
-			colorTokens.color[scaleName] = {};
+
+			// Ensure the scale object exists (especially for brand colors)
+			if (!colorTokens.color[scaleName]) {
+				colorTokens.color[scaleName] = {};
+			}
 
 			colorObj.values.forEach((swatch: any) => {
-				/**
-				 * Leonardo automatically appends the key from your ratios object
-				 * to the color name (e.g., "blue" + "100" = "blue100").
-				 * We strip the name back out to keep the JSON nested.
-				 */
+				// Strip the scale name from the swatch name to get the key (e.g., "blue100" -> "100")
 				const tokenStep = swatch.name.replace(scaleName, '');
 
 				colorTokens.color[scaleName][tokenStep] = {
@@ -85,7 +93,7 @@ function generateTokens() {
 
 	fs.writeFileSync(outputPath, JSON.stringify(colorTokens, null, 2), 'utf-8');
 	console.log(
-		'✅ Successfully converted Leonardo colors to W3C Standard tokens',
+		'✅ W3C Tokens generated including Background anchor and Neutral surfaces.',
 	);
 }
 
