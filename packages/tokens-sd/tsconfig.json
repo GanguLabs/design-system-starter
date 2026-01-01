@@ -13,6 +13,7 @@
 		"module": "nodenext",
 		"target": "esnext",
 		"moduleResolution": "nodenext",
+		"allowImportingTsExtensions": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 

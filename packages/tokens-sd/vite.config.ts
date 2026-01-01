@@ -2,8 +2,8 @@
 import { execSync } from 'child_process';
 import path from 'path';
 import { defineConfig } from 'vite';
+import { outDir } from './shared-constants';
 
-const outDir = 'build';
 export default defineConfig({
 	root: 'src',
 	build: {
@@ -24,11 +24,9 @@ export default defineConfig({
 			'@': path.resolve(__dirname, 'src'), // Optional alias for cleaner imports
 		},
 	},
-	define: {
-		'process.env.NODE_ENV': '"production"', // Inject environment variables
-		// Statically replace __OUT_DIR__ with the JSON-stringified value
-		__OUT_DIR__: JSON.stringify(outDir),
-	},
+	// define: {
+	// 	'process.env.NODE_ENV': '"production"', // Inject environment variables
+	// },
 	plugins: [
 		{
 			name: 'style-dictionary-watcher',

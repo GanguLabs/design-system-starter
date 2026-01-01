@@ -4,6 +4,7 @@ import { globSync } from 'glob';
 import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import StyleDictionary from 'style-dictionary';
+import { outDir } from '../shared-constants.ts';
 // prettier-ignore
 import { formats, logBrokenReferenceLevels, logVerbosityLevels, logWarningLevels, transforms } from 'style-dictionary/enums';
 import type { Config, FormatFn, LocalOptions } from 'style-dictionary/types';
@@ -16,8 +17,7 @@ const tokensStudioTransforms = Object.freeze({
 });
 
 const CWD = process.cwd();
-// const buildDir = path.join(CWD, __OUT_DIR__);
-const buildDir = path.join(CWD, 'build');
+const buildDir = path.join(CWD, outDir);
 const buildFolder = (folderName: string) =>
 	path.relative(CWD, buildDir + '/' + folderName);
 
