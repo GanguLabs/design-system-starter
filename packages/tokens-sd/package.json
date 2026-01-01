@@ -7,7 +7,8 @@
 	"scripts": {
 		"clean": "rimraf dist src/sd-build/tokens",
 		"build:tokens-old-error": "npx tsx node_modules/style-dictionary/bin/style-dictionary build --config ./scripts/sd.config.ts",
-		"build:tokens": "tsx ./scripts/sd.config.ts",
+		"generate:colors": "tsx scripts/leonardo/generate-leonardo-colors.ts",
+		"build:tokens": "pnpm generate:colors && tsx ./scripts/sd.config.ts",
 		"dev": "pnpm build:tokens && vite",
 		"build": "pnpm clean && pnpm build:tokens && tsc && vite build",
 		"preview": "vite preview"
@@ -16,6 +17,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@adobe/leonardo-contrast-colors": "^1.0.0",
 		"@repo/tsconfig": "workspace:*",
 		"@tokens-studio/sd-transforms": "^2.0.3",
 		"@types/node": "^25.0.3",
