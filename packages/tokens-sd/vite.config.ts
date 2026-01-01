@@ -41,7 +41,7 @@ export default defineConfig({
 			insertTypesEntry: true,
 			// 3. Ensure the plugin includes both your src and the generated tokens
 			// CRITICAL: Include the generated TS tokens so types are created for them
-			include: ['src/**/*.ts', 'sd-build/tokens/ts/**/*.ts'],
+			include: ['src/**/*.ts', 'src/sd-build/tokens/**/*.ts'],
 			exclude: [
 				'sd.config.ts',
 				'sd-config/**',
