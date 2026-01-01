@@ -1,12 +1,14 @@
 {
 	"extends": "@repo/tsconfig/lib-react.json",
-	"include": ["src"],
+	"include": ["src", "public/tokens/ts"],
 	"exclude": ["dist", "build", "node_modules"],
 	// Visit https://aka.ms/tsconfig to read more about this file
 	"compilerOptions": {
 		// File Layout
 		// "rootDir": "./src",
-		// "outDir": "./dist",
+		"outDir": "./dist",
+		"baseUrl": ".",
+		"paths": { "@/*": ["src/*"] },
 
 		// Environment Settings
 		// See also https://aka.ms/tsconfig/module
@@ -27,6 +29,7 @@
 		"sourceMap": true,
 		"declaration": true,
 		"declarationMap": true,
+		"emitDeclarationOnly": true,
 
 		// Stricter Typechecking Options
 		"noUncheckedIndexedAccess": true,
