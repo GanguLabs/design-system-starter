@@ -29,11 +29,20 @@ export default defineConfig({
 				const srcDir = path.resolve(__dirname, 'src/sd-build');
 				const destDir = path.resolve(__dirname, 'dist/sd-build');
 
-				if (fs.existsSync(srcDir)) {
-					// Recursive copy (Requires Node 16.7.0+)
-					fs.cpSync(srcDir, destDir, { recursive: true });
-					console.log('Successfully copied sd-build contents to dist');
+				if (!fs.existsSync(srcDir)) {
+					console.error(
+						'\x1b[31m%s\x1b[0m',
+						'ERR: The "sd-build" folder was not found!',
+					);
+					console.error(
+						'Make sure you run "pnpm build:tokens" before building the library.',
+					);
+					process.exit(1); // Stop the build process
 				}
+
+				// If it exists, proceed with copy
+				fs.cpSync(srcDir, destDir, { recursive: true });
+				console.log('✅ Tokens copied to dist successfully.');
 			},
 		},
 		{
