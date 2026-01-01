@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { packageOutDir } from './shared-constants';
+import { packageOutDir } from './scripts/shared-constants';
 // import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
@@ -43,8 +43,8 @@ export default defineConfig({
 			// CRITICAL: Include the generated TS tokens so types are created for them
 			include: ['src/**/*.ts', 'src/sd-build/tokens/**/*.ts'],
 			exclude: [
-				'sd.config.ts',
-				'sd-config/**',
+				'scripts/sd.config.ts',
+				'scripts/sd-config/**',
 				'src/**/*.test.ts',
 				'node_modules/**',
 				'shared-constants.ts', // Add any other config files here

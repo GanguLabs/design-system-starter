@@ -6,8 +6,8 @@
 	"main": "config.js",
 	"scripts": {
 		"clean": "rimraf dist src/sd-build/tokens",
-		"build:tokens-old-error": "npx tsx node_modules/style-dictionary/bin/style-dictionary build --config ./sd.config.ts",
-		"build:tokens": "tsx ./sd.config.ts",
+		"build:tokens-old-error": "npx tsx node_modules/style-dictionary/bin/style-dictionary build --config ./scripts/sd.config.ts",
+		"build:tokens": "tsx ./scripts/sd.config.ts",
 		"dev": "pnpm build:tokens && vite",
 		"build": "pnpm clean && pnpm build:tokens && tsc && vite build",
 		"preview": "vite preview"
