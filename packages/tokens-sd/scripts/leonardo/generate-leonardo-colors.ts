@@ -3,16 +3,21 @@ import path from 'node:path';
 import { createLeonardoTheme, TokenScaleConfig } from './leonardo-wrapper';
 
 /**
- * W3C DESIGN TOKEN INTERFACES
+ * Individual W3C Color Token leaf node (Inherits type from parent)
  */
 interface W3CColorToken {
 	$value: string;
-	$type: 'color';
+	// $type: 'color';
 	$description?: string;
 }
 
+/**
+ * A group of tokens (e.g., 'neutral' or 'blue')
+ */
 interface W3CColorGroup {
-	[step: string]: W3CColorToken;
+	// Optional type here would apply to all tokens in this scale
+	$type?: 'color';
+	[step: string]: W3CColorToken | string | undefined;
 }
 
 /**
@@ -20,8 +25,8 @@ interface W3CColorGroup {
  */
 interface W3CTokenExport {
 	color: {
-		$type: 'color';
-		[scaleName: string]: W3CColorGroup | string; // 'string' accounts for the $type property
+		$type: 'color'; // All nested tokens inherit this type
+		[scaleName: string]: W3CColorGroup | string;
 	};
 }
 
@@ -52,10 +57,21 @@ const SCALES_CONFIG: TokenScaleConfig[] = [
 	},
 ];
 
-function generateTokens() {
+interface ExportOptions {
+	includeDescription?: boolean;
+}
+
+function generateTokens(
+	options: ExportOptions = { includeDescription: false },
+) {
 	const theme = createLeonardoTheme(SCALES_CONFIG);
 
-	const colorTokens: W3CTokenExport = { color: { $type: 'color' } };
+	// 1. Initialize with the inherited type at the top level
+	const colorTokens: W3CTokenExport = {
+		color: {
+			$type: 'color', // Standard W3C: children inherit this type
+		},
+	};
 
 	/**
 	 * We destructure to skip the first element [0].
@@ -75,11 +91,17 @@ function generateTokens() {
 		scale.values.forEach((swatch, index) => {
 			const stepKey = keys[index] || (index + 1).toString();
 
+			// 2. Leaf nodes now only contain the value and metadata
 			const token: W3CColorToken = {
 				$value: swatch.value,
-				$type: 'color',
-				$description: `Contrast ratio: ${swatch.contrast}:1`,
+				// $type: 'color',
+				// $description: `Contrast ratio: ${swatch.contrast}:1`,
 			};
+
+			// Add description ONLY if the toggle is enabled
+			if (options.includeDescription) {
+				token.$description = `Contrast: ${swatch.contrast}:1`;
+			}
 
 			group[stepKey] = token;
 		});
@@ -102,4 +124,4 @@ function generateTokens() {
 	);
 }
 
-generateTokens();
+generateTokens({ includeDescription: false });
