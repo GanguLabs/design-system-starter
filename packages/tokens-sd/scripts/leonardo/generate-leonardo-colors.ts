@@ -1,23 +1,9 @@
-import type { ColorBase } from '@adobe/leonardo-contrast-colors';
-import { BackgroundColor, Color, Theme } from '@adobe/leonardo-contrast-colors';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createLeonardoTheme, TokenScaleConfig } from './leonardo-wrapper';
 
 /**
- * 1. Define the Type-Safe Configuration
- * We use a generic record for ratios so the keys ('0', '10', etc.)
- * are preserved for the token generation.
- */
-interface TokenScaleConfig extends ColorBase {
-	// name: string;
-	// colorKeys: string[];
-	// ratios: Record<string, number>;
-	// colorspace?: 'LAB' | 'LCH' | 'RGB' | 'HSL';
-	isBackground?: boolean;
-}
-
-/**
- * Individual W3C Color Token leaf node
+ * W3C DESIGN TOKEN INTERFACES
  */
 interface W3CColorToken {
 	$value: string;
@@ -25,10 +11,6 @@ interface W3CColorToken {
 	$description?: string;
 }
 
-/**
- * A group of tokens (e.g., 'neutral' or 'blue')
- * Using a Record allows for dynamic keys like '0', '100', etc.
- */
 interface W3CColorGroup {
 	[step: string]: W3CColorToken;
 }
@@ -43,11 +25,13 @@ interface W3CTokenExport {
 	};
 }
 
-const scalesConfig: TokenScaleConfig[] = [
+// 1. Configuration - Easy to maintain and strictly typed
+const SCALES_CONFIG: TokenScaleConfig[] = [
 	{
 		name: 'neutral',
 		colorKeys: ['#ffffff'],
 		// Using '0' as ratio 1 creates the base background anchor in the scale
+		// Note that the 0 scale below still might generate different color than the one define above based on the lightness & contrast of the theme
 		ratios: { '0': 1, '10': 1.05, '20': 1.1, '30': 1.2 },
 		isBackground: true,
 	},
@@ -68,63 +52,24 @@ const scalesConfig: TokenScaleConfig[] = [
 	},
 ];
 
-/**
- * 2. Theme Orchestration
- */
-const namingMap = new Map<string, string[]>();
-const leonardoColors: Color[] = [];
-let bgAnchor: BackgroundColor | undefined;
-
-scalesConfig.forEach((cfg) => {
-	// Store the keys for the token loop
-	namingMap.set(cfg.name, Object.keys(cfg.ratios));
-
-	const colorParams: ColorBase = {
-		name: cfg.name,
-		colorKeys: cfg.colorKeys,
-		ratios: cfg.ratios,
-		colorspace: cfg.colorspace || 'LAB',
-	};
-
-	// Instantiate the standard Color for the scale
-	leonardoColors.push(new Color(colorParams));
-
-	// If flagged, create the BackgroundColor anchor
-	if (cfg.isBackground) {
-		// This is a workaround - because the BackgroundColor ratios are not available in myTheme.contrastColors below
-		bgAnchor = new BackgroundColor({
-			name: cfg.name,
-			colorKeys: cfg.colorKeys,
-			ratios: cfg.ratios,
-		});
-	}
-});
-
-if (!bgAnchor) throw new Error('No background scale defined.');
-
-const myTheme = new Theme({
-	colors: leonardoColors,
-	backgroundColor: bgAnchor,
-	lightness: 97,
-	contrast: 1,
-});
-
-/**
- * 3. W3C Token Generation
- */
 function generateTokens() {
+	const theme = createLeonardoTheme(SCALES_CONFIG);
+
 	const colorTokens: W3CTokenExport = { color: { $type: 'color' } };
 
-	const [, ...scales] = myTheme.contrastColors;
+	/**
+	 * We destructure to skip the first element [0].
+	 * Thanks to the workaround, the 'neutral' scale is duplicated in the scales array [1+],
+	 * allowing us to capture '0', '10', '20', etc., in one pass.
+	 */
+	const [, ...scales] = theme.contrastColors;
 
 	scales.forEach((scale) => {
 		const scaleName = scale.name;
+		const config = SCALES_CONFIG.find((c) => c.name === scaleName);
+		if (!config || !config.ratios) return;
 
-		const originalConfig = scalesConfig.find((c) => c.name === scaleName);
-		if (!originalConfig || !originalConfig.ratios) return;
-
-		const keys = Object.keys(originalConfig.ratios);
-
+		const keys = Object.keys(config.ratios);
 		const group: W3CColorGroup = {};
 
 		scale.values.forEach((swatch, index) => {
