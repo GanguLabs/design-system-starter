@@ -1,0 +1,8 @@
+{
+  "semantic": {
+    "$type": "color",
+    "surface-canvas": { "$value": "{color.neutral.0}" },
+    "surface-subtle": { "$value": "{color.neutral.10}" },
+    "brand-primary": { "$value": "{color.blue.500}" }
+  }
+}
