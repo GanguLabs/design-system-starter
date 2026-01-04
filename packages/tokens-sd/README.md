@@ -30,6 +30,8 @@ Alternatives:
 
 - https://color.review/
 
+## use leonardocolor.io for color palette generation
+
 ## Basic Style Dictionary
 
 This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
