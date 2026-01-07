@@ -1,11 +1,12 @@
 {
-	"name": "adobe-leonardo-colors",
+	"name": "@repo/leonardo-contrast-colors",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"files": [
 		"dist"
 	],
+	"source": "./lib/main.ts",
 	"main": "./dist/main.js",
 	"module": "./dist/main.js",
 	"types": "./dist/main.d.ts",
@@ -15,6 +16,9 @@
 			"types": "./dist/main.d.ts"
 		},
 		"./style.css": "./dist/main.css"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
 		"dev": "vite",

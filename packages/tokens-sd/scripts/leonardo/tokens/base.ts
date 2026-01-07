@@ -1,7 +1,7 @@
 import {
 	BackgroundColorScale,
 	ColorScale,
-} from '../models/leonardo-color-scales';
+} from '@repo/leonardo-contrast-colors';
 
 export const neutral = new BackgroundColorScale({
 	name: 'neutral',

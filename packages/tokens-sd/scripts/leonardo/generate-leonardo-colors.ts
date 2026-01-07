@@ -1,6 +1,6 @@
+import { LeonardoThemeWrapper } from '@repo/leonardo-contrast-colors';
 import fs from 'node:fs';
 import path from 'node:path';
-import { LeonardoThemeWrapper } from './lib/leonardo-wrapper';
 import { W3CColorGroup, W3CColorToken, W3CTokenExport } from './models/tokens';
 import { allScales, neutral } from './tokens/base';
 import { semanticDefinitions } from './tokens/semantic';

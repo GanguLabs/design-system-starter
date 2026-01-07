@@ -13,7 +13,8 @@
 		"composite": true,
 		"noEmit": true, // Back to true
 		"declaration": true, // Keep these for the plugin to read
-		"declarationMap": true,
+		"declarationMap": true, // Essential for Ctrl+Click to source
+		"sourceMap": true, // Essential for debugging
 		"emitDeclarationOnly": false,
 		"allowImportingTsExtensions": true,
 		"isolatedModules": true
