@@ -5,3 +5,6 @@ export { Label } from '@/components/label';
 
 // Color Wrapper
 export * from '@/leo';
+
+// Expose Adobe Leonardo
+// export type { Color, Theme } from '@adobe/leonardo-contrast-colors';
