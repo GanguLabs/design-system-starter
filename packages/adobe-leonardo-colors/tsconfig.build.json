@@ -1,8 +1,22 @@
 {
 	"extends": "./tsconfig.json",
-	"include": ["lib"],
 	"compilerOptions": {
-		"noEmit": true,
-		"jsx": "react-jsx"
-	}
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"jsx": "react-jsx",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["lib/*"]
+		},
+		"skipLibCheck": true,
+		"composite": true,
+		"noEmit": true, // Back to true
+		"declaration": true, // Keep these for the plugin to read
+		"declarationMap": true,
+		"emitDeclarationOnly": false,
+		"allowImportingTsExtensions": true,
+		"isolatedModules": true
+	},
+	"include": ["lib"]
 }
