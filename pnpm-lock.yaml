@@ -376,6 +376,9 @@ importers:
 
   packages/adobe-leonardo-colors:
     dependencies:
+      '@adobe/leonardo-contrast-colors':
+        specifier: ^1.0.0
+        version: 1.0.0
       react:
         specifier: ^19.2.0
         version: 19.2.0
