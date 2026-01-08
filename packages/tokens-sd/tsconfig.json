@@ -11,16 +11,21 @@
 	// Visit https://aka.ms/tsconfig to read more about this file
 	"compilerOptions": {
 		// File Layout
-		// "rootDir": "./src",
+		// "rootDir": "./lib",
 		"outDir": "./dist",
 		"baseUrl": ".",
-		"paths": { "@/*": ["src/*"] },
+		"paths": {
+			"@/*": ["src/*"],
+			"@repo/leonardo-contrast-colors": [
+				"../../packages/adobe-leonardo-colors/lib/main.ts"
+			]
+		},
 
 		// Environment Settings
 		// See also https://aka.ms/tsconfig/module
-		"module": "nodenext",
+		"module": "esnext",
 		"target": "esnext",
-		"moduleResolution": "nodenext",
+		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,

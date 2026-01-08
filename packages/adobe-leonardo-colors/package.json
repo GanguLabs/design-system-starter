@@ -12,8 +12,14 @@
 	"types": "./dist/main.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/main.js",
-			"types": "./dist/main.d.ts"
+			"import": {
+				"development": "./lib/main.ts",
+				"default": "./dist/main.js"
+			},
+			"types": {
+				"development": "./lib/main.ts",
+				"default": "./dist/main.d.ts"
+			}
 		},
 		"./style.css": "./dist/main.css"
 	},
