@@ -36,6 +36,6 @@
 		"@types/react-dom": "^18.2.23",
 		"@vanilla-extract/css": "^1.15.3",
 		"@vanilla-extract/vite-plugin": "4.0.10",
-		"typescript": "^5.5.4"
+		"typescript": "5.8.2"
 	}
 }
