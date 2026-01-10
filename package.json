@@ -17,6 +17,8 @@
 		"dev:tui": "turbo run dev --ui=tui",
 		"dev:example-vite": "turbo run dev --filter=./apps/example-vite",
 		"dev:docs": "turbo run dev --filter=./apps/docs",
+		"dev:next": "turbo run dev --filter=./apps/next-16",
+		"dev:next:tui": "turbo run dev --ui=tui --filter=./apps/next-16",
 		"dev:web": "turbo run dev --filter=./apps/web",
 		"dev:web:tui": "turbo run dev --ui=tui --filter=./apps/web",
 		"dev:storybook": "turbo run dev --filter=./apps/storybook",
