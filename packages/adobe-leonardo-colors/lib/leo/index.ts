@@ -1,5 +1,11 @@
 import { Theme } from '@adobe/leonardo-contrast-colors';
-import { AnyScale, BackgroundColorScale } from './models/leonardo-color-scales';
+import {
+	AnyScale,
+	BackgroundColorScale,
+	ColorScale,
+} from './models/leonardo-color-scales';
+
+export { BackgroundColorScale, ColorScale };
 
 export namespace LeonardoThemeWrapper {
 	/** Public Data Shapes */

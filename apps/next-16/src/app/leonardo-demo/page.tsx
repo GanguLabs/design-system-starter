@@ -1,5 +1,5 @@
 'use client';
-import { useAdaptiveTheme } from './use-adaptive-theme';
+import { useAdaptiveTheme } from './hooks/use-adaptive-theme';
 
 export default function DemoPage() {
 	const { lightness, setLightness, wrapper } = useAdaptiveTheme();

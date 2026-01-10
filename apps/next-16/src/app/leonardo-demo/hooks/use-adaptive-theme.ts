@@ -3,7 +3,7 @@
 import {
 	BackgroundColorScale,
 	ColorScale,
-	LeonardoThemeWrapper,
+	LeonardoThemeWrapper as Leo,
 } from '@repo/leonardo-contrast-colors';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -30,11 +30,7 @@ export function useAdaptiveTheme() {
 
 	// 2. Initialize your Wrapper
 	const wrapper = useMemo(() => {
-		return new LeonardoThemeWrapper(
-			[scales.blue, scales.gray],
-			scales.gray,
-			lightness
-		);
+		return new Leo([scales.blue, scales.gray], scales.gray, lightness);
 	}, [scales, lightness]);
 
 	// 3. Apply CSS variables to a container or :root
@@ -43,7 +39,7 @@ export function useAdaptiveTheme() {
 		const root = document.documentElement;
 
 		// Apply background
-		root.style.setProperty('--app-bg', wrapper.bac);
+		root.style.setProperty('--app-bg', wrapper.backgroundColor);
 
 		// Apply all scale swatches
 		normalized.forEach((scale) => {
