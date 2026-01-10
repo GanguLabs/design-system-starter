@@ -1,7 +1,7 @@
 import { Theme } from '@adobe/leonardo-contrast-colors';
 import { AnyScale, BackgroundColorScale } from './models/leonardo-color-scales';
 
-namespace LeonardoThemeWrapper {
+export namespace LeonardoThemeWrapper {
 	/** Public Data Shapes */
 	export interface Swatch {
 		key: string;
