@@ -1,7 +1,8 @@
 {
+	"root": false,
 	"extends": ["../../biome.json"],
 	"files": {
-		"include": [".storybook", "tests", "utils"],
+		"includes": ["**/.storybook/**", "**/tests/**", "**/utils/**"],
 		"ignoreUnknown": true
 	}
 }

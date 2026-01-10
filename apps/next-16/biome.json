@@ -1,13 +1,14 @@
 {
-	"extends": ["../../biome.json"],
-  "files": {
-    "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
-  },
-  "linter": {
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
-    }
-  },
+	"root": false,
+	"extends": "//",
+	"files": {
+		"ignoreUnknown": true,
+		"includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+	},
+	"linter": {
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
+		}
+	}
 }

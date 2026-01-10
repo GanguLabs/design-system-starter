@@ -1,16 +1,14 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
 	"files": {
-		"ignore": ["dist"]
+		"includes": ["**", "!**/dist"]
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -45,16 +43,9 @@
 			"trailingCommas": "all"
 		}
 	},
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  },
 	"overrides": [
 		{
-			"include": ["*.tsx", "*.jsx"],
+			"includes": ["*.tsx", "*.jsx"],
 			"javascript": {
 				"formatter": {
 					"trailingCommas": "es5"
