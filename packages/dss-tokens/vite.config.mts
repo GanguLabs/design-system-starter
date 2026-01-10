@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 const extensionForFormat = (format) =>
-	({ es: 'esm', cjs: 'cjs', dts: 'd.ts' }[format]);
+	({ es: 'esm', cjs: 'cjs', dts: 'd.ts' })[format];
 
 export default defineConfig({
 	build: {
