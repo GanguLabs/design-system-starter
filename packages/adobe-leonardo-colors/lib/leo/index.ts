@@ -36,6 +36,19 @@ export class LeonardoThemeWrapper {
 	}
 
 	/**
+	 * Corrected Getter:
+	 * Leonardo's output puts the resolved background hex in the first item
+	 * of the contrastColors array.
+	 */
+	public get backgroundColor(): string {
+		const rawOutput = this.theme.contrastColors as unknown as [
+			LeonardoBackgroundOutput,
+			...LeonardoColorOutput[]
+		];
+		return rawOutput[0].background;
+	}
+
+	/**
 	 * Normalizes the complex Leonardo output into a clean array of Swatches.
 	 * Re-inserts the background anchor into the correct position.
 	 */
