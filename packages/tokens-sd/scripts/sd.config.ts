@@ -45,6 +45,7 @@ const mySdConfig: Config = {
 		formats: { 'typescript/const-object': tsTypeSafe },
 	},
 	platforms: getPlatforms(filesToUse, defaultOptions),
+	usesDtcg: true,
 };
 
 // 4. Execution
