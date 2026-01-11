@@ -1,73 +1,150 @@
-# React + TypeScript + Vite
+This documentation defines a Tiered Token Architecture within a Turborepo. It integrates Style Dictionary (Source of Truth), Leonardo (Color Science), Vanilla Extract (Type-safe CSS-in-TS), and Next.js (Runtime Orchestration).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🏗️ System Architecture Overview
 
-Currently, two official plugins are available:
+The system is split into four layers to ensure that design decisions (Tokens) are decoupled from mathematical generation (Leonardo) and implementation (Vanilla Extract).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. The Brain (@repo/sd-tokens)
 
-## React Compiler
+**Role**: Single Source of Truth (SSOT).
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Defines **Primitive Steps** (e.g., 100-900).
+- Defines **Color Families** (e.g., Blue, Gray).
+- Defines **Semantic Intent** (The "Purpose" of a color, e.g., brand-bg).
+- **Output**: TypeScript Types and Style Dictionary JSON/XML for multi-platform support.
 
-## Expanding the ESLint configuration
+### 2. The Math Engine (@repo/leonardo-contrast-colors)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Role**: Generates accessible color values.
 
-```js
-export default defineConfig([
-	globalIgnores(['dist']),
-	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [
-			// Other configs...
+- Wraps @adobe/leonardo-contrast-colors.
+- Uses Generics to ensure that a scale named "Blue" contains exactly the steps defined in the Brain.
+- Calculates real Hex values based on a dynamic **Lightness** slider.
 
-			// Remove tseslint.configs.recommended and replace with this
-			tseslint.configs.recommendedTypeChecked,
-			// Alternatively, use this for stricter rules
-			tseslint.configs.strictTypeChecked,
-			// Optionally, add this for stylistic rules
-			tseslint.configs.stylisticTypeChecked,
+### 3. The CSS Contract (@repo/styles)
 
-			// Other configs...
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ['./tsconfig.node.json', './tsconfig.app.json'],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
+**Role**: Type-safe CSS Variable delivery.
+
+- Uses **Vanilla Extract** to create a "Contract."
+- Transforms the "Brain's" tokens into static CSS Variable names (--s-brand-bg).
+- Ensures that developers use vars.brand.bg instead of hardcoded strings.
+
+### 4. The Orchestrator (apps/next-app)
+
+**Role**: Runtime synchronization.
+
+- A custom hook (useSyncTheme) bridges the Math Engine and the CSS Contract.
+- Updates the browser's CSS Variables in real-time.
+- Enables DevTools Experimentation by aliasing Semantic variables to Primitive variables.
+
+## 🛠️ Package Implementation
+
+### Layer 1: @repo/sd-tokens
+
+Defined in packages/sd-tokens/src/index.ts.
+
+```typescript
+// The "Blueprint"
+export const primitiveSteps = [
+	100, 200, 300, 400, 500, 600, 700, 800, 900,
+] as const;
+export type PrimitiveStep = (typeof primitiveSteps)[number];
+
+export const colorFamilies = ['blue', 'gray', 'purple'] as const;
+export type ColorFamily = (typeof colorFamilies)[number];
+
+// The "Intent" (Platform Agnostic)
+export const semanticStructure = {
+	brand: { bg: '', text: '', border: '' },
+	surface: { main: '', muted: '' },
+} as const;
+
+// Default Mappings for the Web Orchestrator
+export const defaultMappings = {
+	brand: { bg: 'blue-500', text: 'blue-100', border: 'blue-600' },
+	surface: { main: 'gray-900', muted: 'gray-700' },
+} as const;
+
+// This is the object Style Dictionary will "crawl"
+export const tokensSource = {
+	primitive: {
+		blue: Object.fromEntries(
+			primitiveSteps.map((s) => [s, { value: `{color.blue.${s}}` }])
+		),
+		// ... etc
+	},
+	semantic: {
+		brand: {
+			bg: { value: '{primitive.blue.500}', comment: 'Main app background' },
+			text: { value: '{primitive.blue.100}' },
 		},
 	},
-]);
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Layer 2: @repo/styles (Vanilla Extract)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+Defined in packages/styles/src/vars.css.ts.
 
-export default defineConfig([
-	globalIgnores(['dist']),
-	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [
-			// Other configs...
-			// Enable lint rules for React
-			reactX.configs['recommended-typescript'],
-			// Enable lint rules for React DOM
-			reactDom.configs.recommended,
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ['./tsconfig.node.json', './tsconfig.app.json'],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
-		},
-	},
-]);
+```typescript
+import { createGlobalThemeContract } from '@vanilla-extract/css';
+import {
+	primitiveSteps,
+	colorFamilies,
+	semanticStructure,
+} from '@repo/sd-tokens';
+
+// Generate Primitives Contract: p-blue-100, p-blue-200, etc.
+const primitivesStructure = Object.fromEntries(
+	colorFamilies.map((f) => [
+		f,
+		Object.fromEntries(primitiveSteps.map((s) => [s, `p-${f}-${s}`])),
+	])
+);
+export const primitives = createGlobalThemeContract(primitivesStructure);
+
+// Generate Semantics Contract: s-brand-bg, s-brand-text, etc.
+const semanticsStructure = Object.fromEntries(
+	Object.entries(semanticStructure).map(([grp, tokens]) => [
+		grp,
+		Object.fromEntries(Object.keys(tokens).map((t) => [t, `s-${grp}-${t}`])),
+	])
+);
+export const vars = createGlobalThemeContract(semanticsStructure);
 ```
+
+### Layer 3: @repo/colors (Leonardo Wrapper)
+
+A simplified view of the generic-powered wrapper in packages/colors/lib/main.ts.
+
+```typescript
+export class LeonardoThemeWrapper<T extends string, K extends string | number> {
+	// Uses Leonardo's Theme class to calculate swatches
+	public getScales(): Record<T, NormalizedScale<K>> {
+		// Returns a Record with keys like 'blue' or 'gray'
+		// allowing dot-notation in the Orchestrator.
+	}
+}
+```
+
+## 🔄 The Runtime Flow (Next.js)
+
+The useSyncTheme hook is the "Live" part of the architecture. It performs the following mapping at runtime:
+
+1. Primitive Injection:
+   Takes Hex values from Leonardo and assigns them to --p-[family]-[step] variables.
+2. Semantic Aliasing:
+   Reads the defaultMappings and performs:
+   document.documentElement.style.setProperty('--s-brand-bg', 'var(--p-blue-500)')
+
+## Why this is powerful for developers:
+
+- **No Rebuilds**: You can change the Lightness slider in the UI; Leonardo recalculates, and the primitives update instantly.
+- **DevTools Debugging**: In the browser, you can inspect an element and change --s-brand-bg from var(--p-blue-500) to var(--p-blue-600) to see a "darker" version without touching code.
+- **Standard Web**: It uses color-scheme and standard CSS variables, making it compatible with any vanilla CSS or Vanilla Extract styles.
+
+## 🚀 How to Extend
+
+1.  **To add a new Color Family**: Add a name to colorFamilies in @repo/sd-tokens.
+2.  **To add a new Semantic Token**: Add a key to semanticStructure and a mapping to defaultMappings.
+3.  **To support Mobile**: Run the Style Dictionary build script in @repo/sd-tokens to generate colors.xml (Android) or Colors.swift (iOS).
