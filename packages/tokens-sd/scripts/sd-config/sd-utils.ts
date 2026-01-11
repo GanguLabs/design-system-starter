@@ -40,7 +40,7 @@ export function getNonEmptyTokenFiles() {
 	return allTokenFiles.filter((filePath) => {
 		try {
 			const stats = statSync(filePath);
-			if (stats.size == 0) return false;
+			if (stats.size === 0) return false;
 
 			const content = readFileSync(filePath, 'utf-8');
 			if (content.trim().length === 0) return false;
