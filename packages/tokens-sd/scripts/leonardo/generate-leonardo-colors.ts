@@ -80,7 +80,7 @@ function build(options: ExportOptions = { includeDescription: false }) {
  * Custom stringifier to collapse single-value tokens into one line.
  * It ignores objects that have extra properties like $description.
  */
-function stringifyW3C(data: any): string {
+function stringifyW3C(data: W3CTokenExport): string {
 	// 1. Generate standard pretty-printed JSON
 	const json = JSON.stringify(data, null, 2);
 
