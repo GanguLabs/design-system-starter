@@ -367,12 +367,6 @@ importers:
       '@adobe/leonardo-contrast-colors':
         specifier: ^1.0.0
         version: 1.0.0
-      react:
-        specifier: ^19.2.0
-        version: 19.2.0
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.0(react@19.2.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
@@ -21777,7 +21771,7 @@ snapshots:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.4
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
 

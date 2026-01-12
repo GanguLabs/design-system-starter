@@ -1,14 +1,10 @@
-import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 // ref: https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma
 export default defineConfig({
 	plugins: [
-		react(),
-		libInjectCss(),
 		dts({
 			include: ['lib'],
 			tsconfigPath: './tsconfig.build.json',
@@ -23,18 +19,6 @@ export default defineConfig({
 	],
 	build: {
 		copyPublicDir: false,
-		rollupOptions: {
-			external: ['react', 'react/jsx-runtime'],
-			output: {
-				assetFileNames: (assetInfo) => {
-					if (assetInfo.name === 'style.css') {
-						return 'main.css';
-					}
-					// Fallback to a default name or use assetInfo.name if it exists
-					return assetInfo.name || 'defaultName.css';
-				},
-			},
-		},
 		lib: {
 			entry: resolve(__dirname, 'lib/main.ts'),
 			formats: ['es'],
