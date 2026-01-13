@@ -1,4 +1,4 @@
-import { W3CColorToken } from '../models/tokens';
+import type { W3CColorToken } from '../models/tokens';
 import { blue, neutral } from './base';
 
 /**

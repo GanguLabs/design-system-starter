@@ -28,9 +28,12 @@ This documentation defines a Tiered Token Architecture within a Turborepo. It in
 - @repo/styles: Uses a walkDTCG utility to strip metadata from the tokens and create a createGlobalThemeContract for Vanilla Extract.
 - useSyncTheme Hook: Orchestrates the runtime by:
   1.  Injecting Leonardo hex codes into Primitive CSS variables.
-  2.  Aliasing Semantic CSS variables to those Primitives (e.g., --s-brand-bg: var(--p-blue-500)).
+- Aliasing Semantic CSS variables to those Primitives (e.g., --color-s-brand-bg: var(--color-p-blue-500)).
+- I want to create the semantic tokens with style-dictionary package, because
+	1. Its the single source of truth
+	2. it allows me to generate tokens for various platforms
 
-**Initial Task**: Acknowledge this architecture. Then, help me [insert your first task, e.g., "set up the folder structure for the @repo/styles package"].
+**Initial Task**: Acknowledge this architecture. Ask me any questions if you need more clarity. Then, give me a sequence of implementation steps (numbered) that i can use to point you and ask more clarity on further instructions.
 
 ### Essential Guidelines
 
