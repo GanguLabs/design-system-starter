@@ -1,4 +1,4 @@
-import { Theme } from '@adobe/leonardo-contrast-colors';
+import { type Colorspace, Theme } from '@adobe/leonardo-contrast-colors';
 import type {
 	AnyScale,
 	BackgroundColorScale,
@@ -26,7 +26,8 @@ export class LeonardoThemeWrapper {
 	constructor(
 		allScales: AnyScale[],
 		backgroundScale: BackgroundColorScale<string>,
-		lightness: number = 100
+		lightness: number = 100,
+		output: Colorspace = 'OKLCH',
 	) {
 		this.allScales = allScales;
 		this.backgroundScale = backgroundScale;
@@ -34,6 +35,7 @@ export class LeonardoThemeWrapper {
 			colors: allScales,
 			backgroundColor: backgroundScale,
 			lightness: lightness,
+			output,
 			contrast: 1,
 		});
 	}
@@ -46,7 +48,7 @@ export class LeonardoThemeWrapper {
 	public get backgroundColor(): string {
 		const rawOutput = this.theme.contrastColors as unknown as [
 			LeonardoBackgroundOutput,
-			...LeonardoColorOutput[]
+			...LeonardoColorOutput[],
 		];
 		return rawOutput[0].background;
 	}
@@ -58,13 +60,13 @@ export class LeonardoThemeWrapper {
 	public getNormalizedScales(): LeonardoThemeWrapper.NormalizedScale[] {
 		const [bgData, ...fgScales] = this.theme.contrastColors as unknown as [
 			LeonardoBackgroundOutput,
-			...LeonardoColorOutput[]
+			...LeonardoColorOutput[],
 		];
 
 		return fgScales.map((generatedScale) => {
 			// Because of ITokenScale, we know every scale has colorName
 			const originalScale = this.allScales.find(
-				(s) => s.colorName === generatedScale.name
+				(s) => s.colorName === generatedScale.name,
 			);
 
 			if (!originalScale)
